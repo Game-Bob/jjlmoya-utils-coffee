@@ -316,6 +316,7 @@ const t = (ui ?? {}) as BrewRatioCalculatorUI;
     el('modeCoffee')?.addEventListener('click', () => { Object.assign(state, { mode: 'coffee' as BrewMode, inputValue: 20 }); syncUIToState(); render(); });
     el('modeWater')?.addEventListener('click', () => { Object.assign(state, { mode: 'water' as BrewMode, inputValue: 300 }); syncUIToState(); render(); });
     el('iceToggle')?.addEventListener('change', (e) => { state.iceMode = (e.target as HTMLInputElement).checked; render(); });
+    el('brewInput')?.addEventListener('input', (e) => { state.inputValue = parseFloat((e.target as HTMLInputElement).value) || 1; render(); });
   }
 
   function initIntensityButtons() {

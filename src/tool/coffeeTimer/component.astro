@@ -270,12 +270,44 @@ const t = (ui ?? {}) as CoffeeTimerUI;
     resetTimer();
   }
 
-  function handleInput(id: string, value: string) {
+  function setInput(id: string, val: number): void {
+    const inp = el(id) as HTMLInputElement;
+    if (inp) inp.value = String(val);
+  }
+
+  function clampBloomWater(): void {
+    const max = Math.max(10, Math.round(config.waterTotal * 0.15));
+    if (config.bloomWater <= max) return;
+    config.bloomWater = max;
+    setInput('inputBloomWater', max);
+  }
+
+  function clampBloomTime(): void {
+    const max = config.totalSeconds - 30;
+    if (config.bloomSeconds <= max) return;
+    config.bloomSeconds = Math.max(10, max);
+    setInput('inputBloomTime', config.bloomSeconds);
+  }
+
+  function scaleTimeToWater(oldWater: number, newWater: number): void {
+    if (oldWater <= 0) return;
+    const scaled = Math.max(60, Math.round(config.totalSeconds * newWater / oldWater));
+    config.totalSeconds = scaled;
+    setInput('inputTotalTime', scaled);
+  }
+
+  function handleInput(id: string, value: string): void {
     const val = parseInt(value) || 0;
-    if (id === 'inputWater') { config.waterTotal = val; setText('targetWeightDisplay', String(val)); }
-    if (id === 'inputBloomWater') config.bloomWater = val;
-    if (id === 'inputBloomTime') config.bloomSeconds = val;
-    if (id === 'inputTotalTime') config.totalSeconds = val;
+    if (id === 'inputWater') {
+      const old = config.waterTotal;
+      config.waterTotal = val;
+      setText('targetWeightDisplay', String(val));
+      scaleTimeToWater(old, val);
+      clampBloomWater();
+    }
+    if (id === 'inputBloomWater') { config.bloomWater = val; clampBloomWater(); }
+    if (id === 'inputBloomTime') { config.bloomSeconds = val; clampBloomTime(); }
+    if (id === 'inputTotalTime') { config.totalSeconds = val; clampBloomTime(); }
   }
 
   function initButtons() {
