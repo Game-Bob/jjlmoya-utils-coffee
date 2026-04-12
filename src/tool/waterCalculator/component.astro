@@ -1,0 +1,709 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { KnownLocale } from '../../types';
+import type { WaterCalculatorUI } from './ui';
+import { WATER_PROFILES, SALTS } from './logic';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as WaterCalculatorUI;
+---
+
+<div
+  class="water-calculator"
+  data-profile-sub-template={t.profileSubTemplate}
+  data-custom-profile-name={t.customProfileName}
+  data-corrosion-high={t.corrosionHigh}
+  data-corrosion-medium={t.corrosionMedium}
+  data-corrosion-low={t.corrosionLow}
+  data-scale-high={t.scaleHigh}
+  data-scale-medium={t.scaleMedium}
+  data-scale-low={t.scaleLow}
+  data-copy-template={t.copyTemplate}
+  data-copied-text={t.copiedText}
+>
+  <div class="water-calc-container">
+
+    <div class="water-config-panel">
+
+      <section class="water-section-card">
+        <header class="water-section-header">
+          <Icon name="mdi:tune-variant" />
+          <h3>{t.sectionMixTitle}</h3>
+        </header>
+
+        <div class="water-input-row">
+          <div class="water-field">
+            <label for="base-liters">{t.labelVolume}</label>
+            <div class="water-input-wrapper">
+              <input type="number" id="base-liters" value="1" step="0.1" min="0.1" />
+              <span class="water-unit-badge">LITROS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="water-field">
+          <label>{t.labelProfile}</label>
+          <div class="water-presets-grid">
+            {WATER_PROFILES.map((profile) => (
+              <button
+                class="water-preset-chip"
+                data-profile={JSON.stringify({ name: profile.name, gh: profile.gh, kh: profile.kh, magnesiumRatio: profile.magnesiumRatio })}
+                type="button"
+              >
+                {profile.name}
+              </button>
+            ))}
+            <button class="water-preset-chip" id="water-custom-btn" type="button">
+              {t.customProfileBtn}
+            </button>
+          </div>
+        </div>
+
+        <div id="ppm-manual-fields" class="water-ppm-fields water-hidden">
+          <div class="water-field">
+            <label for="target-gh">{t.labelGH}</label>
+            <div class="water-input-wrapper">
+              <input type="number" id="target-gh" value="68" step="1" />
+              <span class="water-unit-badge">mg/L</span>
+            </div>
+          </div>
+          <div class="water-field">
+            <label for="target-kh">{t.labelKH}</label>
+            <div class="water-input-wrapper">
+              <input type="number" id="target-kh" value="40" step="1" />
+              <span class="water-unit-badge">mg/L</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="water-section-card">
+        <header class="water-section-header">
+          <Icon name="mdi:beaker-outline" />
+          <h3>{t.concentratesTitle}</h3>
+        </header>
+
+        <div class="water-input-row">
+          <div class="water-field">
+            <label for="stock-mg">{t.saltMgName}</label>
+            <div class="water-input-wrapper">
+              <input type="number" id="stock-mg" value={SALTS.MAGNESIUM.defaultConcentration} step="0.01" />
+              <span class="water-unit-badge">g/100ml</span>
+            </div>
+          </div>
+          <div class="water-field">
+            <label for="stock-ca">{t.saltCaName}</label>
+            <div class="water-input-wrapper">
+              <input type="number" id="stock-ca" value={SALTS.CALCIUM.defaultConcentration} step="0.01" />
+              <span class="water-unit-badge">g/100ml</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="water-field water-field-half">
+          <label for="stock-buf">{t.saltBufName}</label>
+          <div class="water-input-wrapper">
+            <input type="number" id="stock-buf" value={SALTS.BUFFER.defaultConcentration} step="0.01" />
+            <span class="water-unit-badge">g/100ml</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="water-results-sidebar">
+      <div class="water-recipe-display">
+        <header class="water-section-header water-recipe-header">
+          <Icon name="mdi:clipboard-text-outline" class="water-recipe-icon" />
+          <h3><span id="active-profile-name">{t.recipeTitle}</span></h3>
+        </header>
+        <p id="profile-values-sub" class="water-profile-sub"></p>
+
+        <div class="water-recipe-item">
+          <span class="water-recipe-label">{t.labelMg}</span>
+          <span class="water-recipe-value"><span id="res-mg">0.00</span> <small>ml</small></span>
+        </div>
+        <div class="water-recipe-item">
+          <span class="water-recipe-label">{t.labelCa}</span>
+          <span class="water-recipe-value"><span id="res-ca">0.00</span> <small>ml</small></span>
+        </div>
+        <div class="water-recipe-item">
+          <span class="water-recipe-label">{t.labelBuffer}</span>
+          <span class="water-recipe-value"><span id="res-buf">0.00</span> <small>ml</small></span>
+        </div>
+
+        <div class="water-total-row">
+          <span class="water-recipe-label">{t.labelDistilledWater}</span>
+          <div class="water-recipe-value water-total-value"><span id="res-water">0</span> <small>ml</small></div>
+        </div>
+
+        <button class="water-copy-btn" id="copy-recipe" type="button">
+          <Icon name="mdi:content-copy" />
+          {t.copyBtn}
+        </button>
+      </div>
+
+      <div class="water-safety-status">
+        <div id="alert-corrosion" class="water-status-box water-status-yellow">
+          <div class="water-status-icon"><Icon name="mdi:alert-circle-outline" /></div>
+          <div class="water-status-info">
+            <h4>{t.safetyMetalsTitle}</h4>
+            <p id="corrosion-msg">{t.calculatingText}</p>
+          </div>
+        </div>
+
+        <div id="alert-scale" class="water-status-box water-status-green">
+          <div class="water-status-icon"><Icon name="mdi:information-outline" /></div>
+          <div class="water-status-info">
+            <h4>{t.safetyScaleTitle}</h4>
+            <p id="scale-msg">{t.calculatingText}</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="water-section-card water-glossary-section">
+    <header class="water-section-header">
+      <Icon name="mdi:book-open-variant" />
+      <h3>{t.glossaryTitle}</h3>
+    </header>
+    <div class="water-glossary-wrap">
+      {[0, 1, 2, 3].map((idx) => (
+        <div class="water-glossary-card">
+          <h4>{t[`glossary${idx}Term`]}</h4>
+          <p>{t[`glossary${idx}Desc`]}</p>
+        </div>
+      ))}
+    </div>
+  </footer>
+</div>
+
+<script>
+  import {
+    calculateConcentrateAmount,
+    getCorrosionRisk,
+    getLimescaleRisk,
+    fillTemplate,
+    SALTS,
+    WATER_PROFILES,
+  } from './logic';
+
+  const root = document.querySelector('.water-calculator') as HTMLElement;
+  const presetBtns = document.querySelectorAll<HTMLButtonElement>('.water-preset-chip:not(#water-custom-btn)');
+
+  function i(key: string): string { return root?.dataset[key] ?? ''; }
+  function setText(id: string, txt: string): void { const el = document.getElementById(id); if (el) el.textContent = txt; }
+  function setClass(id: string, cls: string): void { const el = document.getElementById(id); if (el) el.className = cls; }
+  function val(id: string): number { return parseFloat((document.getElementById(id) as HTMLInputElement)?.value) || 0; }
+  function setVal(id: string, v: number): void { const el = document.getElementById(id) as HTMLInputElement; if (el) el.value = String(v); }
+  function getResult(id: string): string { return document.getElementById(id)?.textContent ?? ''; }
+  function showGrid(id: string): void { const el = document.getElementById(id); if (el) el.style.display = 'grid'; }
+  function hideDom(id: string): void { const el = document.getElementById(id); if (el) el.style.display = 'none'; }
+  function cap(s: string): string { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  let activeMgRatio = WATER_PROFILES[0].magnesiumRatio;
+  let activeProfileName = WATER_PROFILES[0].name;
+
+  function getSafetyClass(risk: string): string {
+    if (risk === 'high') return 'water-status-box water-status-orange';
+    if (risk === 'medium') return 'water-status-box water-status-yellow';
+    return 'water-status-box water-status-green';
+  }
+
+  function calcAmounts(gh: number, kh: number, liters: number) {
+    const mgH = gh * activeMgRatio;
+    const caH = gh * (1 - activeMgRatio);
+    const mg = calculateConcentrateAmount(mgH, liters, val('stock-mg'), SALTS.MAGNESIUM.factor);
+    const ca = calculateConcentrateAmount(caH, liters, val('stock-ca'), SALTS.CALCIUM.factor);
+    const buf = calculateConcentrateAmount(kh, liters, val('stock-buf'), SALTS.BUFFER.factor);
+    return { mg, ca, buf };
+  }
+
+  function updateResults(amounts: { mg: number; ca: number; buf: number }, liters: number): void {
+    setText('res-mg', amounts.mg.toFixed(2));
+    setText('res-ca', amounts.ca.toFixed(2));
+    setText('res-buf', amounts.buf.toFixed(2));
+    const pureWater = liters * 1000 - amounts.mg - amounts.ca - amounts.buf;
+    setText('res-water', pureWater.toFixed(0));
+  }
+
+  function updateSafety(gh: number, kh: number): void {
+    const corrRisk = getCorrosionRisk(gh, kh);
+    const scaleRisk = getLimescaleRisk(gh, kh);
+    setClass('alert-corrosion', getSafetyClass(corrRisk));
+    setClass('alert-scale', getSafetyClass(scaleRisk));
+    setText('corrosion-msg', i(`corrosion${cap(corrRisk)}`));
+    setText('scale-msg', i(`scale${cap(scaleRisk)}`));
+  }
+
+  function updateProfileHeader(gh: number, kh: number): void {
+    setText('active-profile-name', activeProfileName);
+    setText('profile-values-sub', fillTemplate(i('profileSubTemplate'), { gh: String(gh), kh: String(kh) }));
+  }
+
+  function saveStocks(): void {
+    const data = { mg: val('stock-mg'), ca: val('stock-ca'), buf: val('stock-buf') };
+    localStorage.setItem('coffee-water-stocks', JSON.stringify(data));
+  }
+
+  function updateCalculations(): void {
+    const liters = val('base-liters') || 1;
+    const gh = val('target-gh');
+    const kh = val('target-kh');
+    updateResults(calcAmounts(gh, kh, liters), liters);
+    updateProfileHeader(gh, kh);
+    updateSafety(gh, kh);
+    saveStocks();
+  }
+
+  function buildCopyText(): string {
+    return fillTemplate(i('copyTemplate'), {
+      profileName: activeProfileName,
+      liters: String(val('base-liters')),
+      mg: getResult('res-mg'),
+      ca: getResult('res-ca'),
+      buf: getResult('res-buf'),
+      water: getResult('res-water'),
+    });
+  }
+
+  function initPresetButtons(): void {
+    presetBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const data = btn.getAttribute('data-profile');
+        if (!data) return;
+        presetBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const p = JSON.parse(data) as { name: string; gh: number; kh: number; magnesiumRatio: number };
+        activeMgRatio = p.magnesiumRatio;
+        activeProfileName = p.name;
+        setVal('target-gh', p.gh);
+        setVal('target-kh', p.kh);
+        hideDom('ppm-manual-fields');
+        updateCalculations();
+      });
+    });
+  }
+
+  function initCustomProfile(): void {
+    const customBtn = document.getElementById('water-custom-btn');
+    customBtn?.addEventListener('click', () => {
+      presetBtns.forEach((b) => b.classList.remove('active'));
+      customBtn.classList.add('active');
+      activeMgRatio = 1;
+      activeProfileName = i('customProfileName');
+      showGrid('ppm-manual-fields');
+      updateCalculations();
+    });
+  }
+
+  function initCopyButton(): void {
+    const copyBtn = document.getElementById('copy-recipe');
+    copyBtn?.addEventListener('click', () => {
+      const orig = copyBtn.textContent ?? '';
+      navigator.clipboard.writeText(buildCopyText()).then(() => {
+        copyBtn.textContent = i('copiedText');
+        setTimeout(() => { copyBtn.textContent = orig; }, 2000);
+      });
+    });
+  }
+
+  function initInputListeners(): void {
+    const ids = ['base-liters', 'target-gh', 'target-kh', 'stock-mg', 'stock-ca', 'stock-buf'];
+    ids.forEach((id) => {
+      document.getElementById(id)?.addEventListener('input', updateCalculations);
+    });
+  }
+
+  function loadSavedStocks(): void {
+    const saved = localStorage.getItem('coffee-water-stocks');
+    if (!saved) return;
+    const data = JSON.parse(saved) as { mg: number; ca: number; buf: number };
+    setVal('stock-mg', data.mg);
+    setVal('stock-ca', data.ca);
+    setVal('stock-buf', data.buf);
+  }
+
+  function init(): void {
+    loadSavedStocks();
+    presetBtns[0]?.classList.add('active');
+    initPresetButtons();
+    initCustomProfile();
+    initInputListeners();
+    initCopyButton();
+    updateCalculations();
+  }
+
+  init();
+</script>
+
+<style>
+  .water-calculator {
+    --water-primary: #321d19;
+    --water-primary-light: #5d4037;
+    --water-secondary: #d4a373;
+    --water-accent: #e67e22;
+    --water-bg-main: rgba(255, 252, 248, 0.95);
+    --water-border: #e7e0d8;
+    --water-text: #2d1b17;
+    --water-shadow: 0 10px 30px -10px rgba(78, 52, 46, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .water-calc-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .water-config-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .water-section-card {
+    background: var(--water-bg-main);
+    border: 1px solid var(--water-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--water-shadow);
+  }
+
+  .water-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--water-secondary);
+  }
+
+  .water-section-header h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--water-primary);
+    margin: 0;
+  }
+
+  .water-input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .water-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .water-field label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--water-primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .water-field-half {
+    max-width: calc(50% - 0.75rem);
+  }
+
+  .water-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .water-input-wrapper input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    padding-right: 3.5rem;
+    background: white;
+    border: 2px solid var(--water-border);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--water-primary);
+    transition: all 0.2s ease;
+  }
+
+  .water-input-wrapper input:focus {
+    outline: none;
+    border-color: var(--water-accent);
+    box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.1);
+  }
+
+  .water-unit-badge {
+    position: absolute;
+    right: 1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: var(--water-secondary);
+    pointer-events: none;
+  }
+
+  .water-presets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .water-preset-chip {
+    padding: 0.75rem;
+    background: white;
+    border: 2px solid var(--water-border);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--water-primary-light);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+
+  .water-preset-chip:hover {
+    border-color: var(--water-secondary);
+    background: #faf7f2;
+  }
+
+  .water-preset-chip.active {
+    background: var(--water-primary);
+    color: white;
+    border-color: var(--water-primary);
+  }
+
+  .water-ppm-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .water-results-sidebar {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .water-recipe-display {
+    background: var(--water-primary);
+    color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(50, 29, 25, 0.25);
+  }
+
+  .water-recipe-header {
+    border-color: var(--water-accent);
+  }
+
+  .water-recipe-header h3 {
+    color: white;
+  }
+
+  .water-recipe-icon {
+    color: var(--water-secondary);
+  }
+
+  .water-profile-sub {
+    font-size: 0.75rem;
+    color: var(--water-secondary);
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .water-recipe-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .water-recipe-item:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1rem;
+  }
+
+  .water-recipe-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  .water-recipe-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--water-secondary);
+  }
+
+  .water-recipe-value small {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  .water-total-row {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .water-total-value {
+    color: white;
+  }
+
+  .water-copy-btn {
+    width: 100%;
+    padding: 1.25rem;
+    background: var(--water-accent);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.2s;
+  }
+
+  .water-copy-btn:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+  }
+
+  .water-safety-status {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .water-status-box {
+    background: white;
+    border-radius: 16px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    border: 1px solid var(--water-border);
+  }
+
+  .water-status-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .water-status-info h4 {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 0.25rem;
+  }
+
+  .water-status-info p {
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--water-primary-light);
+  }
+
+  .water-status-green { border-left: 6px solid #27ae60; }
+  .water-status-yellow { border-left: 6px solid #f1c40f; }
+  .water-status-orange { border-left: 6px solid var(--water-accent); }
+
+  .water-glossary-section {
+    margin-top: 2rem;
+  }
+
+  .water-glossary-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .water-glossary-card {
+    background: rgba(212, 163, 115, 0.05);
+    border: 1px dashed var(--water-secondary);
+    border-radius: 16px;
+    padding: 1.25rem;
+  }
+
+  .water-glossary-card h4 {
+    color: var(--water-primary);
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .water-glossary-card p {
+    font-size: 0.8rem;
+    color: var(--water-primary-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .water-calc-container {
+      grid-template-columns: 1fr;
+    }
+
+    .water-results-sidebar {
+      position: static;
+    }
+
+    .water-input-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .water-field-half {
+      max-width: 100%;
+    }
+  }
+
+  .water-hidden {
+    display: none;
+  }
+
+  :global(.theme-dark) .water-section-card,
+  :global(.theme-dark) .water-status-box {
+    background: #1a0f0d;
+    border-color: #3d2b27;
+  }
+
+  :global(.theme-dark) .water-input-wrapper input {
+    background: #120908;
+    border-color: #3d2b27;
+    color: #eee;
+  }
+
+  :global(.theme-dark) .water-preset-chip {
+    background: #231512;
+    border-color: #3d2b27;
+    color: #ccc;
+  }
+</style>

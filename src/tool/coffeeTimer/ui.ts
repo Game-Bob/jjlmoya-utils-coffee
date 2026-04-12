@@ -1,0 +1,29 @@
+export interface CoffeeTimerUI extends Record<string, string> {
+  readyText: string;
+  startBtn: string;
+  pauseBtn: string;
+  resumeBtn: string;
+  resetBtn: string;
+  newBrewBtn: string;
+  targetLabel: string;
+  instructionStart: string;
+  hintStart: string;
+  phase1Label: string;
+  phase2Label: string;
+  phase3Label: string;
+  instructionBloom: string;
+  hintBloom: string;
+  instructionPour: string;
+  hintPour: string;
+  instructionDrain: string;
+  hintDrain: string;
+  summaryTitle: string;
+  summaryMessage: string;
+  statTimeLabel: string;
+  statWaterLabel: string;
+  setupTitle: string;
+  labelWater: string;
+  labelBloomWater: string;
+  labelBloomTime: string;
+  labelTotalTime: string;
+}

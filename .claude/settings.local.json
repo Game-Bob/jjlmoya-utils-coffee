@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /d/code/jjlmoya/src/i18n/*/utilidades/)",
+      "Bash(echo \"ESLINT_EXIT:$?\")"
+    ]
+  }
+}
