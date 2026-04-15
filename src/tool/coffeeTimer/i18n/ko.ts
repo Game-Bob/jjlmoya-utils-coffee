@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { CoffeeTimerUI } from '../ui';
 
-const slug = 'ko-pi-chu-chul-ta-i-meo';
+const slug = 'coffee-brew-timer';
 const title = '커피 추출 타이머';
 const description =
   '푸어 단계, 리듬 보조 오디오 알림, 추출 요약 기능을 갖춘 전문 스페셜티 커피 타이머입니다. V60, 케멕스, 에어로프레스에 최적화되어 있습니다.';

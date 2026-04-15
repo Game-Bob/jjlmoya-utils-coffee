@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { GrindConverterUI } from '../ui';
 
-const slug = 'ko-pi-bun-swae-do-byeon-hwan-gi';
+const slug = 'coffee-grind-size-converter';
 const title = '커피 분쇄도 변환기';
 const description =
   '에스프레소, V60, 프렌치 프레스 및 기타 도구에 맞춰 그라인더를 조절할 수 있는 클릭 및 레벨 가이드 기반의 인터랙티브 분쇄도 차트입니다. 모든 추출 방식에 대한 기술적 마이크론 매핑을 제공합니다.';

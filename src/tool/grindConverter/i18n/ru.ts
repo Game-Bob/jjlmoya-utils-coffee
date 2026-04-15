@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { GrindConverterUI } from '../ui';
 
-const slug = 'coffee-grind-size-converter';
+const slug = 'konverter-pomola-kofe';
 const title = 'Конвертер степени помола кофе';
 const description =
   'Интерактивная таблица помола с руководством по кликам и уровням для настройки вашей кофемолки для эспрессо, V60, френч-пресса и других методов. Техническая карта микронов для всех способов экстракции.';

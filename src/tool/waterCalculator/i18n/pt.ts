@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { WaterCalculatorUI } from '../ui';
 
-const slug = 'calculadora-agua-cafe-sca';
+const slug = 'sca-calculadora-agua-cafe';
 const title = 'Calculadora de Água para Café SCA';
 const description =
   'Calcule concentrações minerais exatas para café especial. Perfis SCA, Barista Hustle e Hendon. Controle Magnésio, Cálcio e Bicarbonato para maximizar o sabor e proteger sua máquina.';

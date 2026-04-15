@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { CoffeeTimerUI } from '../ui';
 
-const slug = 'coffee-brew-timer';
+const slug = 'khronometr-dlya-prigotovleniya-kofe';
 const title = 'Таймер для заваривания кофе';
 const description =
   'Профессиональный таймер для спешелти кофе с фазами вливания, звуковыми сигналами ритма и сводкой экстракции. Оптимизирован для V60, Chemex и Aeropress.';

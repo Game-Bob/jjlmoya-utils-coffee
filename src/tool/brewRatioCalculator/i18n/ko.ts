@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewRatioCalculatorUI } from '../ui';
 
-const slug = 'ko-pi-bun-su-bi-gye-san-gi';
+const slug = 'coffee-ratio-calculator';
 const title = '커피 브루잉 비율(분수비) 계산기';
 const description =
   '이상적인 비율(1:15, 1:16...)에 맞춰 필요한 정확한 커피 양(g)이나 물의 양(ml)을 계산합니다. 추출 결과량, 푸어링 가이드, 아이스 커피 모드 및 레시피 저장 기능을 포함합니다.';

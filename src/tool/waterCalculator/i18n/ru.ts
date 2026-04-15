@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { WaterCalculatorUI } from '../ui';
 
-const slug = 'sca-coffee-water-calculator';
+const slug = 'sca-kalkulator-vody-dlya-kofe';
 const title = 'Калькулятор воды для кофе SCA';
 const description =
   'Рассчитайте точные концентрации минералов для спешелти кофе. Профили SCA, Barista Hustle и Hendon. Контролируйте магний, кальций и бикарбонат для максимального вкуса и защиты вашей кофемашины.';

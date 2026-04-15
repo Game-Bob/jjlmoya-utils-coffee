@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { CoffeeTimerUI } from '../ui';
 
-const slug = 'ka-fei-chong-zhu-ji-shi-qi';
+const slug = 'coffee-brew-timer';
 const title = '咖啡冲煮计时器';
 const description =
   '专业的精品咖啡计时器，包含注水阶段、节奏音频提醒和萃取摘要。针对 V60、Chemex 和爱乐压进行了优化。';

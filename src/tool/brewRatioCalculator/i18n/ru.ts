@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewRatioCalculatorUI } from '../ui';
 
-const slug = 'coffee-ratio-calculator';
+const slug = 'kalkulator-proporcii-kofe';
 const title = 'Калькулятор пропорций кофе';
 const description =
   'Рассчитайте точное количество граммов кофе или миллилитров воды для вашего идеального соотношения (1:15, 1:16...). Включает результат в чашке, руководство по вливанию, режим кофе со льдом и сохраненные рецепты.';

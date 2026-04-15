@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewRatioCalculatorUI } from '../ui';
 
-const slug = 'coffee-brew-ratio-calculator';
+const slug = 'coffee-ratio-calculator';
 const title = 'コーヒー粉水比（ブリューレシオ）計算機';
 const description =
   '理想の比率（1:15、1:16...）に合わせて、必要なコーヒー粉（g）や湯量（ml）を正確に計算します。出来上がり量、抽出ガイド、アイスコーヒーモード、レシピ保存機能付き。';

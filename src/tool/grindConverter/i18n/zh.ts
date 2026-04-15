@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { GrindConverterUI } from '../ui';
 
-const slug = 'ka-fei-yan-mo-du-zhuan-huan-qi';
+const slug = 'coffee-grind-size-converter';
 const title = '咖啡研磨度转换器';
 const description =
   '交互式研磨度图表，提供段位和刻度调整指南，适用于意式浓缩、V60、法压壶等多种器具。针对所有萃取方式提供技术性的微米级映射。';

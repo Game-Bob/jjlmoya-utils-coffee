@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewRatioCalculatorUI } from '../ui';
 
-const slug = 'ka-fei-fen-shui-bi-ji-suan-qi';
+const slug = 'coffee-ratio-calculator';
 const title = '咖啡粉水比计算器';
 const description =
   '为您理想的粉水比（1:15, 1:16...）计算精确的咖啡克数或水的毫升数。包含最终杯内结果、注水指南、冰咖啡模式以及保存配方功能。';

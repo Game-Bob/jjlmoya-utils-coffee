@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { WaterCalculatorUI } from '../ui';
 
-const slug = 'sca-ka-fei-shui-ji-suan-qi';
+const slug = 'sca-coffee-water-calculator';
 const title = 'SCA 精品咖啡用水计算器';
 const description =
   '为精品咖啡计算精确的矿物质浓度。支持 SCA、Barista Hustle 和 Hendon 配方。精准控制镁、钙和碳酸氢盐，最大限度提升风味并保护您的咖啡机。';
