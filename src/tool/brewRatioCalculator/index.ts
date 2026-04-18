@@ -1,3 +1,4 @@
+import { brewRatioCalculator } from './entry';
 export * from './entry';
 export const BREW_RATIO_CALCULATOR_TOOL: ToolDefinition = {
   entry: brewRatioCalculator,
