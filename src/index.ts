@@ -1,5 +1,5 @@
 export { coffeeCategory } from './category';
-export { default as coffeeCategorySEO } from './category/seo.astro';
+export const coffeeCategorySEO = () => import('./category/seo.astro').then((m) => m.default);
 
 export type {
   KnownLocale,

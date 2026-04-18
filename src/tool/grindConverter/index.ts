@@ -1,7 +1,4 @@
 import type { CoffeeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import GrindConverterComponent from './component.astro';
-import GrindConverterSEO from './seo.astro';
-import GrindConverterBibliography from './bibliography.astro';
 
 import type { GrindConverterUI } from './ui';
 
@@ -49,11 +46,10 @@ export const grindConverter: CoffeeToolEntry<GrindConverterUI> = {
   },
 };
 
-export { GrindConverterComponent, GrindConverterSEO, GrindConverterBibliography };
 
 export const GRIND_CONVERTER_TOOL: ToolDefinition = {
   entry: grindConverter,
-  Component: GrindConverterComponent,
-  SEOComponent: GrindConverterSEO,
-  BibliographyComponent: GrindConverterBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

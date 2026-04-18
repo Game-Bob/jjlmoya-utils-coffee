@@ -1,7 +1,4 @@
 import type { CoffeeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import BrewRatioCalculatorComponent from './component.astro';
-import BrewRatioCalculatorSEO from './seo.astro';
-import BrewRatioCalculatorBibliography from './bibliography.astro';
 
 import type { BrewRatioCalculatorUI } from './ui';
 
@@ -49,11 +46,10 @@ export const brewRatioCalculator: CoffeeToolEntry<BrewRatioCalculatorUI> = {
   },
 };
 
-export { BrewRatioCalculatorComponent, BrewRatioCalculatorSEO, BrewRatioCalculatorBibliography };
 
 export const BREW_RATIO_CALCULATOR_TOOL: ToolDefinition = {
   entry: brewRatioCalculator,
-  Component: BrewRatioCalculatorComponent,
-  SEOComponent: BrewRatioCalculatorSEO,
-  BibliographyComponent: BrewRatioCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

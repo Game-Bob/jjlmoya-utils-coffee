@@ -1,7 +1,4 @@
 import type { CoffeeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import CoffeeTimerComponent from './component.astro';
-import CoffeeTimerSEO from './seo.astro';
-import CoffeeTimerBibliography from './bibliography.astro';
 
 import type { CoffeeTimerUI } from './ui';
 
@@ -49,11 +46,10 @@ export const coffeeTimer: CoffeeToolEntry<CoffeeTimerUI> = {
   },
 };
 
-export { CoffeeTimerComponent, CoffeeTimerSEO, CoffeeTimerBibliography };
 
 export const COFFEE_TIMER_TOOL: ToolDefinition = {
   entry: coffeeTimer,
-  Component: CoffeeTimerComponent,
-  SEOComponent: CoffeeTimerSEO,
-  BibliographyComponent: CoffeeTimerBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

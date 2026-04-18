@@ -1,7 +1,4 @@
 import type { CoffeeToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import WaterCalculatorComponent from './component.astro';
-import WaterCalculatorSEO from './seo.astro';
-import WaterCalculatorBibliography from './bibliography.astro';
 
 import type { WaterCalculatorUI } from './ui';
 
@@ -49,11 +46,10 @@ export const waterCalculator: CoffeeToolEntry<WaterCalculatorUI> = {
   },
 };
 
-export { WaterCalculatorComponent, WaterCalculatorSEO, WaterCalculatorBibliography };
 
 export const WATER_CALCULATOR_TOOL: ToolDefinition = {
   entry: waterCalculator,
-  Component: WaterCalculatorComponent,
-  SEOComponent: WaterCalculatorSEO,
-  BibliographyComponent: WaterCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };
