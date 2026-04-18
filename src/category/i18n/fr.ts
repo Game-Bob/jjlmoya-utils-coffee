@@ -1,7 +1,7 @@
 import type { CategoryLocaleContent } from '../../types';
 
 export const content: CategoryLocaleContent = {
-  slug: 'cafe',
+  slug: 'cafe-specialite',
   title: 'Outils et Calculateurs pour les Amateurs de Café de Spécialité',
   description:
     'Élevez votre rituel café avec des outils gratuits en ligne. Calculateurs de Brew Ratio, minuteries barista, minéralisation de l\'eau SCA et conversions de mouture.',
