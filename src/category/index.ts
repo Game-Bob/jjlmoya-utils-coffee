@@ -1,8 +1,8 @@
 import type { CoffeeCategoryEntry } from '../types';
-import { brewRatioCalculator } from '../tool/brewRatioCalculator';
-import { coffeeTimer } from '../tool/coffeeTimer';
-import { waterCalculator } from '../tool/waterCalculator';
-import { grindConverter } from '../tool/grindConverter';
+import { brewRatioCalculator } from '../tool/brewRatioCalculator/entry';
+import { coffeeTimer } from '../tool/coffeeTimer/entry';
+import { waterCalculator } from '../tool/waterCalculator/entry';
+import { grindConverter } from '../tool/grindConverter/entry';
 
 export const coffeeCategory: CoffeeCategoryEntry = {
   icon: 'mdi:coffee',
