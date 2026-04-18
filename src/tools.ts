@@ -6,3 +6,5 @@ import { GRIND_CONVERTER_TOOL } from './tool/grindConverter';
 
 export const ALL_TOOLS: ToolDefinition[] = [BREW_RATIO_CALCULATOR_TOOL, COFFEE_TIMER_TOOL, WATER_CALCULATOR_TOOL, GRIND_CONVERTER_TOOL];
 
+
+export const ALL_ENTRIES = ALL_TOOLS.map(t => t.entry);
