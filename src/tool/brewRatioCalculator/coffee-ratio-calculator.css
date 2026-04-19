@@ -30,7 +30,7 @@
     margin: 0 auto 5rem;
   }
 
-  :global(.theme-dark) .brew-calculator {
+  .theme-dark .brew-calculator {
     --brew-bg: #1c1008;
     --brew-surface: #251508;
     --brew-border: #3d2a14;
@@ -482,7 +482,7 @@
     gap: 0.625rem;
   }
 
-  :global(.brew-phase-item) {
+  .brew-phase-item {
     display: flex;
     align-items: flex-start;
     gap: 0.875rem;
@@ -492,7 +492,7 @@
     padding: 0.875rem 1rem;
   }
 
-  :global(.brew-phase-number) {
+  .brew-phase-number {
     width: 1.75rem;
     height: 1.75rem;
     border-radius: 50%;
@@ -507,13 +507,13 @@
     margin-top: 0.1rem;
   }
 
-  :global(.brew-phase-text) {
+  .brew-phase-text {
     font-size: 0.85rem;
     color: var(--brew-text-secondary);
     line-height: 1.5;
   }
 
-  :global(.brew-phase-text strong) {
+  .brew-phase-text strong {
     color: var(--brew-text);
     font-weight: 700;
   }
@@ -593,7 +593,7 @@
     border-radius: 0.875rem;
   }
 
-  :global(.brew-fav-item) {
+  .brew-fav-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -605,12 +605,12 @@
     transition: all 0.2s;
   }
 
-  :global(.brew-fav-item:hover) {
+  .brew-fav-item:hover {
     border-color: var(--brew-accent);
     background: var(--brew-surface);
   }
 
-  :global(.brew-fav-icon-dot) {
+  .brew-fav-icon-dot {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
@@ -618,12 +618,12 @@
     flex-shrink: 0;
   }
 
-  :global(.brew-fav-info) {
+  .brew-fav-info {
     flex: 1;
     min-width: 0;
   }
 
-  :global(.brew-fav-name) {
+  .brew-fav-name {
     font-weight: 700;
     font-size: 0.875rem;
     color: var(--brew-text);
@@ -632,13 +632,13 @@
     text-overflow: ellipsis;
   }
 
-  :global(.brew-fav-meta) {
+  .brew-fav-meta {
     font-size: 0.7rem;
     color: var(--brew-muted);
     margin-top: 0.1rem;
   }
 
-  :global(.brew-fav-delete) {
+  .brew-fav-delete {
     background: none;
     border: none;
     color: var(--brew-muted);
@@ -649,7 +649,7 @@
     font-size: 0.85rem;
   }
 
-  :global(.brew-fav-delete:hover) { color: #ef4444; }
+  .brew-fav-delete:hover { color: #ef4444; }
 
   .brew-modal-overlay {
     position: fixed;

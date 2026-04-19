@@ -344,62 +344,62 @@
     display: none;
   }
 
-  :global(.theme-dark) .water-calculator {
+  .theme-dark .water-calculator {
     --water-bg-main: #1a0f0d;
     --water-border: #3d2b27;
     --water-text: #e7e0d8;
   }
 
-  :global(.theme-dark) .water-section-card,
-  :global(.theme-dark) .water-status-box {
+  .theme-dark .water-section-card,
+  .theme-dark .water-status-box {
     background: #1a0f0d;
     border-color: #3d2b27;
   }
 
-  :global(.theme-dark) .water-section-header h3,
-  :global(.theme-dark) .water-glossary-card h4,
-  :global(.theme-dark) .water-status-info h4 {
+  .theme-dark .water-section-header h3,
+  .theme-dark .water-glossary-card h4,
+  .theme-dark .water-status-info h4 {
     color: var(--water-secondary);
   }
 
-  :global(.theme-dark) .water-field label {
+  .theme-dark .water-field label {
     color: #b5a4a0;
   }
 
-  :global(.theme-dark) .water-input-wrapper input {
+  .theme-dark .water-input-wrapper input {
     background: #120908;
     border-color: #3d2b27;
     color: #eee;
   }
 
-  :global(.theme-dark) .water-preset-chip {
+  .theme-dark .water-preset-chip {
     background: #231512;
     border-color: #3d2b27;
     color: #ccc;
   }
 
-  :global(.theme-dark) .water-preset-chip:hover {
+  .theme-dark .water-preset-chip:hover {
     background: #2d1b17;
     border-color: var(--water-secondary);
   }
 
-  :global(.theme-dark) .water-preset-chip.active {
+  .theme-dark .water-preset-chip.active {
     background: var(--water-accent);
     border-color: var(--water-accent);
     color: white;
   }
 
-  :global(.theme-dark) .water-status-info p,
-  :global(.theme-dark) .water-glossary-card p {
+  .theme-dark .water-status-info p,
+  .theme-dark .water-glossary-card p {
     color: #b5a4a0;
   }
 
-  :global(.theme-dark) .water-glossary-card {
+  .theme-dark .water-glossary-card {
     background: rgba(212, 163, 115, 0.1);
     border-style: solid;
   }
 
-  :global(.theme-dark) .water-recipe-display {
+  .theme-dark .water-recipe-display {
     border: 1px solid #4d3b37;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }

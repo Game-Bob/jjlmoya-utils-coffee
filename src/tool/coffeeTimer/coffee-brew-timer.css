@@ -16,7 +16,7 @@
     margin: 0 auto 4rem;
   }
 
-  :global(.theme-dark) .coffee-timer {
+  .theme-dark .coffee-timer {
     --timer-bg: #1a120b;
     --timer-surface: #251b13;
     --timer-border: #3d2a1c;
