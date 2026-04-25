@@ -2,6 +2,46 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
 
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Asam / Kecut',
+    bitter: 'Pahit / Hangus',
+    watery: 'Encer / Lemah',
+    astringent: 'Sepat / Kering',
+  },
+  causes: {
+    acidic: ['Gilingan terlalu kasar (under-extraction)', 'Suhu air terlalu rendah', 'Waktu seduh terlalu singkat', 'Kopi terlalu segar (belum degassing)'],
+    bitter: ['Gilingan terlalu halus (over-extraction)', 'Suhu air terlalu tinggi', 'Waktu seduh terlalu lama', 'Kopi lama atau sangrai gelap'],
+    watery: ['Gilingan terlalu kasar (ekstraksi lemah)', 'Rasio terlalu tinggi (terlalu banyak air)', 'Waktu seduh terlalu singkat', 'Kopi terlalu lama atau kualitas rendah'],
+    astringent: ['Masalah kualitas air (terlalu banyak mineral)', 'Over-extraction dikombinasikan dengan kandungan mineral', 'Gilingan terlalu halus dengan air sadah', 'Suhu seduh terlalu tinggi'],
+  },
+  solutions: {
+    acidic: 'Air mengalir terlalu cepat melalui gilingan kasar tanpa mengekstraksi body. Gilingan lebih halus meningkatkan permukaan kontak dan memperlambat aliran.',
+    bitter: 'Air menghabiskan waktu terlalu lama untuk mengekstraksi—mengekstrak senyawa pahit dan abu. Gilingan lebih kasar mengurangi waktu kontak dan intensitas ekstraksi.',
+    watery: 'Tidak cukup zat terlarut dalam cangkir Anda. Gilingan lebih halus atau peningkatan dosis kopi menaikkan persentase ekstraksi dan body.',
+    astringent: 'Air kaya mineral mengekstraksi secara berlebihan dan berikatan dengan senyawa kopi, menciptakan sensasi kering di mulut. Gilingan lebih kasar mengurangi over-extraction sementara penyaringan meningkatkan kualitas air.',
+  },
+  actions: {
+    acidic: { text: 'Giling sedikit lebih halus', textSevere: 'Giling jauh lebih halus', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Giling sedikit lebih kasar', textSevere: 'Giling jauh lebih kasar', icon: 'mdi:chevron-right' },
+    watery: { text: 'Giling lebih halus atau gunakan 5g kopi lebih banyak', textSevere: 'Giling jauh lebih halus atau gunakan 7g kopi lebih banyak', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Gunakan air filter dan giling lebih kasar', textSevere: 'Gunakan air filter dan giling jauh lebih kasar', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Seperti garam halus', bitter: 'Seperti tepung', watery: 'Seperti bubuk kakao', astringent: 'Tepung sedikit lebih halus' },
+    pourover: { acidic: 'Seperti garam meja', bitter: 'Seperti pasir kasar', watery: 'Seperti tepung jagung halus', astringent: 'Pasir halus' },
+    aeropress: { acidic: 'Seperti tepung jagung halus', bitter: 'Seperti garam meja', watery: 'Seperti lada bubuk halus', astringent: 'Pasir sedang' },
+    frenchpress: { acidic: 'Seperti remah roti', bitter: 'Seperti garam krosok', watery: 'Seperti garam laut', astringent: 'Pasir kasar' },
+    moka: { acidic: 'Seperti garam laut halus', bitter: 'Seperti pasir halus', watery: 'Seperti garam meja', astringent: 'Pasir sedang-halus' },
+    coldbrew: { acidic: 'Seperti garam laut kasar', bitter: 'Seperti kerikil', watery: 'Seperti garam krosok', astringent: 'Pasir kasar dengan butiran' },
+  },
+  secondaryAction: 'Seduh pada {temp}°C selama {time}',
+  tertiaryAction: 'Biarkan kopi mendingin ke suhu ruang sebelum dicicipi untuk menangkap semua rasa.',
+};
+
 const slug = 'diagnosis-ekstraksi-kopi-brew-fixer';
 const title = 'Diagnosis Ekstraksi Kopi: The Brew Fixer';
 const description =
@@ -314,6 +354,18 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodMokaDesc: 'Moka pot, Kompor',
     methodEspressoDesc: 'Mesin espresso, lever',
     methodColdbrewDesc: 'Perendaman, dingin',
-    fadeOutMessage: 'Bagus! Terus asah kemampuan seduh Anda.',
+    fadeOutMessage: 'Bagus! Terus lakukan penyesuaian.',
+    backBtn: 'Kembali',
+    mainIssueLabel: 'Masalah Utama',
+    improvedBtn: 'Membaik',
+    notYetBtn: 'Belum',
+    copiedBtn: 'Disalin!',
+    combinedLabel: 'Gabungan',
+    diagnosisTitle: 'Diagnosis The Brew Fixer',
+    issueLabel: 'Masalah',
+    causeLabel: 'Penyebab',
+    actionLabel: 'Tindakan',
+    whyLabel: 'Mengapa',
+    nextLabel: 'Berikutnya',
   },
 };

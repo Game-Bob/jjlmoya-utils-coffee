@@ -2,6 +2,46 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
 
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: '酸っぱい / 尖った酸味',
+    bitter: '苦い / 焦げた味',
+    watery: '水っぽい / 薄い',
+    astringent: '渋い / 口が乾く感じ',
+  },
+  causes: {
+    acidic: ['挽き目が粗すぎる（未抽出）', '水温が低すぎる', '抽出時間が短すぎる', 'コーヒーが新鮮すぎる（ガスが抜けていない）'],
+    bitter: ['挽き目が細かすぎる（過抽出）', '水温が高すぎる', '抽出時間が長すぎる', '古いコーヒーまたは深煎り'],
+    watery: ['挽き目が粗すぎる（抽出不足）', 'ブリューレシオが高すぎる（水が多い）', '抽出時間が短すぎる', 'コーヒーが古すぎるか低品質'],
+    astringent: ['水質の問題（ミネラル分が多すぎる）', '過抽出とミネラル成分の組み合わせ', '硬水での細かすぎる挽き目', '抽出温度が高すぎる'],
+  },
+  solutions: {
+    acidic: '挽き目が粗いため、成分を十分に抽出する前に水が早く通り過ぎています。細かく挽くことで表面積を増やし、水流を遅くします。',
+    bitter: '抽出に時間がかかりすぎて、苦味や焦げた成分まで引き出されています。粗く挽くことで接触時間を短縮し、抽出強度を抑えます。',
+    watery: 'カップの中の溶解固形分が不足しています。挽き目を細かくするか、粉量を増やすことで抽出率とボディを高めます。',
+    astringent: 'ミネラル分の多い水が過剰に抽出し、コーヒー成分と結合して口の中に乾燥感を生んでいます。粗く挽いて過抽出を抑えつつ、ろ過などで水質を改善してください。',
+  },
+  actions: {
+    acidic: { text: '少し細かく挽く', textSevere: 'かなり細かく挽く', icon: 'mdi:chevron-left' },
+    bitter: { text: '少し粗く挽く', textSevere: 'かなり粗く挽く', icon: 'mdi:chevron-right' },
+    watery: { text: '細かく挽くか粉を5g増やす', textSevere: 'かなり細かく挽くか粉を7g増やす', icon: 'mdi:plus-circle' },
+    astringent: { text: 'ろ過した水を使い粗く挽く', textSevere: 'ろ過した水を使いかなり粗く挽く', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: '細塩のような', bitter: '小麦粉のような', watery: 'ココアパウダーのような', astringent: '少し細かめの小麦粉' },
+    pourover: { acidic: '食卓塩のような', bitter: '粗い砂のような', watery: '細かいコーンミールのような', astringent: '細かい砂' },
+    aeropress: { acidic: '細かいコーンミールのような', bitter: '食卓塩のような', watery: '細かく挽いた胡椒のような', astringent: '中程度の砂' },
+    frenchpress: { acidic: 'パン粉のような', bitter: '岩塩のような', watery: '海塩のような', astringent: '粗い砂' },
+    moka: { acidic: '細かい海塩のような', bitter: '細かい砂のような', watery: '食卓塩のような', astringent: '中細の砂' },
+    coldbrew: { acidic: '粗い海塩のような', bitter: '砂利のような', watery: '岩塩のような', astringent: '粒のある粗い砂' },
+  },
+  secondaryAction: '{temp}℃で{time}抽出する',
+  tertiaryAction: 'すべてのフレーバーを捉えるために、試飲する前にコーヒーが室温まで冷めるのを待ってください。',
+};
+
 const slug = 'coffee-flavor-diagnosis-extraction-problems';
 const title = 'コーヒー抽出診断：The Brew Fixer';
 const description =
@@ -314,6 +354,18 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodMokaDesc: 'マキネッタ、直火式',
     methodEspressoDesc: 'エスプレッソマシン、レバー式',
     methodColdbrewDesc: '浸漬式、水出し',
-    fadeOutMessage: 'お見事です！理想の味を追求し続けましょう。',
+    fadeOutMessage: 'お疲れ様でした！この調子で調整を続けてください。',
+    backBtn: '戻る',
+    mainIssueLabel: '主な問題',
+    improvedBtn: '改善した',
+    notYetBtn: 'まだ',
+    copiedBtn: 'コピーしました！',
+    combinedLabel: '組み合わせ',
+    diagnosisTitle: 'The Brew Fixer 診断結果',
+    issueLabel: '問題',
+    causeLabel: '原因',
+    actionLabel: '対策',
+    whyLabel: '理由',
+    nextLabel: '次へ',
   },
 };

@@ -2,6 +2,46 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
 
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Syrligt / Surt',
+    bitter: 'Bittert / Bränt',
+    watery: 'Vattnigt / Svagt',
+    astringent: 'Strävt / Torrt',
+  },
+  causes: {
+    acidic: ['Malningsgrad för grov (underextraktion)', 'Vattentemperatur för låg', 'Bryggtid för kort', 'Kaffet för färskt (ej avgasat)'],
+    bitter: ['Malningsgrad för fin (överextraktion)', 'Vattentemperatur för hög', 'Bryggtid för lång', 'Gammalt eller mörkrostat kaffe'],
+    watery: ['Malningsgrad för grov (svag extraktion)', 'Bryggförhållande för högt (för mycket vatten)', 'Bryggtid för kort', 'Kaffet för gammalt eller av låg kvalitet'],
+    astringent: ['Vattenkvalitetsproblem (för mycket mineraler)', 'Överextraktion kombinerat med mineralinnehåll', 'Malningsgrad för fin med hårt vatten', 'Bryggtemperatur för hög'],
+  },
+  solutions: {
+    acidic: 'Vattnet rinner för snabbt genom de grova kornen utan att extrahera kropp. En finare malning ökar kontaktytan och saktar ner flödet.',
+    bitter: 'Vattnet har spenderat för lång tid med att extrahera och dragit ut bittra och askiga föreningar. En grövre malning minskar kontakttiden och extraktionsintensiteten.',
+    watery: 'Inte tillräckligt med upplösta ämnen i din kopp. En finare malning eller ökad kaffedos höjer extraktionsprocenten och kroppen.',
+    astringent: 'Mineralrikt vatten överextraherar och binder till kaffeföreningar, vilket skapar en torr munkänsla. En grövre malning minskar överextraktionen medan filtrering förbättrar vattenkvaliteten.',
+  },
+  actions: {
+    acidic: { text: 'Mal något finare', textSevere: 'Mal mycket finare', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Mal något grövre', textSevere: 'Mal mycket grövre', icon: 'mdi:chevron-right' },
+    watery: { text: 'Mal finare eller använd 5g mer kaffe', textSevere: 'Mal mycket finare eller använd 7g mer kaffe', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Använd filtrerat vatten och mal grövre', textSevere: 'Använd filtrerat vatten och mal mycket grövre', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Som fint salt', bitter: 'Som mjöl', watery: 'Som kakaopulver', astringent: 'Något finare mjöl' },
+    pourover: { acidic: 'Som bordssalt', bitter: 'Som grov sand', watery: 'Som fint majsmjöl', astringent: 'Fin sand' },
+    aeropress: { acidic: 'Som fint majsmjöl', bitter: 'Som bordssalt', watery: 'Som finmalt peppar', astringent: 'Medium sand' },
+    frenchpress: { acidic: 'Som ströbröd', bitter: 'Som stensalt', watery: 'Som havssalt', astringent: 'Grov sand' },
+    moka: { acidic: 'Som fint havssalt', bitter: 'Som fin sand', watery: 'Som bordssalt', astringent: 'Medium-fin sand' },
+    coldbrew: { acidic: 'Som grovt havssalt', bitter: 'Som grus', watery: 'Som stensalt', astringent: 'Grov sand med korn' },
+  },
+  secondaryAction: 'Brygg vid {temp}°C i {time}',
+  tertiaryAction: 'Låt kaffet svalna till rumstemperatur innan du provsmakar för att fånga alla noter.',
+};
+
 const slug = 'diagnos-kaffeextraktion-brew-fixer';
 const title = 'Diagnos av Kaffeextraktion: The Brew Fixer';
 const description =
@@ -315,5 +355,17 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodEspressoDesc: 'Espressomaskin',
     methodColdbrewDesc: 'Immersion, kallt',
     fadeOutMessage: 'Bra jobbat! Fortsätt att finjustera.',
+    backBtn: 'Tillbaka',
+    mainIssueLabel: 'Huvudproblem',
+    improvedBtn: 'Förbättrad',
+    notYetBtn: 'Inte än',
+    copiedBtn: 'Kopierat!',
+    combinedLabel: 'Kombinerad',
+    diagnosisTitle: 'The Brew Fixer Diagnos',
+    issueLabel: 'Problem',
+    causeLabel: 'Orsak',
+    actionLabel: 'Åtgärd',
+    whyLabel: 'Varför',
+    nextLabel: 'Nästa',
   },
 };

@@ -1,6 +1,45 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Kwaśna / Cierpka',
+    bitter: 'Gorzka / Przypalona',
+    watery: 'Wodnista / Słaba',
+    astringent: 'Astringentna / Sucha',
+  },
+  causes: {
+    acidic: ['Zbyt gruby mielenie (pod-ekstrakcja)', 'Zbyt niska temperatura wody', 'Zbyt krótki czas parzenia', 'Zbyt świeża kawa (nieodgazowana)'],
+    bitter: ['Zbyt drobne mielenie (nad-ekstrakcja)', 'Zbyt wysoka temperatura wody', 'Zbyt długi czas parzenia', 'Stara kawa lub ciemno palona'],
+    watery: ['Zbyt gruby mielenie (słaba ekstrakcja)', 'Zbyt wysoki ratio (za dużo wody)', 'Zbyt krótki czas parzenia', 'Kawa zbyt stara lub niskiej jakości'],
+    astringent: ['Problemy z jakością wody (za dużo minerałów)', 'Nad-ekstrakcja połączona z zawartością minerałów', 'Zbyt drobne mielenie przy twardej wodzie', 'Zbyt wysoka temperatura parzenia'],
+  },
+  solutions: {
+    acidic: 'Woda przepływa zbyt szybko przez grube ziarna, nie wydobywając body. Drobniejsze mielenie zwiększa powierzchnię kontaktu i spowalnia przepływ.',
+    bitter: 'Woda spędziła zbyt dużo czasu na ekstrakcji, wydobywając gorzkie i popiołowe związki. Grubsze mielenie skraca czas kontaktu i intensywność ekstrakcji.',
+    watery: 'Niewystarczająca ilość rozpuszczonych substancji stałych w filiżance. Drobniejsze mielenie lub zwiększenie dozy kawy podnosi procent ekstrakcji i body.',
+    astringent: 'Woda bogata w minerały nadmiernie ekstrahuje i wiąże się ze związkami kawy, tworząc uczucie suchości w ustach. Grubsze mielenie zmniejsza nad-ekstrakcję, a filtrowanie poprawia jakość wody.',
+  },
+  actions: {
+    acidic: { text: 'Zmiel nieco drobniej', textSevere: 'Zmiel znacznie drobniej', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Zmiel nieco grubiej', textSevere: 'Zmiel znacznie grubiej', icon: 'mdi:chevron-right' },
+    watery: { text: 'Zmiel drobniej lub użyj 5g więcej kawy', textSevere: 'Zmiel znacznie drobniej lub użyj 7g więcej kawy', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Użyj przefiltrowanej wody i zmiel grubiej', textSevere: 'Użyj przefiltrowanej wody i zmiel znacznie grubiej', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Jak drobna sól', bitter: 'Jak mąka', watery: 'Jak kakao w proszku', astringent: 'Nieco drobniejsza mąka' },
+    pourover: { acidic: 'Jak sól kuchenna', bitter: 'Jak gruby piasek', watery: 'Jak drobna mąka kukurydziana', astringent: 'Drobny piasek' },
+    aeropress: { acidic: 'Jak drobna mąka kukurydziana', bitter: 'Jak sól kuchenna', watery: 'Jak drobno zmielony pieprz', astringent: 'Średni piasek' },
+    frenchpress: { acidic: 'Jak bułka tarta', bitter: 'Jak sól kamienna', watery: 'Jak sól morska', astringent: 'Gruby piasek' },
+    moka: { acidic: 'Jak drobna sól morska', bitter: 'Jak drobny piasek', watery: 'Jak sól kuchenna', astringent: 'Średnio-drobny piasek' },
+    coldbrew: { acidic: 'Jak gruba sól morska', bitter: 'Jak żwir', watery: 'Jak sól kamienna', astringent: 'Gruby piasek z ziarnami' },
+  },
+  secondaryAction: 'Parz w temperaturze {temp}°C przez {time}',
+  tertiaryAction: 'Pozwól kawie ostygnąć do temperatury pokojowej przed degustacją, aby wyczuć wszystkie nuty.',
+};
 
 const slug = 'diagnostyka-ekstrakcji-kawy-brew-fixer';
 const title = 'Diagnostyka Ekstrakcji Kawy: The Brew Fixer';
@@ -314,6 +353,18 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodMokaDesc: 'Kawiarka, Kafetiera',
     methodEspressoDesc: 'Ekspres kolbowy',
     methodColdbrewDesc: 'Metoda immersyjna na zimno',
-    fadeOutMessage: 'Dobra robota! Szukaj dalej idealnego smaku.',
+    fadeOutMessage: 'Świetna robota! Kontynuuj dostrajanie.',
+    backBtn: 'Wstecz',
+    mainIssueLabel: 'Główny Problem',
+    improvedBtn: 'Poprawione',
+    notYetBtn: 'Jeszcze nie',
+    copiedBtn: 'Skopiowano!',
+    combinedLabel: 'Połączone',
+    diagnosisTitle: 'Diagnoza The Brew Fixer',
+    issueLabel: 'Problem',
+    causeLabel: 'Przyczyna',
+    actionLabel: 'Działanie',
+    whyLabel: 'Dlaczego',
+    nextLabel: 'Dalej',
   },
 };

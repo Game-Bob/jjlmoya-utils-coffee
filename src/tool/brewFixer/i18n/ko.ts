@@ -2,6 +2,46 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
 
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: '신맛 / 날카로운 산미',
+    bitter: '쓴맛 / 탄 맛',
+    watery: '밍밍함 / 연함',
+    astringent: '떫음 / 입안이 마름',
+  },
+  causes: {
+    acidic: ['분쇄도가 너무 굵음 (과소 추출)', '수온이 너무 낮음', '추출 시간이 너무 짧음', '커피가 너무 신선함 (가스가 안 빠짐)'],
+    bitter: ['분쇄도가 너무 가늠 (과다 추출)', '수온이 너무 높음', '추출 시간이 너무 길음', '오래된 원두 또는 강배전'],
+    watery: ['분쇄도가 너무 굵음 (추출 부족)', '추출 비율이 너무 높음 (물이 많음)', '추출 시간이 너무 짧음', '원두가 너무 오래되었거나 저품질'],
+    astringent: ['수질 문제 (미네랄 과다)', '과다 추출과 미네랄 성분의 결합', '경수에서의 너무 가는 분쇄도', '추출 온도가 너무 높음'],
+  },
+  solutions: {
+    acidic: '분쇄도가 굵어 바디를 추출하기 전에 물이 너무 빨리 통과합니다. 분쇄도를 가늘게 조정하여 표면적을 넓히고 유속을 늦추세요.',
+    bitter: '추출 시간이 너무 길어 쓴맛과 탄 맛 성분까지 추출되었습니다. 분쇄도를 굵게 조정하여 접촉 시간을 줄이고 추출 강도를 낮추세요.',
+    watery: '컵에 용존 고형분이 부족합니다. 분쇄도를 가늘게 하거나 원두 양을 늘려 추출 수율과 바디감을 높이세요.',
+    astringent: '미네랄이 풍부한 물이 과다 추출을 유발하고 커피 성분과 결합하여 입안에 건조함을 만듭니다. 분쇄도를 굵게 하여 과다 추출을 줄이고 필터링으로 수질을 개선하세요.',
+  },
+  actions: {
+    acidic: { text: '분쇄도를 약간 가늘게', textSevere: '분쇄도를 훨씬 가늘게', icon: 'mdi:chevron-left' },
+    bitter: { text: '분쇄도를 약간 굵게', textSevere: '분쇄도를 훨씬 굵게', icon: 'mdi:chevron-right' },
+    watery: { text: '분쇄도를 가늘게 하거나 원두 5g 추가', textSevere: '분쇄도를 훨씬 가늘게 하거나 원두 7g 추가', icon: 'mdi:plus-circle' },
+    astringent: { text: '여과된 물을 사용하고 분쇄도를 굵게', textSevere: '여과된 물을 사용하고 분쇄도를 훨씬 굵게', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: '고운 소금 같은', bitter: '밀가루 같은', watery: '코코아 가루 같은', astringent: '약간 더 고운 밀가루' },
+    pourover: { acidic: '꽃소금 같은', bitter: '굵은 모래 같은', watery: '고운 옥수수 가루 같은', astringent: '고운 모래' },
+    aeropress: { acidic: '고운 옥수수 가루 같은', bitter: '꽃소금 같은', watery: '곱게 간 후추 같은', astringent: '중간 모래' },
+    frenchpress: { acidic: '빵가루 같은', bitter: '암염 같은', watery: '천일염 같은', astringent: '굵은 모래' },
+    moka: { acidic: '고운 천일염 같은', bitter: '고운 모래 같은', watery: '꽃소금 같은', astringent: '중간-고운 모래' },
+    coldbrew: { acidic: '굵은 천일염 같은', bitter: '자갈 같은', watery: '암염 같은', astringent: '알갱이가 있는 굵은 모래' },
+  },
+  secondaryAction: '{temp}°C에서 {time} 동안 추출',
+  tertiaryAction: '모든 향미를 느끼기 위해 시음 전 커피가 실온으로 식을 때까지 기다려 보세요.',
+};
+
 const slug = 'coffee-flavor-diagnosis-extraction-problems';
 const title = '커피 추출 진단기: The Brew Fixer';
 const description =
@@ -314,6 +354,18 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodMokaDesc: '마키네타, 직화식',
     methodEspressoDesc: '에스프레소 머신, 레버식',
     methodColdbrewDesc: '침출식, 찬물 추출',
-    fadeOutMessage: '참 잘하셨습니다! 계속해서 자신만의 맛을 찾아보세요.',
+    fadeOutMessage: '참 잘하셨어요! 계속해서 조정해 보세요.',
+    backBtn: '뒤로',
+    mainIssueLabel: '주요 문제',
+    improvedBtn: '개선됨',
+    notYetBtn: '아직',
+    copiedBtn: '복사됨!',
+    combinedLabel: '결합됨',
+    diagnosisTitle: 'The Brew Fixer 진단 결과',
+    issueLabel: '문제',
+    causeLabel: '원인',
+    actionLabel: '해결책',
+    whyLabel: '이유',
+    nextLabel: '다음',
   },
 };

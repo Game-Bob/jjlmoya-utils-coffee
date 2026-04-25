@@ -1,6 +1,45 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Ácido / Agrio',
+    bitter: 'Amargo / Quemado',
+    watery: 'Acuoso / Débil',
+    astringent: 'Astringente / Seco',
+  },
+  causes: {
+    acidic: ['Molienda demasiado gruesa (subextracción)', 'Temperatura del agua muy baja', 'Tiempo de preparación muy corto', 'Café muy fresco (no desgasificado)'],
+    bitter: ['Molienda demasiado fina (sobreextracción)', 'Temperatura del agua muy alta', 'Tiempo de preparación muy largo', 'Café viejo o de tueste oscuro'],
+    watery: ['Molienda muy gruesa (extracción débil)', 'Ratio muy alto (mucha agua)', 'Tiempo de preparación muy corto', 'Café viejo o de baja calidad'],
+    astringent: ['Problemas de calidad del agua (muchos minerales)', 'Sobreextracción combinada con contenido mineral', 'Molienda muy fina con agua dura', 'Temperatura de preparación muy alta'],
+  },
+  solutions: {
+    acidic: 'El agua fluye demasiado rápido a través de los granos gruesos sin extraer el cuerpo. Una molienda más fina aumenta la superficie de contacto y frena el flujo.',
+    bitter: 'El agua pasó demasiado tiempo extrayendo, sacando compuestos amargos y cenizos. Una molienda más gruesa reduce el tiempo de contacto y la intensidad de la extracción.',
+    watery: 'No hay suficientes sólidos disueltos en tu taza. Una molienda más fina o aumentar la dosis de café eleva el porcentaje de extracción y el cuerpo.',
+    astringent: 'El agua rica en minerales sobreextrae y se une a los compuestos del café, creando una sensación de sequedad en la boca. Una molienda más gruesa reduce la sobreextracción mientras que el filtrado mejora la calidad del agua.',
+  },
+  actions: {
+    acidic: { text: 'Moler un poco más fino', textSevere: 'Moler mucho más fino', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Moler un poco más grueso', textSevere: 'Moler mucho más grueso', icon: 'mdi:chevron-right' },
+    watery: { text: 'Moler más fino o usar 5g más de café', textSevere: 'Moler mucho más fino o usar 7g más de café', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Usar agua filtrada y moler más grueso', textSevere: 'Usar agua filtrada y moler mucho más grueso', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Como sal fina', bitter: 'Como harina', watery: 'Como cacao en polvo', astringent: 'Harina ligeramente más fina' },
+    pourover: { acidic: 'Como sal de mesa', bitter: 'Como arena gruesa', watery: 'Como harina de maíz fina', astringent: 'Arena fina' },
+    aeropress: { acidic: 'Como harina de maíz fina', bitter: 'Como sal de mesa', watery: 'Como pimienta finamente molida', astringent: 'Arena media' },
+    frenchpress: { acidic: 'Como pan rallado', bitter: 'Como sal de roca', watery: 'Como sal marina', astringent: 'Arena gruesa' },
+    moka: { acidic: 'Como sal marina fina', bitter: 'Como arena fina', watery: 'Como sal de mesa', astringent: 'Arena media-fina' },
+    coldbrew: { acidic: 'Como sal marina gruesa', bitter: 'Como grava', watery: 'Como sal de roca', astringent: 'Arena gruesa con granos' },
+  },
+  secondaryAction: 'Preparar a {temp}°C por {time}',
+  tertiaryAction: 'Deja que el café se enfríe a temperatura ambiente antes de probarlo para captar todas las notas.',
+};
 
 const slug = 'diagnostico-extraccion-cafe-brew-fixer';
 const title = 'Diagnóstico de Extracción de Café: The Brew Fixer';

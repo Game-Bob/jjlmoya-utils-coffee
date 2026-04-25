@@ -2,6 +2,46 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
 
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: '酸味 / 尖锐的酸',
+    bitter: '苦味 / 焦味',
+    watery: '水感 / 淡',
+    astringent: '涩感 / 口干',
+  },
+  causes: {
+    acidic: ['研磨度太粗（萃取不足）', '水温太低', '萃取时间太短', '咖啡豆太新鲜（未养豆）'],
+    bitter: ['研磨度太细（过度萃取）', '水温太高', '萃取时间太长', '陈年豆或深烘焙'],
+    watery: ['研磨度太粗（萃取强度低）', '粉水比太高（水太多）', '萃取时间太短', '咖啡豆太陈旧或质量低'],
+    astringent: ['水质问题（矿物质过多）', '过度萃取结合矿物质含量', '硬水环境下研磨度过细', '萃取温度太高'],
+  },
+  solutions: {
+    acidic: '由于研磨太粗，水流通过太快，未能萃取足够浓度。调细研磨度可以增加接触面积并减缓水流。',
+    bitter: '水接触时间过长，提取了苦涩和烟灰味物质。调粗研磨度可以缩短接触时间并降低萃取强度。',
+    watery: '杯中溶解固体不足。调细研磨度或增加粉量可以提高萃取率和浓度。',
+    astringent: '富含矿物质的水导致过度萃取并与咖啡物质结合，产生口腔干燥感。调粗研磨度以减少过度萃取，同时通过过滤改善水质。',
+  },
+  actions: {
+    acidic: { text: '调细一点研磨度', textSevere: '调细很多研磨度', icon: 'mdi:chevron-left' },
+    bitter: { text: '调粗一点研磨度', textSevere: '调粗很多研磨度', icon: 'mdi:chevron-right' },
+    watery: { text: '调细研磨度或增加5克粉', textSevere: '调细很多研磨度或增加7克粉', icon: 'mdi:plus-circle' },
+    astringent: { text: '使用过滤水并调粗研磨', textSevere: '使用过滤水并调粗很多研磨', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: '像细盐', bitter: '像面粉', watery: '像可可粉', astringent: '略细的面粉' },
+    pourover: { acidic: '像食盐', bitter: '像粗砂', watery: '像细玉米粉', astringent: '细砂' },
+    aeropress: { acidic: '像细玉米粉', bitter: '像食盐', watery: '像细磨胡椒粉', astringent: '中砂' },
+    frenchpress: { acidic: '像面包屑', bitter: '像岩盐', watery: '像海盐', astringent: '粗砂' },
+    moka: { acidic: '像细海盐', bitter: '像细砂', watery: '像食盐', astringent: '中细砂' },
+    coldbrew: { acidic: '像粗海盐', bitter: '像碎石', watery: '像岩盐', astringent: '带颗粒的粗砂' },
+  },
+  secondaryAction: '以 {temp}°C 萃取 {time}',
+  tertiaryAction: '在品尝之前让咖啡冷却至室温，以便捕捉所有风味。',
+};
+
 const slug = 'coffee-flavor-diagnosis-extraction-problems';
 const title = '咖啡萃取诊断：The Brew Fixer';
 const description =
@@ -315,5 +355,17 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodEspressoDesc: '意式机, 拉杆机',
     methodColdbrewDesc: '浸泡, 冷制',
     fadeOutMessage: '做得好！继续精进。',
+    backBtn: '返回',
+    mainIssueLabel: '主要问题',
+    improvedBtn: '有改善',
+    notYetBtn: '还没有',
+    copiedBtn: '已复制！',
+    combinedLabel: '组合',
+    diagnosisTitle: 'The Brew Fixer 诊断结果',
+    issueLabel: '问题',
+    causeLabel: '原因',
+    actionLabel: '行动',
+    whyLabel: '原因',
+    nextLabel: '下一步',
   },
 };

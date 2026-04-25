@@ -1,6 +1,45 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Säuerlich / Sauer',
+    bitter: 'Bitter / Verbrannt',
+    watery: 'Wässrig / Schwach',
+    astringent: 'Astringierend / Trocken',
+  },
+  causes: {
+    acidic: ['Mahlgrad zu grob (Unterextraktion)', 'Wassertemperatur zu niedrig', 'Brühzeit zu kurz', 'Kaffee zu frisch (nicht entgast)'],
+    bitter: ['Mahlgrad zu fein (Überextraktion)', 'Wassertemperatur zu hoch', 'Brühzeit zu lang', 'Alter oder dunkel gerösteter Kaffee'],
+    watery: ['Mahlgrad zu grob (schwache Extraktion)', 'Brühverhältnis zu hoch (zu viel Wasser)', 'Brühzeit zu kurz', 'Kaffee zu alt oder von geringer Qualität'],
+    astringent: ['Wasserqualitätsprobleme (zu viele Mineralien)', 'Überextraktion kombiniert mit Mineralgehalt', 'Mahlgrad zu fein bei hartem Wasser', 'Brühtemperatur zu hoch'],
+  },
+  solutions: {
+    acidic: 'Das Wasser fließt zu schnell durch das grobe Kaffeemehl, ohne Körper zu extrahieren. Ein feinerer Mahlgrad vergrößert die Kontaktfläche und verlangsamt den Durchfluss.',
+    bitter: 'Das Wasser hat zu lange extrahiert und dabei bittere und aschige Verbindungen gelöst. Ein gröberer Mahlgrad reduziert die Kontaktzeit und die Extraktionsintensität.',
+    watery: 'Nicht genügend gelöste Feststoffe in Ihrer Tasse. Ein feinerer Mahlgrad oder eine höhere Kaffeedosis erhöht den Extraktionsprozentsatz und den Körper.',
+    astringent: 'Mineralreiches Wasser überextrahiert und bindet sich an Kaffeeverbindungen, was ein trockenes Mundgefühl erzeugt. Ein gröberer Mahlgrad reduziert die Überextraktion, während Filtern die Wasserqualität verbessert.',
+  },
+  actions: {
+    acidic: { text: 'Etwas feiner mahlen', textSevere: 'Viel feiner mahlen', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Etwas gröber mahlen', textSevere: 'Viel gröber mahlen', icon: 'mdi:chevron-right' },
+    watery: { text: 'Feiner mahlen oder 5g mehr Kaffee verwenden', textSevere: 'Viel feiner mahlen oder 7g mehr Kaffee verwenden', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Gefiltertes Wasser verwenden und gröber mahlen', textSevere: 'Gefiltertes Wasser verwenden und viel gröber mahlen', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Wie feines Salz', bitter: 'Wie Mehl', watery: 'Wie Kakaopulver', astringent: 'Etwas feineres Mehl' },
+    pourover: { acidic: 'Wie Tafelsalz', bitter: 'Wie grober Sand', watery: 'Wie feines Maismehl', astringent: 'Feiner Sand' },
+    aeropress: { acidic: 'Wie feines Maismehl', bitter: 'Wie Tafelsalz', watery: 'Wie fein gemahlener Pfeffer', astringent: 'Mittlerer Sand' },
+    frenchpress: { acidic: 'Wie Semmelbrösel', bitter: 'Wie Steinsalz', watery: 'Wie Meersalz', astringent: 'Grober Sand' },
+    moka: { acidic: 'Wie feines Meersalz', bitter: 'Wie feiner Sand', watery: 'Wie Tafelsalz', astringent: 'Mittelfeiner Sand' },
+    coldbrew: { acidic: 'Wie grobes Meersalz', bitter: 'Wie Kies', watery: 'Wie Steinsalz', astringent: 'Grober Sand mit Körnern' },
+  },
+  secondaryAction: 'Brühen bei {temp}°C für {time}',
+  tertiaryAction: 'Lassen Sie den Kaffee auf Raumtemperatur abkühlen, bevor Sie ihn probieren, um alle Noten zu erfassen.',
+};
 
 const slug = 'kaffee-extraktions-diagnose-braufehler';
 const title = 'Kaffee Extraktions Diagnose: Der Brew Fixer';
@@ -327,6 +366,5 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     actionLabel: 'Maßnahme',
     whyLabel: 'Grund',
     nextLabel: 'Nächster Schritt',
-    improvementHint: 'Passe die Einstellung an und brühe eine neue Tasse.',
   },
 };

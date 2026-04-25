@@ -4,7 +4,11 @@
       "Read(//d/code/jjlmoya-utils-work/**)",
       "Bash(chmod +x /tmp/check_all.sh)",
       "Bash(/tmp/check_all.sh)",
-      "Bash(git diff *)"
+      "Bash(git diff *)",
+      "Bash(git -C d:/code/jjlmoya-utils-coffee diff src/pages/[locale]/[slug].astro)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
     ]
   }
 }

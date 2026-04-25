@@ -1,6 +1,45 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Acide / Aigre',
+    bitter: 'Amer / Brûlé',
+    watery: 'Aqueux / Faible',
+    astringent: 'Astringent / Sec',
+  },
+  causes: {
+    acidic: ['Mouture trop grossière (sous-extraction)', 'Température de l\'eau trop basse', 'Temps d\'infusion trop court', 'Café trop frais (non dégazé)'],
+    bitter: ['Mouture trop fine (surextraction)', 'Température de l\'eau trop haute', 'Temps d\'infusion trop long', 'Café vieux ou torréfaction foncée'],
+    watery: ['Mouture trop grossière (extraction faible)', 'Ratio trop élevé (trop d\'eau)', 'Temps d\'infusion trop court', 'Café trop vieux ou de basse qualité'],
+    astringent: ['Problèmes de qualité de l\'eau (trop de minéraux)', 'Surextraction combinée à la teneur en minéraux', 'Mouture trop fine avec de l\'eau dure', 'Température d\'infusion trop élevée'],
+  },
+  solutions: {
+    acidic: 'L\'eau s\'écoule trop rapidement à travers les grains grossiers sans extraire le corps. Une mouture plus fine augmente la surface de contact et ralentit le flux.',
+    bitter: 'L\'eau a passé trop de temps à extraire, tirant des composés amers et cendrés. Une mouture plus grossière réduit le temps de contact et l\'intensité de l\'extraction.',
+    watery: 'Pas assez de solides dissous dans votre tasse. Une mouture plus fine ou une dose de café accrue augmente le pourcentage d\'extraction et le corps.',
+    astringent: 'L\'eau riche en minéraux surextrait et se lie aux composés du café, créant une sensation de sécheresse en bouche. Une mouture plus grossière réduit la surextraction tandis que la filtration améliore la qualité de l\'eau.',
+  },
+  actions: {
+    acidic: { text: 'Moudre un peu plus fin', textSevere: 'Moudre beaucoup plus fin', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Moudre un peu plus gros', textSevere: 'Moudre beaucoup plus gros', icon: 'mdi:chevron-right' },
+    watery: { text: 'Moudre plus fin ou utiliser 5g de café en plus', textSevere: 'Moudre beaucoup plus fin ou utiliser 7g de café en plus', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Utiliser de l\'eau filtrée et moudre plus gros', textSevere: 'Utiliser de l\'eau filtrée et moudre beaucoup plus gros', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Comme du sel fin', bitter: 'Comme de la farine', watery: 'Comme du cacao en poudre', astringent: 'Farine légèrement plus fine' },
+    pourover: { acidic: 'Comme du sel de table', bitter: 'Comme du sable grossier', watery: 'Comme de la semoule de maïs fine', astringent: 'Sable fin' },
+    aeropress: { acidic: 'Comme de la semoule de maïs fine', bitter: 'Comme du sel de table', watery: 'Comme du poivre finement moulu', astringent: 'Sable moyen' },
+    frenchpress: { acidic: 'Comme de la chapelure', bitter: 'Comme du gros sel', watery: 'Comme du sel de mer', astringent: 'Sable grossier' },
+    moka: { acidic: 'Comme du sel de mer fin', bitter: 'Comme du sable fin', watery: 'Comme du sel de table', astringent: 'Sable moyen-fin' },
+    coldbrew: { acidic: 'Comme du gros sel de mer', bitter: 'Comme du gravier', watery: 'Comme du gros sel', astringent: 'Sable grossier avec grains' },
+  },
+  secondaryAction: 'Infuser à {temp}°C pendant {time}',
+  tertiaryAction: 'Laissez le café refroidir à température ambiante avant de le déguster pour saisir toutes les notes.',
+};
 
 const slug = 'diagnostic-extraction-cafe-brew-fixer';
 const title = 'Diagnostic d\'Extraction du Café : The Brew Fixer';
@@ -327,6 +366,5 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     actionLabel: 'Action',
     whyLabel: 'Pourquoi',
     nextLabel: 'Ensuite',
-    improvementHint: 'Faites l\'ajustement et préparez une autre tasse.',
   },
 };

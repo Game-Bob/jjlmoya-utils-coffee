@@ -1,6 +1,45 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Ácido / Azedo',
+    bitter: 'Amargo / Queimado',
+    watery: 'Aquoso / Fraco',
+    astringent: 'Adstringente / Seco',
+  },
+  causes: {
+    acidic: ['Moagem muito grossa (sub-extração)', 'Temperatura da água muito baixa', 'Tempo de preparo muito curto', 'Café muito fresco (não desgaseificado)'],
+    bitter: ['Moagem muito fina (super-extração)', 'Temperatura da água muito alta', 'Tempo de preparo muito longo', 'Café velho ou torra escura'],
+    watery: ['Moagem muito grossa (extração fraca)', 'Ratio muito alto (muita água)', 'Tempo de preparo muito curto', 'Café muito velho o de baixa qualidade'],
+    astringent: ['Problemas de qualidade da água (muitos minerais)', 'Super-extração combinada com conteúdo mineral', 'Moagem muito fina com água dura', 'Temperatura de preparo muito alta'],
+  },
+  solutions: {
+    acidic: 'A água flui muito rápido através dos grãos grossos sem extrair o corpo. Uma moagem mais fina aumenta a superfície de contato e retarda o fluxo.',
+    bitter: 'A água passou muito tempo extraindo — extraindo compostos amargos e cinzas. Uma moagem mais grossa reduz o tempo de contato e a intensidade da extração.',
+    watery: 'Não há sólidos dissolvidos suficientes em sua xícara. Uma moagem mais fina ou o aumento da dose de café eleva a porcentagem de extração e o corpo.',
+    astringent: 'A água rica em minerais super-extrai e se liga aos compostos do café, criando uma sensação de secura na boca. Uma moagem mais grossa reduz a super-extração, enquanto a filtragem melhora a qualidade da água.',
+  },
+  actions: {
+    acidic: { text: 'Moer um pouco mais fino', textSevere: 'Moer muito mais fino', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Moer um poco mais grosso', textSevere: 'Moer muito mais grosso', icon: 'mdi:chevron-right' },
+    watery: { text: 'Moer mais fino ou usar 5g a mais de café', textSevere: 'Moer muito mais fino ou usar 7g a mais de café', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Usar água filtrada e moer mais grosso', textSevere: 'Usar água filtrada e moer muito mais grosso', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Como sal fino', bitter: 'Como farinha', watery: 'Como cacau em pó', astringent: 'Farinha ligeiramente mais fina' },
+    pourover: { acidic: 'Como sal de cozinha', bitter: 'Como areia grossa', watery: 'Como fubá fino', astringent: 'Areia fina' },
+    aeropress: { acidic: 'Como fubá fino', bitter: 'Como sal de cozinha', watery: 'Como pimenta finamente moída', astringent: 'Areia média' },
+    frenchpress: { acidic: 'Como farinha de rosca', bitter: 'Como sal grosso', watery: 'Como sal marinho', astringent: 'Areia grossa' },
+    moka: { acidic: 'Como sal marinho fino', bitter: 'Como areia fina', watery: 'Como sal de cozinha', astringent: 'Areia média-fina' },
+    coldbrew: { acidic: 'Como sal marinho grosso', bitter: 'Como cascalho', watery: 'Como sal grosso', astringent: 'Areia grossa com grãos' },
+  },
+  secondaryAction: 'Preparar a {temp}°C por {time}',
+  tertiaryAction: 'Deixe o café esfriar até a temperatura ambiente antes de provar para captar todas as notas.',
+};
 
 const slug = 'diagnostico-extracao-cafe-brew-fixer';
 const title = 'Diagnóstico de Extração de Café: The Brew Fixer';
@@ -314,6 +353,18 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodMokaDesc: 'Moka, Cafeteira de fogo',
     methodEspressoDesc: 'Máquina de espresso, alavanca',
     methodColdbrewDesc: 'Imersão, a frio',
-    fadeOutMessage: 'Bom trabalho! Continue a afinar.',
+    fadeOutMessage: 'Bom trabalho! Continue a ajustar.',
+    backBtn: 'Voltar',
+    mainIssueLabel: 'Problema Principal',
+    improvedBtn: 'Melhorou',
+    notYetBtn: 'Ainda não',
+    copiedBtn: 'Copiado!',
+    combinedLabel: 'Combinado',
+    diagnosisTitle: 'Diagnóstico do The Brew Fixer',
+    issueLabel: 'Problema',
+    causeLabel: 'Causa',
+    actionLabel: 'Ação',
+    whyLabel: 'Porquê',
+    nextLabel: 'Seguinte',
   },
 };

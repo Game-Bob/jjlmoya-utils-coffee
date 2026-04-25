@@ -3,6 +3,46 @@ import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
 import { bibliography } from '../bibliography';
 
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Acidic / Sour',
+    bitter: 'Bitter / Burnt',
+    watery: 'Watery / Weak',
+    astringent: 'Astringent / Drying',
+  },
+  causes: {
+    acidic: ['Grind too coarse (under-extraction)', 'Water temperature too low', 'Brewing time too short', 'Coffee too fresh (not degassed)'],
+    bitter: ['Grind too fine (over-extraction)', 'Water temperature too high', 'Brewing time too long', 'Stale or dark roast coffee'],
+    watery: ['Grind too coarse (weak extraction)', 'Brew ratio too high (more water)', 'Brewing time too short', 'Coffee too old or low quality'],
+    astringent: ['Water quality issues (too many minerals)', 'Over-extraction combined with mineral content', 'Grind too fine with hard water', 'Brewing temperature too high'],
+  },
+  solutions: {
+    acidic: 'Water flows too quickly through coarse grounds without extracting the body. Finer grind increases contact surface and slows flow.',
+    bitter: 'Water spent too long extracting—over-extracting bitter compounds and ash. Coarser grind reduces contact time and extraction intensity.',
+    watery: 'Insufficient dissolved solids in your cup. Finer grind or increased coffee dose raises extraction percentage and body.',
+    astringent: 'Mineral-rich water over-extracts and bonds to coffee compounds, creating a drying mouthfeel. Coarser grind reduces over-extraction while filtering improves water quality.',
+  },
+  actions: {
+    acidic: { text: 'Grind slightly finer', textSevere: 'Grind much finer', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Grind slightly coarser', textSevere: 'Grind much coarser', icon: 'mdi:chevron-right' },
+    watery: { text: 'Grind finer or use 5g more coffee', textSevere: 'Grind much finer or use 7g more coffee', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Use filtered water and grind coarser', textSevere: 'Use filtered water and grind much coarser', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Like fine salt', bitter: 'Like flour', watery: 'Like cocoa powder', astringent: 'Slightly finer flour' },
+    pourover: { acidic: 'Like table salt', bitter: 'Like coarse sand', watery: 'Like fine cornmeal', astringent: 'Fine sand' },
+    aeropress: { acidic: 'Like fine cornmeal', bitter: 'Like table salt', watery: 'Like finely ground pepper', astringent: 'Medium sand' },
+    frenchpress: { acidic: 'Like breadcrumbs', bitter: 'Like rock salt', watery: 'Like sea salt', astringent: 'Coarse sand' },
+    moka: { acidic: 'Like fine sea salt', bitter: 'Like fine sand', watery: 'Like table salt', astringent: 'Medium-fine sand' },
+    coldbrew: { acidic: 'Like coarse sea salt', bitter: 'Like gravel', watery: 'Like rock salt', astringent: 'Coarse sand with grains' },
+  },
+  secondaryAction: 'Brew at {temp}°C for {time}',
+  tertiaryAction: 'Allow the coffee to cool to room temperature before tasting to catch all notes.',
+};
+
 const slug = 'coffee-flavor-diagnosis-extraction-problems';
 const title = 'Coffee Extraction Diagnostics: The Brew Fixer';
 const description =

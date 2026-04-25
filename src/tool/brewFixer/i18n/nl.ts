@@ -1,6 +1,45 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Zuur / Wrang',
+    bitter: 'Bitter / Verbrand',
+    watery: 'Waterig / Slap',
+    astringent: 'Astringent / Droog',
+  },
+  causes: {
+    acidic: ['Maalgraad te grof (onderextractie)', 'Watertemperatuur te laag', 'Zetduur te kort', 'Koffie te vers (niet ontgast)'],
+    bitter: ['Maalgraad te fijn (overextractie)', 'Watertemperatuur te hoog', 'Zetduur te lang', 'Oude of donker gebrande koffie'],
+    watery: ['Maalgraad te grof (zwakke extractie)', 'Zetverhouding te hoog (te veel water)', 'Zetduur te kort', 'Koffie te oud of van lage kwaliteit'],
+    astringent: ['Problemen met waterkwaliteit (te veel mineralen)', 'Overextractie gecombineerd met mineraalgehalte', 'Maalgraad te fijn met hard water', 'Zettemperatuur te hoog'],
+  },
+  solutions: {
+    acidic: 'Het water stroomt te snel door de grove korrels zonder body te extraheren. Een fijnere maalgraad vergroot het contactoppervlak en vertraagt de stroom.',
+    bitter: 'Het water heeft te lang geëxtraheerd, waardoor bittere en asachtige verbindingen vrijkwamen. Een grovere maalgraad verkort de contacttijd en extractie-intensiteit.',
+    watery: 'Niet genoeg opgeloste deeltjes in je kopje. Een fijnere maalgraad of een hogere koffiedosis verhoogt het extractiepercentage en de body.',
+    astringent: 'Mineraalrijk water extraheert te veel en bindt zich aan koffieverbindingen, wat een droog mondgevoel geeft. Een grovere maalgraad vermindert overextractie, terwijl filtering de waterkwaliteit verbetert.',
+  },
+  actions: {
+    acidic: { text: 'Iets fijner malen', textSevere: 'Veel fijner malen', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Iets grover malen', textSevere: 'Veel grover malen', icon: 'mdi:chevron-right' },
+    watery: { text: 'Fijner malen of 5g meer koffie gebruiken', textSevere: 'Veel fijner malen of 7g meer koffie gebruiken', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Gefilterd water gebruiken and grover malen', textSevere: 'Gefilterd water gebruiken en veel grover malen', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Als fijn zout', bitter: 'Als bloem', watery: 'Als cacaopoeder', astringent: 'Iets fijnere bloem' },
+    pourover: { acidic: 'Als tafelzout', bitter: 'Als grof zand', watery: 'Als fijn maïsmeel', astringent: 'Fijn zand' },
+    aeropress: { acidic: 'Als fijn maïsmeel', bitter: 'Als tafelzout', watery: 'Als fijn gemalen peper', astringent: 'Gemiddeld zand' },
+    frenchpress: { acidic: 'Als paneermeel', bitter: 'Als steenzout', watery: 'Als zeezout', astringent: 'Grof zand' },
+    moka: { acidic: 'Als fijn zeezout', bitter: 'Als fijn zand', watery: 'Als tafelzout', astringent: 'Middel-fijn zand' },
+    coldbrew: { acidic: 'Als grof zeezout', bitter: 'Als grind', watery: 'Als steenzout', astringent: 'Grof zand met korrels' },
+  },
+  secondaryAction: 'Zetten op {temp}°C gedurende {time}',
+  tertiaryAction: 'Laat de koffie afkoelen tot kamertemperatuur voordat je proeft om alle nuances te ontdekken.',
+};
 
 const slug = 'koffie-extractie-diagnose-brew-fixer';
 const title = 'Koffie Extractie Diagnose: De Brew Fixer';
@@ -314,6 +353,18 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodMokaDesc: 'Moka pot, Percolator',
     methodEspressoDesc: 'Espressomachine',
     methodColdbrewDesc: 'Immersion, koud',
-    fadeOutMessage: 'Goed gedaan! Blijf perfectioneren.',
+    fadeOutMessage: 'Goed gedaan! Blijf afstellen.',
+    backBtn: 'Terug',
+    mainIssueLabel: 'Hoofdprobleem',
+    improvedBtn: 'Verbeterd',
+    notYetBtn: 'Nog niet',
+    copiedBtn: 'Gekopieerd!',
+    combinedLabel: 'Gecombineerd',
+    diagnosisTitle: 'The Brew Fixer Diagnose',
+    issueLabel: 'Problem',
+    causeLabel: 'Oorzaak',
+    actionLabel: 'Actie',
+    whyLabel: 'Waarom',
+    nextLabel: 'Volgende',
   },
 };

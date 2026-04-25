@@ -1,6 +1,45 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Acido / Aspro',
+    bitter: 'Amaro / Bruciato',
+    watery: 'Acquoso / Debole',
+    astringent: 'Astringente / Secco',
+  },
+  causes: {
+    acidic: ['Macinatura troppo grossolana (sotto-estrazione)', 'Temperatura dell\'acqua troppo bassa', 'Tempo di infusione troppo breve', 'Caffè troppo fresco (non degasato)'],
+    bitter: ['Macinatura troppo fine (sovra-estrazione)', 'Temperatura dell\'acqua troppo alta', 'Tempo di infusione troppo lungo', 'Caffè vecchio o tostatura scura'],
+    watery: ['Macinatura troppo grossolana (estrazione debole)', 'Rapporto troppo alto (troppa acqua)', 'Tempo di infusione troppo breve', 'Caffè troppo vecchio o di bassa qualità'],
+    astringent: ['Problemi di qualità dell\'acqua (troppi minerali)', 'Sovra-estrazione combinata con contenuto minerale', 'Macinatura troppo fine con acqua dura', 'Temperatura di infusione troppo alta'],
+  },
+  solutions: {
+    acidic: 'L\'acqua scorre troppo velocemente attraverso i granelli grossolani senza estrarre il corpo. Una macinatura più fine aumenta la superficie di contatto e rallenta il flusso.',
+    bitter: 'L\'acqua ha passato troppo tempo a estrarre, tirando fuori composti amari e cinerini. Una macinatura più grossolana riduce il tempo di contatto e l\'intensità dell\'estrazione.',
+    watery: 'Non ci sono abbastanza solidi disciolti nella tua tazzina. Una macinatura più fine o un aumento della dose di caffè eleva la percentuale di estrazione e il corpo.',
+    astringent: 'L\'acqua ricca di minerali sovra-estrae e si lega ai composti del caffè, creando una sensazione di secchezza in bocca. Una macinatura più grossolana riduce la sovra-estrazione mentre la filtrazione migliora la qualità dell\'acqua.',
+  },
+  actions: {
+    acidic: { text: 'Macinare un po\' più fine', textSevere: 'Macinare molto più fine', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Macinare un po\' più grosso', textSevere: 'Macinare molto più grosso', icon: 'mdi:chevron-right' },
+    watery: { text: 'Macinare più fine o usare 5g di caffè in più', textSevere: 'Macinare molto più fine o usare 7g de caffè in più', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Usare acqua filtrata e macinare più grosso', textSevere: 'Usare acqua filtrata e macinare molto più grosso', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'Come sale fino', bitter: 'Come farina', watery: 'Come cacao in polvere', astringent: 'Farina leggermente più fine' },
+    pourover: { acidic: 'Come sale da tavola', bitter: 'Come sabbia grossolana', watery: 'Come farina di mais fine', astringent: 'Sabbia fine' },
+    aeropress: { acidic: 'Come farina di mais fine', bitter: 'Come sale da tavola', watery: 'Come pepe macinato finemente', astringent: 'Sabbia media' },
+    frenchpress: { acidic: 'Come pangrattato', bitter: 'Come sale grosso', watery: 'Come sale marino', astringent: 'Sabbia grossolana' },
+    moka: { acidic: 'Come sale marino fino', bitter: 'Come sabbia fine', watery: 'Come sale da tavola', astringent: 'Sabbia medio-fine' },
+    coldbrew: { acidic: 'Come sale marino grosso', bitter: 'Come ghiaia', watery: 'Come sale grosso', astringent: 'Sabbia grossolana con grani' },
+  },
+  secondaryAction: 'Infondere a {temp}°C per {time}',
+  tertiaryAction: 'Lascia raffreddare il caffè a temperatura ambiente prima di assaggiarlo per cogliere tutte le note.',
+};
 
 const slug = 'diagnosi-estrazione-caffe-brew-fixer';
 const title = 'Diagnosi dell\'Estrazione del Caffè: The Brew Fixer';
@@ -314,6 +353,18 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodMokaDesc: 'Moka, Caffettiera da fuoco',
     methodEspressoDesc: 'Macchina espresso, leva',
     methodColdbrewDesc: 'Immersione, a freddo',
-    fadeOutMessage: 'Ottimo lavoro! Continua a perfezionare.',
+    fadeOutMessage: 'Ottimo lavoro! Continua a regolare.',
+    backBtn: 'Indietro',
+    mainIssueLabel: 'Problema Principale',
+    improvedBtn: 'Migliorato',
+    notYetBtn: 'Non ancora',
+    copiedBtn: 'Copiato!',
+    combinedLabel: 'Combinato',
+    diagnosisTitle: 'Diagnosi di The Brew Fixer',
+    issueLabel: 'Problema',
+    causeLabel: 'Causa',
+    actionLabel: 'Azione',
+    whyLabel: 'Perché',
+    nextLabel: 'Avanti',
   },
 };

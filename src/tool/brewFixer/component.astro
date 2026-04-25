@@ -4,15 +4,20 @@ import type { KnownLocale } from '../../types';
 import type { BrewFixerUI } from './ui';
 
 interface Props {
-  locale?: KnownLocale;
+  locale: KnownLocale;
   ui?: Record<string, unknown>;
 }
 
-const { ui } = Astro.props;
+const { locale, ui } = Astro.props;
 const t = (ui ?? {}) as BrewFixerUI;
+
+const module = await import(`./i18n/${locale}.ts`);
+const diagnosisStrings = module.DIAGNOSIS_STRINGS;
 ---
 
 <div class="brew-fixer"
+  data-locale={locale}
+  data-diagnosis={JSON.stringify(diagnosisStrings)}
   data-success-template={t.feedbackSuccessTemplate}
   data-combined={t.combinedLabel}
   data-diagnosis-title={t.diagnosisTitle}
@@ -190,9 +195,12 @@ const t = (ui ?? {}) as BrewFixerUI;
 
 <script>
   import {
-    type BrewMethod, type FlavorNote, type AdjustmentSeverity, type DiagnosisState, type DiagnosisResult,
-    BREW_METHODS, FLAVOR_DIAGNOSTICS, generateDiagnosis,
+    type BrewMethod, type FlavorNote, type AdjustmentSeverity, type DiagnosisState, type DiagnosisResult, type DiagnosisStrings,
+    BREW_METHODS, generateDiagnosis,
   } from './logic';
+
+  const brewFixerEl = document.querySelector('.brew-fixer') as HTMLElement;
+  const diagnosisStrings: DiagnosisStrings = JSON.parse(brewFixerEl?.dataset.diagnosis || '{}');
 
   const state: DiagnosisState = { method: 'pourover', flavors: ['acidic'], severity: 'moderate' };
   const selectedFlavors: Set<FlavorNote> = new Set(['acidic']);
@@ -228,7 +236,7 @@ const t = (ui ?? {}) as BrewFixerUI;
     if (selectedFlavors.size <= 1) {
       secondary.innerHTML = '';
     } else {
-      const text = Array.from(selectedFlavors).map((f) => FLAVOR_DIAGNOSTICS[f].label).join(' + ');
+      const text = Array.from(selectedFlavors).map((f) => diagnosisStrings.flavorLabels[f]).join(' + ');
       const combined = (document.querySelector('.brew-fixer') as HTMLElement).dataset.combined || 'Combined';
       secondary.innerHTML = `<div class="fixer-combined-flavors">${combined}: ${text}</div>`;
     }
@@ -316,11 +324,11 @@ const t = (ui ?? {}) as BrewFixerUI;
       state.severity = (btn as HTMLElement).dataset.severity as AdjustmentSeverity;
     });
   });
-  el('diagnoseBtn')?.addEventListener('click', () => { populateResults(generateDiagnosis(state)); switchToResults(); });
+  el('diagnoseBtn')?.addEventListener('click', () => { populateResults(generateDiagnosis(state, diagnosisStrings)); switchToResults(); });
   el('backBtn')?.addEventListener('click', switchToInput);
   el('resetBtn')?.addEventListener('click', resetForm);
   el('copyBtn')?.addEventListener('click', () => {
-    const diagnosis = generateDiagnosis(state);
+    const diagnosis = generateDiagnosis(state, diagnosisStrings);
     const diagnosisTitle = (document.querySelector('.brew-fixer') as HTMLElement).dataset.diagnosisTitle || 'The Brew Fixer Diagnosis';
     const issueLabel = (document.querySelector('.brew-fixer') as HTMLElement).dataset.issueLabel || 'Issue';
     const causeLabel = (document.querySelector('.brew-fixer') as HTMLElement).dataset.causeLabel || 'Cause';

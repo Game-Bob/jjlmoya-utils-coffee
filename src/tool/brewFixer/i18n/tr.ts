@@ -1,6 +1,45 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+
+export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
+export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
+
+export const DIAGNOSIS_STRINGS = {
+  flavorLabels: {
+    acidic: 'Asidik / Ekşi',
+    bitter: 'Acı / Yanık',
+    watery: 'Sululu / Zayıf',
+    astringent: 'Astringent / Kurutucu',
+  },
+  causes: {
+    acidic: ['Öğütme çok kalın (yetersiz ekstraksiyon)', 'Su sıcaklığı çok düşük', 'Demleme süresi çok kısa', 'Kahve çok taze (gazı alınmamış)'],
+    bitter: ['Öğütme çok ince (aşırı ekstraksiyon)', 'Su sıcaklığı çok yüksek', 'Demleme süresi çok uzun', 'Bayat veya koyu kavrulmuş kahve'],
+    watery: ['Öğütme çok kalın (zayıf ekstraksiyon)', 'Demleme oranı çok yüksek (çok su)', 'Demleme süresi çok kısa', 'Kahve çok eski veya düşük kaliteli'],
+    astringent: ['Su kalitesi sorunları (çok fazla mineral)', 'Aşırı ekstraksiyon ve mineral içeriği kombinasyonu', 'Sert su ile çok ince öğütme', 'Demleme sıcaklığı çok yüksek'],
+  },
+  solutions: {
+    acidic: 'Su, gövdeyi çıkarmadan kalın parçacıklar arasından çok hızlı akıyor. Daha ince öğütme temas yüzeyini artırır ve akışı yavaşlatır.',
+    bitter: 'Su, acı ve küllü bileşikleri çıkararak çok uzun süre ekstraksiyon yaptı. Daha kalın öğütme temas süresini ve ekstraksiyon yoğunluğunu azaltır.',
+    watery: 'Fincanınızda yeterince çözünmüş katı madde yok. Daha ince öğütme veya artırılmış kahve dozu ekstraksiyon yüzdesini ve gövdeyi yükseltir.',
+    astringent: 'Mineral bakımından zengin su aşırı ekstraksiyon yapar ve kahve bileşiklerine bağlanarak ağızda kuruluk hissi yaratır. Daha kalın öğütme aşırı ekstraksiyonu azaltırken filtreleme su kalitesini artırır.',
+  },
+  actions: {
+    acidic: { text: 'Biraz daha ince öğütün', textSevere: 'Çok daha ince öğütün', icon: 'mdi:chevron-left' },
+    bitter: { text: 'Biraz daha kalın öğütün', textSevere: 'Çok daha kalın öğütün', icon: 'mdi:chevron-right' },
+    watery: { text: 'Daha ince öğütün veya 5g daha fazla kahve kullanın', textSevere: 'Çok daha ince öğütün veya 7g daha fazla kahve kullanın', icon: 'mdi:plus-circle' },
+    astringent: { text: 'Filtrelenmiş su kullanın ve kalın öğütün', textSevere: 'Filtrelenmiş su kullanın ve çok daha kalın öğütün', icon: 'mdi:water-filter' },
+  },
+  texturesByMethod: {
+    espresso: { acidic: 'İnce tuz gibi', bitter: 'Un gibi', watery: 'Kakao tozu gibi', astringent: 'Biraz daha ince un' },
+    pourover: { acidic: 'Sofra tuzu gibi', bitter: 'Kalın kum gibi', watery: 'İnce mısır unu gibi', astringent: 'İnce kum' },
+    aeropress: { acidic: 'İnce mısır unu gibi', bitter: 'Sofra tuzu gibi', watery: 'İnce çekilmiş karabiber gibi', astringent: 'Orta kum' },
+    frenchpress: { acidic: 'Ekmek kırıntısı gibi', bitter: 'Kaya tuzu gibi', watery: 'Deniz tuzu gibi', astringent: 'Kalın kum' },
+    moka: { acidic: 'İnce deniz tuzu gibi', bitter: 'İnce kum gibi', watery: 'Sofra tuzu gibi', astringent: 'Orta-ince kum' },
+    coldbrew: { acidic: 'Kalın deniz tuzu gibi', bitter: 'Çakıl gibi', watery: 'Kaya tuzu gibi', astringent: 'Taneli kalın kum' },
+  },
+  secondaryAction: '{temp}°C\'de {time} boyunca demleyin',
+  tertiaryAction: 'Tüm notaları yakalamak için tadına bakmadan önce kahvenin oda sıcaklığına soğumasına izin verin.',
+};
 
 const slug = 'kahve-ekstraksyon-teshisi-brew-fixer';
 const title = 'Kahve Ekstraksiyon Teşhisi: The Brew Fixer';
@@ -314,6 +353,18 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
     methodMokaDesc: 'Moka pot, Ocak üstü',
     methodEspressoDesc: 'Espresso makinesi',
     methodColdbrewDesc: 'Daldırma, soğuk',
-    fadeOutMessage: 'İyi iş! Denemeye devam edin.',
+    fadeOutMessage: 'Harika iş! Ayarlamaya devam edin.',
+    backBtn: 'Geri',
+    mainIssueLabel: 'Ana Sorun',
+    improvedBtn: 'İyileşti',
+    notYetBtn: 'Henüz değil',
+    copiedBtn: 'Kopyalandı!',
+    combinedLabel: 'Birleşik',
+    diagnosisTitle: 'The Brew Fixer Teşhisi',
+    issueLabel: 'Sorun',
+    causeLabel: 'Neden',
+    actionLabel: 'Eylem',
+    whyLabel: 'Neden',
+    nextLabel: 'Sonraki',
   },
 };
