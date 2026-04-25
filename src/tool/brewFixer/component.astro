@@ -2,6 +2,21 @@
 import { Icon } from 'astro-icon/components';
 import type { KnownLocale } from '../../types';
 import type { BrewFixerUI } from './ui';
+import { DIAGNOSIS_STRINGS as de_DIAGNOSIS } from './i18n/de';
+import { DIAGNOSIS_STRINGS as en_DIAGNOSIS } from './i18n/en';
+import { DIAGNOSIS_STRINGS as es_DIAGNOSIS } from './i18n/es';
+import { DIAGNOSIS_STRINGS as fr_DIAGNOSIS } from './i18n/fr';
+import { DIAGNOSIS_STRINGS as id_DIAGNOSIS } from './i18n/id';
+import { DIAGNOSIS_STRINGS as it_DIAGNOSIS } from './i18n/it';
+import { DIAGNOSIS_STRINGS as ja_DIAGNOSIS } from './i18n/ja';
+import { DIAGNOSIS_STRINGS as ko_DIAGNOSIS } from './i18n/ko';
+import { DIAGNOSIS_STRINGS as nl_DIAGNOSIS } from './i18n/nl';
+import { DIAGNOSIS_STRINGS as pl_DIAGNOSIS } from './i18n/pl';
+import { DIAGNOSIS_STRINGS as pt_DIAGNOSIS } from './i18n/pt';
+import { DIAGNOSIS_STRINGS as ru_DIAGNOSIS } from './i18n/ru';
+import { DIAGNOSIS_STRINGS as sv_DIAGNOSIS } from './i18n/sv';
+import { DIAGNOSIS_STRINGS as tr_DIAGNOSIS } from './i18n/tr';
+import { DIAGNOSIS_STRINGS as zh_DIAGNOSIS } from './i18n/zh';
 
 interface Props {
   locale: KnownLocale;
@@ -11,8 +26,25 @@ interface Props {
 const { locale, ui } = Astro.props;
 const t = (ui ?? {}) as BrewFixerUI;
 
-const module = await import(`./i18n/${locale}.ts`);
-const diagnosisStrings = module.DIAGNOSIS_STRINGS;
+const diagnosisMap = {
+  de: de_DIAGNOSIS,
+  en: en_DIAGNOSIS,
+  es: es_DIAGNOSIS,
+  fr: fr_DIAGNOSIS,
+  id: id_DIAGNOSIS,
+  it: it_DIAGNOSIS,
+  ja: ja_DIAGNOSIS,
+  ko: ko_DIAGNOSIS,
+  nl: nl_DIAGNOSIS,
+  pl: pl_DIAGNOSIS,
+  pt: pt_DIAGNOSIS,
+  ru: ru_DIAGNOSIS,
+  sv: sv_DIAGNOSIS,
+  tr: tr_DIAGNOSIS,
+  zh: zh_DIAGNOSIS,
+};
+
+const diagnosisStrings = diagnosisMap[locale as keyof typeof diagnosisMap] ?? diagnosisMap['en'];
 ---
 
 <div class="brew-fixer"
