@@ -1,0 +1,345 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { KnownLocale } from '../../types';
+import type { BrewFixerUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as BrewFixerUI;
+---
+
+<div class="brew-fixer"
+  data-success-template={t.feedbackSuccessTemplate}
+  data-combined={t.combinedLabel}
+  data-diagnosis-title={t.diagnosisTitle}
+  data-issue-label={t.issueLabel}
+  data-cause-label={t.causeLabel}
+  data-action-label={t.actionLabel}
+  data-why-label={t.whyLabel}
+  data-next-label={t.nextLabel}
+  data-copied-btn={t.copiedBtn}
+>
+  <div class="brew-fixer-card">
+    <div class="brew-fixer-header"></div>
+    <div class="brew-fixer-body">
+      <div class="fixer-phase" id="phase-input">
+        <div class="fixer-phase-title">
+          <Icon name="mdi:beaker-outline" />
+          The Brew Fixer
+        </div>
+
+        <div class="fixer-section">
+          <div class="fixer-label">{t.methodLabel}</div>
+          <div class="fixer-grid-methods">
+            <button class="fixer-method-btn active" data-method="pourover" type="button">
+              <Icon name="mdi:water-outline" class="fixer-method-icon" />
+              <span class="fixer-method-name">{t.methodPourover}</span>
+              <span class="fixer-method-sub">{t.methodPouroverDesc}</span>
+            </button>
+            <button class="fixer-method-btn" data-method="aeropress" type="button">
+              <Icon name="mdi:coffee-maker" class="fixer-method-icon" />
+              <span class="fixer-method-name">{t.methodAeropress}</span>
+              <span class="fixer-method-sub">{t.methodAeropressDesc}</span>
+            </button>
+            <button class="fixer-method-btn" data-method="frenchpress" type="button">
+              <Icon name="mdi:bottle-wine" class="fixer-method-icon" />
+              <span class="fixer-method-name">{t.methodFrenchpress}</span>
+              <span class="fixer-method-sub">{t.methodFrenchpressDesc}</span>
+            </button>
+            <button class="fixer-method-btn" data-method="moka" type="button">
+              <Icon name="mdi:kettle" class="fixer-method-icon" />
+              <span class="fixer-method-name">{t.methodMoka}</span>
+              <span class="fixer-method-sub">{t.methodMokaDesc}</span>
+            </button>
+            <button class="fixer-method-btn" data-method="espresso" type="button">
+              <Icon name="mdi:coffee" class="fixer-method-icon" />
+              <span class="fixer-method-name">{t.methodEspresso}</span>
+              <span class="fixer-method-sub">{t.methodEspressoDesc}</span>
+            </button>
+            <button class="fixer-method-btn" data-method="coldbrew" type="button">
+              <Icon name="mdi:snowflake" class="fixer-method-icon" />
+              <span class="fixer-method-name">{t.methodColdbrew}</span>
+              <span class="fixer-method-sub">{t.methodColdbrewDesc}</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="fixer-section">
+          <div class="fixer-label">{t.flavorLabel}</div>
+          <div class="fixer-grid-flavors">
+            <button class="fixer-flavor-btn" data-flavor="acidic" type="button">
+              <span class="fixer-flavor-circle" style="background:#FFD700;"></span>
+              <span class="fixer-flavor-name">{t.flavorAcidic}</span>
+              <Icon name="mdi:alert-circle-outline" class="fixer-flavor-icon" />
+            </button>
+            <button class="fixer-flavor-btn" data-flavor="bitter" type="button">
+              <span class="fixer-flavor-circle" style="background:#8B4513;"></span>
+              <span class="fixer-flavor-name">{t.flavorBitter}</span>
+              <Icon name="mdi:fire" class="fixer-flavor-icon" />
+            </button>
+            <button class="fixer-flavor-btn" data-flavor="watery" type="button">
+              <span class="fixer-flavor-circle" style="background:#4A90E2;"></span>
+              <span class="fixer-flavor-name">{t.flavorWatery}</span>
+              <Icon name="mdi:water" class="fixer-flavor-icon" />
+            </button>
+            <button class="fixer-flavor-btn" data-flavor="astringent" type="button">
+              <span class="fixer-flavor-circle" style="background:#9370DB;"></span>
+              <span class="fixer-flavor-name">{t.flavorAstringent}</span>
+              <Icon name="mdi:water-percent" class="fixer-flavor-icon" />
+            </button>
+          </div>
+          <div class="fixer-secondary-flavors" id="secondaryFlavors"></div>
+        </div>
+
+        <div class="fixer-section">
+          <div class="fixer-label">{t.severityLabel}</div>
+          <div class="fixer-severity-grid">
+            <button class="fixer-severity-btn" data-severity="slight" type="button">{t.severitySlightLabel}</button>
+            <button class="fixer-severity-btn active" data-severity="moderate" type="button">{t.severityModerateLabel}</button>
+            <button class="fixer-severity-btn" data-severity="severe" type="button">{t.severitySevereLabel}</button>
+          </div>
+        </div>
+
+        <div class="fixer-actions">
+          <button id="diagnoseBtn" class="fixer-btn-primary" type="button">{t.diagnoseBtn}</button>
+          <button id="resetBtn" class="fixer-btn-secondary" type="button">{t.resetBtn}</button>
+        </div>
+      </div>
+
+      <div class="fixer-phase" id="phase-results" style="display:none;">
+        <div class="fixer-results-header">
+          <button class="fixer-back-btn" id="backBtn" type="button">
+            <Icon name="mdi:arrow-left" /> {t.backBtn}
+          </button>
+          <div class="fixer-result-title" id="resultTitle"></div>
+        </div>
+
+        <div class="fixer-diagnosis-panel">
+          <div class="fixer-diagnosis-card fixer-card-primary">
+            <div class="fixer-card-icon">
+              <Icon name="mdi:test-tube" />
+            </div>
+            <div class="fixer-card-content">
+              <div class="fixer-card-label">{t.mainIssueLabel}</div>
+              <div class="fixer-card-issue" id="primaryIssue"></div>
+              <div class="fixer-card-explanation" id="explanation"></div>
+            </div>
+          </div>
+
+          <div class="fixer-diagnosis-card fixer-card-action">
+            <div class="fixer-card-icon-large" id="actionIcon"></div>
+            <div class="fixer-card-content">
+              <div class="fixer-card-label">{t.actionMainLabel}</div>
+              <div class="fixer-card-action-text" id="primaryAction"></div>
+              <div class="fixer-card-sub" id="actionDescription"></div>
+            </div>
+          </div>
+
+          <div class="fixer-diagnosis-card fixer-card-texture">
+            <div class="fixer-texture-box">
+              <span class="fixer-texture-ref" id="textureRef"></span>
+            </div>
+            <div class="fixer-card-content">
+              <div class="fixer-card-label">{t.textureReferenceLabel}</div>
+              <div class="fixer-texture-description" id="textureDescription"></div>
+            </div>
+          </div>
+
+          <div class="fixer-secondary-actions">
+            <div class="fixer-secondary-action">
+              <div class="fixer-secondary-label">{t.actionSecondaryLabel}</div>
+              <div class="fixer-secondary-text" id="secondaryAction"></div>
+            </div>
+            <div class="fixer-secondary-action">
+              <div class="fixer-secondary-label">{t.actionTertiaryLabel}</div>
+              <div class="fixer-secondary-text" id="tertiaryAction"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="fixer-feedback-section">
+          <div class="fixer-feedback-title">{t.feedbackLabel}</div>
+          <div class="fixer-feedback-buttons">
+            <button class="fixer-feedback-btn fixer-feedback-positive" id="feedbackSuccess" type="button">
+              <Icon name="mdi:thumb-up-outline" />
+              {t.improvedBtn}
+            </button>
+            <button class="fixer-feedback-btn fixer-feedback-negative" id="feedbackFail" type="button">
+              <Icon name="mdi:thumb-down-outline" />
+              {t.notYetBtn}
+            </button>
+          </div>
+          <div class="fixer-confetti" id="confetti"></div>
+        </div>
+
+        <div class="fixer-copy-section">
+          <button class="fixer-btn-copy" id="copyBtn" type="button">
+            <Icon name="mdi:content-copy" />
+            {t.copyDiagnosisBtn}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import {
+    type BrewMethod, type FlavorNote, type AdjustmentSeverity, type DiagnosisState, type DiagnosisResult,
+    BREW_METHODS, FLAVOR_DIAGNOSTICS, generateDiagnosis,
+  } from './logic';
+
+  const state: DiagnosisState = { method: 'pourover', flavors: ['acidic'], severity: 'moderate' };
+  const selectedFlavors: Set<FlavorNote> = new Set(['acidic']);
+  const el = (id: string): HTMLElement | null => document.getElementById(id);
+
+  function toggleMethod(btn: Element): void {
+    document.querySelectorAll('.fixer-method-btn').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.method = (btn as HTMLElement).dataset.method as BrewMethod;
+  }
+
+  function toggleFlavor(btn: Element): void {
+    const flavor = (btn as HTMLElement).dataset.flavor as FlavorNote;
+    if (selectedFlavors.has(flavor)) {
+      selectedFlavors.delete(flavor);
+      btn.classList.remove('active');
+    } else {
+      if (selectedFlavors.size >= 2) {
+        const first = selectedFlavors.values().next().value as FlavorNote;
+        selectedFlavors.delete(first);
+        document.querySelector(`[data-flavor="${first}"]`)?.classList.remove('active');
+      }
+      selectedFlavors.add(flavor);
+      btn.classList.add('active');
+    }
+    state.flavors = Array.from(selectedFlavors);
+    renderSecondaryFlavors();
+  }
+
+  function renderSecondaryFlavors(): void {
+    const secondary = el('secondaryFlavors');
+    if (!secondary) return;
+    if (selectedFlavors.size <= 1) {
+      secondary.innerHTML = '';
+    } else {
+      const text = Array.from(selectedFlavors).map((f) => FLAVOR_DIAGNOSTICS[f].label).join(' + ');
+      const combined = (document.querySelector('.brew-fixer') as HTMLElement).dataset.combined || 'Combined';
+      secondary.innerHTML = `<div class="fixer-combined-flavors">${combined}: ${text}</div>`;
+    }
+  }
+
+  function populateResults(diagnosis: DiagnosisResult): void {
+    const updates = {
+      resultTitle: diagnosis.primaryIssue,
+      primaryIssue: diagnosis.primaryIssue,
+      explanation: diagnosis.explanation,
+      primaryAction: diagnosis.primaryAction,
+      actionDescription: diagnosis.actionDescription,
+      textureRef: diagnosis.textureRef,
+      secondaryAction: diagnosis.secondaryAction,
+      tertiaryAction: diagnosis.tertiaryAction,
+    };
+    Object.entries(updates).forEach(([id, text]) => {
+      const elem = el(id);
+      if (elem) elem.textContent = text;
+    });
+
+    const method = BREW_METHODS[state.method];
+    const textureDesc = el('textureDescription');
+    if (textureDesc) {
+      textureDesc.innerHTML = `Target grind size: <strong>${method.minGrind}-${method.maxGrind}µm</strong>. Temperature: <strong>${method.idealTemp}°C</strong>`;
+    }
+
+    const actionIcon = el('actionIcon');
+    if (actionIcon) {
+      actionIcon.textContent = '→';
+    }
+  }
+
+  function switchToResults(): void {
+    const phaseInput = el('phase-input');
+    const phaseResults = el('phase-results');
+    if (phaseInput && phaseResults) {
+      phaseInput.style.display = 'none';
+      phaseResults.style.display = 'block';
+      phaseResults.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function switchToInput(): void {
+    const phaseInput = el('phase-input');
+    const phaseResults = el('phase-results');
+    if (phaseInput && phaseResults) {
+      phaseInput.style.display = 'block';
+      phaseResults.style.display = 'none';
+      phaseInput.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function resetForm(): void {
+    selectedFlavors.clear();
+    selectedFlavors.add('acidic');
+    state.method = 'pourover';
+    state.severity = 'moderate';
+    state.flavors = ['acidic'];
+    document.querySelectorAll('.fixer-method-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    document.querySelectorAll('.fixer-flavor-btn').forEach((b) => b.classList.toggle('active', (b as HTMLElement).dataset.flavor === 'acidic'));
+    document.querySelectorAll('.fixer-severity-btn').forEach((b) => b.classList.toggle('active', (b as HTMLElement).dataset.severity === 'moderate'));
+    renderSecondaryFlavors();
+  }
+
+  function createConfetti(): void {
+    const confetti = el('confetti');
+    if (!confetti) return;
+    confetti.innerHTML = '';
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'fixer-confetti-particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.setProperty('--delay', Math.random() * 0.5 + 's');
+      confetti.appendChild(particle);
+    }
+  }
+
+  document.querySelectorAll('.fixer-method-btn').forEach((btn) => btn.addEventListener('click', () => toggleMethod(btn)));
+  document.querySelectorAll('.fixer-flavor-btn').forEach((btn) => btn.addEventListener('click', () => toggleFlavor(btn)));
+  document.querySelectorAll('.fixer-severity-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.fixer-severity-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.severity = (btn as HTMLElement).dataset.severity as AdjustmentSeverity;
+    });
+  });
+  el('diagnoseBtn')?.addEventListener('click', () => { populateResults(generateDiagnosis(state)); switchToResults(); });
+  el('backBtn')?.addEventListener('click', switchToInput);
+  el('resetBtn')?.addEventListener('click', resetForm);
+  el('copyBtn')?.addEventListener('click', () => {
+    const diagnosis = generateDiagnosis(state);
+    const diagnosisTitle = (document.querySelector('.brew-fixer') as HTMLElement).dataset.diagnosisTitle || 'The Brew Fixer Diagnosis';
+    const issueLabel = (document.querySelector('.brew-fixer') as HTMLElement).dataset.issueLabel || 'Issue';
+    const causeLabel = (document.querySelector('.brew-fixer') as HTMLElement).dataset.causeLabel || 'Cause';
+    const actionLabel = (document.querySelector('.brew-fixer') as HTMLElement).dataset.actionLabel || 'Action';
+    const whyLabel = (document.querySelector('.brew-fixer') as HTMLElement).dataset.whyLabel || 'Why';
+    const nextLabel = (document.querySelector('.brew-fixer') as HTMLElement).dataset.nextLabel || 'Next';
+
+    const text = `${diagnosisTitle}\n\n${issueLabel}: ${diagnosis.primaryIssue}\n${causeLabel}: ${diagnosis.explanation}\n\n${actionLabel}: ${diagnosis.primaryAction}\n${whyLabel}: ${diagnosis.actionDescription}\n\n${nextLabel}: ${diagnosis.secondaryAction}`;
+    const copiedBtn = (document.querySelector('.brew-fixer') as HTMLElement).dataset.copiedBtn || 'Copied!';
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = el('copyBtn');
+      if (btn) {
+        const original = btn.textContent;
+        btn.textContent = copiedBtn;
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      }
+    });
+  });
+  el('feedbackSuccess')?.addEventListener('click', () => { el('feedbackSuccess')?.classList.add('active'); createConfetti(); });
+  el('feedbackFail')?.addEventListener('click', () => { el('feedbackFail')?.classList.add('active'); });
+  renderSecondaryFlavors();
+</script>

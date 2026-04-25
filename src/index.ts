@@ -29,3 +29,6 @@ export type { WaterCalculatorUI, WaterCalculatorLocaleContent } from './tool/wat
 export { grindConverter, GRIND_CONVERTER_TOOL } from './tool/grindConverter';
 export type { GrindConverterUI, GrindConverterLocaleContent } from './tool/grindConverter';
 
+export { brewFixer, BREW_FIXER_TOOL } from './tool/brewFixer';
+export type { BrewFixerUI, BrewFixerLocaleContent } from './tool/brewFixer';
+
