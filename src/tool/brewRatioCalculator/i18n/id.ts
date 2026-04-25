@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewRatioCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-rasio-kopi';
 const title = 'Kalkulator Rasio Seduh Kopi';
@@ -108,24 +109,7 @@ export const content: ToolLocaleContent<BrewRatioCalculatorUI> = {
   faqTitle: 'Pertanyaan yang Sering Diajukan tentang Rasio Seduh',
   faq: faqData,
   bibliographyTitle: 'Referensi Teknis dan Standar SCA',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: Water Quality Handbook',
-      url: 'https://sca.coffee/research/water-quality',
-    },
-    {
-      name: 'SCA: Brewing Control Chart and Golden Cup Standards',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Barista Hustle: The Brew Ratio',
-      url: 'https://www.baristahustle.com/blog/the-coffee-to-water-ratio/',
-    },
-    {
-      name: 'Perfect Daily Grind: Understanding Coffee Extraction',
-      url: 'https://perfectdailygrind.com/2017/09/understanding-coffee-extraction/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

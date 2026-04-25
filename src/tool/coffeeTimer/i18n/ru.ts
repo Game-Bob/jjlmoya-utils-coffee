@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { CoffeeTimerUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'khronometr-dlya-prigotovleniya-kofe';
 const title = 'Таймер для заваривания кофе';
@@ -108,24 +109,7 @@ export const content: ToolLocaleContent<CoffeeTimerUI> = {
   faqTitle: 'Часто задаваемые вопросы о кофейном таймере',
   faq: faqData,
   bibliographyTitle: 'Технические справочники и протоколы SCA',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: Brewing Best Practices',
-      url: 'https://sca.coffee/research/protocols-best-practices',
-    },
-    {
-      name: 'Barista Hustle: The Theory of Extraction',
-      url: 'https://www.baristahustle.com/blog/the-theory-of-extraction/',
-    },
-    {
-      name: 'World Brewers Cup: Competition Protocol',
-      url: 'https://worldcoffeeevents.org/world-brewers-cup/',
-    },
-    {
-      name: 'Perfect Daily Grind: How Brew Time Affects Coffee Flavor',
-      url: 'https://perfectdailygrind.com/2019/04/how-brew-time-affects-your-coffee/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { WaterCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'sca-coffee-water-calculator';
 const title = 'SCA 커피 워터 계산기';
@@ -99,24 +100,7 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
   faqTitle: 'SCA 커피 워터 계산기에 대한 자주 묻는 질문',
   faq: faqData,
   bibliographyTitle: '기술 참고 문헌 및 SCA 표준',
-  bibliography: [
-    {
-      name: 'SCA 수질 표준',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Barista Hustle: DIY Water Recipes Redux',
-      url: 'https://www.baristahustle.com/blog/diy-water-recipes-redux/',
-    },
-    {
-      name: '커피 워터의 과학 (Hendon)',
-      url: 'https://phys.org/news/2014-06-science-coffee.html',
-    },
-    {
-      name: 'Perfect Daily Grind: 수질 화학과 커피',
-      url: 'https://perfectdailygrind.com/2019/09/water-chemistry-coffee/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

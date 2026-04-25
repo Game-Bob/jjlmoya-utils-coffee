@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
 export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
@@ -148,28 +149,7 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
   faqTitle: '커피 추출에 관한 자주 묻는 질문',
   faq: faqData,
   bibliographyTitle: '기술 자료 및 커피 과학',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: 추출 가이드라인',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Scott Rao: The Coffee Roaster\'s Companion',
-      url: 'https://www.roastscience.com/',
-    },
-    {
-      name: 'Barista Hustle: 에스프레소 추출 가이드',
-      url: 'https://www.baristahustle.com/blog/extraction-the-espresso-compass/',
-    },
-    {
-      name: 'Perfect Daily Grind: 커피 추출의 이해',
-      url: 'https://perfectdailygrind.com/2017/09/understanding-coffee-extraction/',
-    },
-    {
-      name: 'Matt Perger: 커피 맛의 언어화',
-      url: 'https://www.baristahustle.com/blog/cupping-tasting-notes/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

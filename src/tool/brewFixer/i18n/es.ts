@@ -1,5 +1,7 @@
+import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
 export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
@@ -147,28 +149,7 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
   faqTitle: 'Preguntas Frecuentes sobre la Extracción de Café',
   faq: faqData,
   bibliographyTitle: 'Referencias Técnicas y Ciencia del Café',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: Guías de Extracción',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Scott Rao: The Coffee Roaster\'s Companion',
-      url: 'https://www.roastscience.com/',
-    },
-    {
-      name: 'Barista Hustle: Guía de Extracción de Espresso',
-      url: 'https://www.baristahustle.com/blog/extraction-the-espresso-compass/',
-    },
-    {
-      name: 'Perfect Daily Grind: Entendiendo la Extracción del Café',
-      url: 'https://perfectdailygrind.com/2017/09/understanding-coffee-extraction/',
-    },
-    {
-      name: 'Matt Perger: Articulando Notas de Sabor en el Café',
-      url: 'https://www.baristahustle.com/blog/cupping-tasting-notes/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

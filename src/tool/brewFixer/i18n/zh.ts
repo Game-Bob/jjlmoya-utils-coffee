@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
 export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
@@ -148,28 +149,7 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
   faqTitle: '咖啡萃取常见问题解答',
   faq: faqData,
   bibliographyTitle: '技术参考与咖啡科学',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: 萃取指南',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Scott Rao: 咖啡烘焙师伴侣',
-      url: 'https://www.roastscience.com/',
-    },
-    {
-      name: 'Barista Hustle: 意式浓缩萃取指南',
-      url: 'https://www.baristahustle.com/blog/extraction-the-espresso-compass/',
-    },
-    {
-      name: 'Perfect Daily Grind: 深入理解咖啡萃取',
-      url: 'https://perfectdailygrind.com/2017/09/understanding-coffee-extraction/',
-    },
-    {
-      name: 'Matt Perger: 咖啡风味描述词',
-      url: 'https://www.baristahustle.com/blog/cupping-tasting-notes/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

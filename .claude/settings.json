@@ -5,7 +5,9 @@
       "Bash(chmod +x /tmp/check_all.sh)",
       "Bash(/tmp/check_all.sh)",
       "Bash(git diff *)",
-      "Bash(git -C d:/code/jjlmoya-utils-coffee diff src/pages/[locale]/[slug].astro)"
+      "Bash(git -C d:/code/jjlmoya-utils-coffee diff src/pages/[locale]/[slug].astro)",
+      "Read(//d/d/code/**)",
+      "Bash(node update-bibliography.js)"
     ],
     "additionalDirectories": [
       "\\tmp"

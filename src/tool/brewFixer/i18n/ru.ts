@@ -1,5 +1,6 @@
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
 export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
@@ -147,28 +148,7 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
   faqTitle: 'Часто задаваемые вопросы об экстракции кофе',
   faq: faqData,
   bibliographyTitle: 'Техническая литература и наука о кофе',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: Стандарты экстракции',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Scott Rao: The Coffee Roaster\'s Companion',
-      url: 'https://www.roastscience.com/',
-    },
-    {
-      name: 'Barista Hustle: Гид по экстракции эспрессо',
-      url: 'https://www.baristahustle.com/blog/extraction-the-espresso-compass/',
-    },
-    {
-      name: 'Perfect Daily Grind: Понимание экстракции кофе',
-      url: 'https://perfectdailygrind.com/2017/09/understanding-coffee-extraction/',
-    },
-    {
-      name: 'Matt Perger: Описание вкусовых дескрипторов',
-      url: 'https://www.baristahustle.com/blog/cupping-tasting-notes/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

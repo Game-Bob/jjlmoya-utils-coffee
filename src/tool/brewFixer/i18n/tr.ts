@@ -1,5 +1,6 @@
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewFixerUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 export type FlavorNote = 'acidic' | 'bitter' | 'watery' | 'astringent';
 export type BrewMethod = 'pourover' | 'frenchpress' | 'aeropress' | 'moka' | 'espresso' | 'coldbrew';
@@ -147,28 +148,7 @@ export const content: ToolLocaleContent<BrewFixerUI> = {
   faqTitle: 'Kahve Ekstraksiyonu Hakkında Sıkça Sorulan Sorular',
   faq: faqData,
   bibliographyTitle: 'Teknik Referanslar ve Kahve Bilimi',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: Ekstraksiyon Standartları',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Scott Rao: The Coffee Roaster\'s Companion',
-      url: 'https://www.roastscience.com/',
-    },
-    {
-      name: 'Barista Hustle: Espresso Ekstraksiyon Rehberi',
-      url: 'https://www.baristahustle.com/blog/extraction-the-espresso-compass/',
-    },
-    {
-      name: 'Perfect Daily Grind: Kahve Ekstraksiyonunu Anlamak',
-      url: 'https://perfectdailygrind.com/2017/09/understanding-coffee-extraction/',
-    },
-    {
-      name: 'Matt Perger: Kahvede Tat Notlarını Tanımlamak',
-      url: 'https://www.baristahustle.com/blog/cupping-tasting-notes/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

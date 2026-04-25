@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewRatioCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'coffee-ratio-calculator';
 const title = '커피 브루잉 비율(분수비) 계산기';
@@ -108,24 +109,7 @@ export const content: ToolLocaleContent<BrewRatioCalculatorUI> = {
   faqTitle: '브루잉 비율에 대한 자주 묻는 질문',
   faq: faqData,
   bibliographyTitle: '기술 참고 문헌 및 SCA 표준',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: Water Quality Handbook',
-      url: 'https://sca.coffee/research/water-quality',
-    },
-    {
-      name: 'SCA: Brewing Control Chart and Golden Cup Standards',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Barista Hustle: The Brew Ratio',
-      url: 'https://www.baristahustle.com/blog/the-coffee-to-water-ratio/',
-    },
-    {
-      name: 'Perfect Daily Grind: Understanding Coffee Extraction',
-      url: 'https://perfectdailygrind.com/2017/09/understanding-coffee-extraction/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

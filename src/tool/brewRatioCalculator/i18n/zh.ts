@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { BrewRatioCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'coffee-ratio-calculator';
 const title = '咖啡粉水比计算器';
@@ -108,24 +109,7 @@ export const content: ToolLocaleContent<BrewRatioCalculatorUI> = {
   faqTitle: '关于粉水比的常见问题',
   faq: faqData,
   bibliographyTitle: '技术参考与 SCA 标准',
-  bibliography: [
-    {
-      name: 'Specialty Coffee Association: Water Quality Handbook',
-      url: 'https://sca.coffee/research/water-quality',
-    },
-    {
-      name: 'SCA: Brewing Control Chart and Golden Cup Standards',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Barista Hustle: The Brew Ratio',
-      url: 'https://www.baristahustle.com/blog/the-coffee-to-water-ratio/',
-    },
-    {
-      name: 'Perfect Daily Grind: Understanding Coffee Extraction',
-      url: 'https://perfectdailygrind.com/2017/09/understanding-coffee-extraction/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

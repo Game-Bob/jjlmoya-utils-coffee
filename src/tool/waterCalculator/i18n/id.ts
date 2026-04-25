@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { WaterCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-air-kopi-sca';
 const title = 'Kalkulator Air Kopi SCA';
@@ -99,24 +100,7 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
   faqTitle: 'Pertanyaan yang Sering Diajukan tentang Kalkulator Air Kopi SCA',
   faq: faqData,
   bibliographyTitle: 'Referensi Teknis dan Standar SCA',
-  bibliography: [
-    {
-      name: 'Standar Kualitas Air SCA',
-      url: 'https://sca.coffee/research/coffee-standards',
-    },
-    {
-      name: 'Barista Hustle: DIY Water Recipes Redux',
-      url: 'https://www.baristahustle.com/blog/diy-water-recipes-redux/',
-    },
-    {
-      name: 'The Science of Coffee Water (Hendon)',
-      url: 'https://phys.org/news/2014-06-science-coffee.html',
-    },
-    {
-      name: 'Perfect Daily Grind: Kimia Air dan Kopi',
-      url: 'https://perfectdailygrind.com/2019/09/water-chemistry-coffee/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

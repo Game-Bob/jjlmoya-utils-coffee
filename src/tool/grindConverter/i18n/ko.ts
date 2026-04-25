@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { GrindConverterUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'coffee-grind-size-converter';
 const title = '커피 분쇄도 변환기';
@@ -99,24 +100,7 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
   faqTitle: '커피 분쇄도에 관한 자주 묻는 질문',
   faq: faqData,
   bibliographyTitle: '분쇄 및 추출 관련 참고 자료',
-  bibliography: [
-    {
-      name: 'James Hoffmann: The Ultimate Guide to Coffee Grind Size',
-      url: 'https://www.youtube.com/watch?v=83n7Yp_p2yM',
-    },
-    {
-      name: 'Barista Hustle: Grind Size and Extraction',
-      url: 'https://www.baristahustle.com/blog/the-grind-size-and-extraction/',
-    },
-    {
-      name: 'Comandante C40: Official Extraction Chart',
-      url: 'https://www.comandantegrinder.com/',
-    },
-    {
-      name: 'SCA Brewing Best Practices: Grind Standards',
-      url: 'https://sca.coffee/research/protocols-best-practices',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
