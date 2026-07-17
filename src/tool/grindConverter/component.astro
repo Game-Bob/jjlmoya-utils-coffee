@@ -24,7 +24,7 @@ const t = (ui ?? {}) as GrindConverterUI;
     <div class="grind-lab-main">
 
       <header class="grind-interface-header">
-        <label class="grind-control-label">{t.step1Label}</label>
+        <label class="grind-control-label" for="grinder-select">{t.step1Label}</label>
         <select id="grinder-select" class="grind-custom-select">
           {GRINDERS.map((g) => (
             <option value={g.id}>{g.brand} {g.name}</option>

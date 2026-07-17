@@ -48,7 +48,7 @@ const t = (ui ?? {}) as BrewRatioCalculatorUI;
           <div class="brew-section-label">
             <span class="brew-label-icon" id="inputIconCoffee"><Icon name="mdi:coffee" /></span>
             <span class="brew-label-icon brew-hidden" id="inputIconWater"><Icon name="mdi:water-outline" /></span>
-            <span id="inputLabel">{t.inputLabelCoffee}</span>
+            <label id="inputLabel" for="brewInput">{t.inputLabelCoffee}</label>
           </div>
           <div class="brew-input-group">
             <input type="number" id="brewInput" class="brew-input" value="20" min="1" step="1" />
@@ -80,12 +80,12 @@ const t = (ui ?? {}) as BrewRatioCalculatorUI;
             </div>
             <div class="brew-custom-ratio" id="customRatioInputs">
               <div>
-                <span class="brew-custom-label">{t.customCoffeeLabel}</span>
+                <label class="brew-custom-label" for="customCoffee">{t.customCoffeeLabel}</label>
                 <input type="number" id="customCoffee" class="brew-custom-input" value="1" min="1" step="0.5" />
               </div>
               <div class="brew-custom-sep">:</div>
               <div>
-                <span class="brew-custom-label">{t.customWaterLabel}</span>
+                <label class="brew-custom-label" for="customWater">{t.customWaterLabel}</label>
                 <input type="number" id="customWater" class="brew-custom-input" value="15" min="1" step="0.5" />
               </div>
             </div>
@@ -182,7 +182,7 @@ const t = (ui ?? {}) as BrewRatioCalculatorUI;
 
   <div class="brew-modal-overlay" id="saveModal">
     <div class="brew-modal">
-      <div class="brew-modal-title">{t.modalTitle}</div>
+      <label class="brew-modal-title" for="recipeNameInput">{t.modalTitle}</label>
       <input type="text" id="recipeNameInput" class="brew-modal-input" placeholder={t.modalPlaceholder} maxlength="40" />
       <div class="brew-modal-actions">
         <button class="brew-modal-cancel" id="cancelSaveBtn" type="button">{t.modalCancel}</button>
