@@ -1,0 +1,223 @@
+---
+import type { KnownLocale } from '../../types';
+import type { AeropressRatioCalculatorUI } from './ui';
+import { aeropressRatioCalculator } from './entry';
+import { RECIPE_PRESETS } from './evaluator';
+import './aeropress-ratio-calculator.css';
+
+interface Props {
+  ui?: AeropressRatioCalculatorUI;
+  locale?: KnownLocale;
+}
+
+const { ui: propUi, locale = 'en' } = Astro.props;
+let ui = propUi;
+if (!ui) {
+  const content = await aeropressRatioCalculator.i18n[locale]?.();
+  ui = content?.ui;
+}
+if (!ui) return null;
+
+const getPresetTitle = (presetId: string) => {
+  switch (presetId) {
+    case 'hoffmann':
+      return ui.presetHoffmann;
+    case 'wendelboe':
+      return ui.presetWendelboe;
+    case 'wac-champ':
+      return ui.presetWacChamp;
+    case 'alan-adler':
+      return ui.presetAlanAdler;
+    case 'iced-bypass':
+      return ui.presetIcedBypass;
+    default:
+      return ui.presetCustom;
+  }
+};
+---
+
+<div class="aeropress-ratio-calculator-main-card" id="aeropress-calculator-root" data-i18n={JSON.stringify(ui)}>
+  <div class="aeropress-ratio-calculator-sidebar">
+    <div class="aeropress-ratio-calculator-unit-toggle">
+      <button type="button" class="aeropress-ratio-calculator-unit-btn aeropress-ratio-calculator-unit-active" data-unit="metric">
+        {ui.unitMetricLabel}
+      </button>
+      <button type="button" class="aeropress-ratio-calculator-unit-btn" data-unit="imperial">
+        {ui.unitImperialLabel}
+      </button>
+    </div>
+
+    <div class="aeropress-ratio-calculator-presets-list">
+      {RECIPE_PRESETS.map((preset, idx) => (
+        <button
+          type="button"
+          class:list={['aeropress-ratio-calculator-preset-chip', { 'aeropress-ratio-calculator-preset-active': idx === 0 }]}
+          data-preset-id={preset.id}
+        >
+          {getPresetTitle(preset.id)}
+        </button>
+      ))}
+    </div>
+
+    <div class="aeropress-ratio-calculator-form-group">
+      <label class="aeropress-ratio-calculator-label" id="label-model">{ui.modelLabel}</label>
+      <div class="aeropress-ratio-calculator-custom-select" data-custom-select="model">
+        <button type="button" class="aeropress-ratio-calculator-select-trigger" aria-haspopup="listbox" aria-labelledby="label-model">
+          <span class="aeropress-ratio-calculator-select-val">{ui.modelOriginal} (230ml)</span>
+          <svg class="aeropress-ratio-calculator-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="aeropress-ratio-calculator-select-dropdown" role="listbox">
+          <div class="aeropress-ratio-calculator-select-option aeropress-ratio-calculator-option-selected" data-val="original">{ui.modelOriginal} (230ml)</div>
+          <div class="aeropress-ratio-calculator-select-option" data-val="xl">{ui.modelXl} (500ml)</div>
+          <div class="aeropress-ratio-calculator-select-option" data-val="go">{ui.modelGo} (200ml)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aeropress-ratio-calculator-form-group">
+      <label class="aeropress-ratio-calculator-label" id="label-method">{ui.methodLabel}</label>
+      <div class="aeropress-ratio-calculator-custom-select" data-custom-select="method">
+        <button type="button" class="aeropress-ratio-calculator-select-trigger" aria-haspopup="listbox" aria-labelledby="label-method">
+          <span class="aeropress-ratio-calculator-select-val">{ui.methodStandard}</span>
+          <svg class="aeropress-ratio-calculator-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="aeropress-ratio-calculator-select-dropdown" role="listbox">
+          <div class="aeropress-ratio-calculator-select-option aeropress-ratio-calculator-option-selected" data-val="standard">{ui.methodStandard}</div>
+          <div class="aeropress-ratio-calculator-select-option" data-val="inverted">{ui.methodInverted}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aeropress-ratio-calculator-form-group">
+      <div class="aeropress-ratio-calculator-label-row">
+        <label class="aeropress-ratio-calculator-label" for="slider-dose">{ui.doseLabel}</label>
+        <span class="aeropress-ratio-calculator-dose-unit-pill">{ui.doseUnitMetric}</span>
+      </div>
+      <div class="aeropress-ratio-calculator-tactile-row">
+        <input type="range" id="slider-dose" class="aeropress-ratio-calculator-slider" data-key="dose" min="5" max="45" step="0.5" value="11" />
+        <input type="number" id="num-dose" class="aeropress-ratio-calculator-num-input" data-key="dose" min="5" max="45" step="0.5" value="11" aria-label={ui.doseLabel} />
+      </div>
+    </div>
+
+    <div class="aeropress-ratio-calculator-form-group">
+      <div class="aeropress-ratio-calculator-label-row">
+        <label class="aeropress-ratio-calculator-label" for="slider-ratio">{ui.ratioLabel}</label>
+        <span class="aeropress-ratio-calculator-unit-pill">{ui.ratioPrefix}</span>
+      </div>
+      <div class="aeropress-ratio-calculator-tactile-row">
+        <input type="range" id="slider-ratio" class="aeropress-ratio-calculator-slider" data-key="ratio" min="4" max="22" step="0.1" value="18.2" />
+        <input type="number" id="num-ratio" class="aeropress-ratio-calculator-num-input" data-key="ratio" min="4" max="22" step="0.1" value="18.2" aria-label={ui.ratioLabel} />
+      </div>
+    </div>
+  </div>
+
+  <div class="aeropress-ratio-calculator-stage">
+    <div class="aeropress-ratio-calculator-stage-header">
+      <div class="aeropress-ratio-calculator-profile-card">
+        <span class="aeropress-ratio-calculator-profile-label">{ui.profileLabel}</span>
+        <span class="aeropress-ratio-calculator-strength-badge">{ui.ratioStrengthMedium}</span>
+      </div>
+    </div>
+
+    <div class="aeropress-ratio-calculator-chamber-view">
+      <svg class="aeropress-ratio-calculator-svg-chamber" viewBox="0 0 320 280" aria-hidden="true">
+        <defs>
+          <linearGradient id="apGlassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="var(--aeropress-ratio-calculator-glass-edge)" />
+            <stop offset="20%" stop-color="var(--aeropress-ratio-calculator-glass-body)" />
+            <stop offset="80%" stop-color="var(--aeropress-ratio-calculator-glass-body)" />
+            <stop offset="100%" stop-color="var(--aeropress-ratio-calculator-glass-edge)" />
+          </linearGradient>
+          <linearGradient id="apCoffeeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="var(--aeropress-ratio-calculator-water-top)" />
+            <stop offset="100%" stop-color="var(--aeropress-ratio-calculator-water-bot)" />
+          </linearGradient>
+        </defs>
+
+        <rect x="75" y="6" width="70" height="10" rx="3" class="aeropress-ratio-calculator-plunger-handle" />
+        <rect x="104" y="16" width="12" height="60" class="aeropress-ratio-calculator-plunger-rod" />
+        <rect x="62" y="55" width="96" height="16" rx="3" class="aeropress-ratio-calculator-plunger-piston" />
+
+        <rect x="60" y="35" width="100" height="190" fill="url(#apGlassGrad)" stroke="var(--aeropress-ratio-calculator-chamber-stroke)" stroke-width="2.5" rx="6" />
+
+        <rect x="62" y="195" width="96" height="26" class="aeropress-ratio-calculator-coffee-bed" rx="2" />
+        <rect x="62" y="68" width="96" height="127" class="aeropress-ratio-calculator-water-level" rx="2" fill="url(#apCoffeeGrad)" />
+
+        <line x1="64" y1="72" x2="80" y2="72" class="aeropress-ratio-calculator-marker-line" />
+        <text x="90" y="77" class="aeropress-ratio-calculator-marker-text">4</text>
+        <line x1="64" y1="110" x2="80" y2="110" class="aeropress-ratio-calculator-marker-line" />
+        <text x="90" y="115" class="aeropress-ratio-calculator-marker-text">3</text>
+        <line x1="64" y1="148" x2="80" y2="148" class="aeropress-ratio-calculator-marker-line" />
+        <text x="90" y="153" class="aeropress-ratio-calculator-marker-text">2</text>
+        <line x1="64" y1="186" x2="80" y2="186" class="aeropress-ratio-calculator-marker-line" />
+        <text x="90" y="191" class="aeropress-ratio-calculator-marker-text">1</text>
+
+        <path d="M 52 225 L 168 225 L 160 242 L 60 242 Z" class="aeropress-ratio-calculator-filter-cap" />
+        <circle cx="85" cy="233" r="1.5" class="aeropress-ratio-calculator-filter-hole" />
+        <circle cx="97" cy="233" r="1.5" class="aeropress-ratio-calculator-filter-hole" />
+        <circle cx="110" cy="233" r="1.5" class="aeropress-ratio-calculator-filter-hole" />
+        <circle cx="123" cy="233" r="1.5" class="aeropress-ratio-calculator-filter-hole" />
+        <circle cx="135" cy="233" r="1.5" class="aeropress-ratio-calculator-filter-hole" />
+
+        <g class="aeropress-ratio-calculator-chamber-callout">
+          <line x1="165" y1="130" x2="195" y2="130" stroke="var(--aeropress-ratio-calculator-brand)" stroke-width="1.5" stroke-dasharray="3,3" />
+          <circle cx="165" cy="130" r="3" fill="var(--aeropress-ratio-calculator-brand)" />
+          <text x="202" y="125" class="aeropress-ratio-calculator-callout-label">{ui.statChamberWater}</text>
+          <text x="202" y="145" class="aeropress-ratio-calculator-callout-val aeropress-ratio-calculator-chamber-dynamic-text">200 g</text>
+        </g>
+      </svg>
+
+      <div class="aeropress-ratio-calculator-bypass-beaker" style="display: none;">
+        <span class="aeropress-ratio-calculator-bypass-badge">{ui.statBypassWater}</span>
+        <span class="aeropress-ratio-calculator-stat-val aeropress-ratio-calculator-bypass-val">0 g</span>
+      </div>
+    </div>
+
+    <div class="aeropress-ratio-calculator-stats-grid">
+      <div class="aeropress-ratio-calculator-stat-card">
+        <span class="aeropress-ratio-calculator-stat-label">{ui.statTotalWater}</span>
+        <span class="aeropress-ratio-calculator-stat-val aeropress-ratio-calculator-val-total">200 g</span>
+      </div>
+      <div class="aeropress-ratio-calculator-stat-card">
+        <span class="aeropress-ratio-calculator-stat-label">{ui.statYield}</span>
+        <span class="aeropress-ratio-calculator-stat-val aeropress-ratio-calculator-val-yield">178 g</span>
+      </div>
+      <div class="aeropress-ratio-calculator-stat-card">
+        <span class="aeropress-ratio-calculator-stat-label">{ui.statEstimatedTds}</span>
+        <span class="aeropress-ratio-calculator-stat-val aeropress-ratio-calculator-val-tds">1.17%</span>
+      </div>
+      <div class="aeropress-ratio-calculator-stat-card">
+        <span class="aeropress-ratio-calculator-stat-label">{ui.grindLabel}</span>
+        <span class="aeropress-ratio-calculator-stat-val aeropress-ratio-calculator-val-grind">{ui.grindMediumFine}</span>
+      </div>
+    </div>
+
+    <div class="aeropress-ratio-calculator-bypass-alert" style="display: none;">
+      <span class="aeropress-ratio-calculator-bypass-title">{ui.bypassAlertTitle}</span>
+      <span class="aeropress-ratio-calculator-bypass-desc"></span>
+    </div>
+
+    <div class="aeropress-ratio-calculator-timer-box">
+      <div class="aeropress-ratio-calculator-timer-info">
+        <span class="aeropress-ratio-calculator-timer-phase">{ui.phaseBloom}</span>
+        <span class="aeropress-ratio-calculator-timer-clock">00:00</span>
+      </div>
+      <div class="aeropress-ratio-calculator-timer-actions">
+        <button type="button" class="aeropress-ratio-calculator-btn aeropress-ratio-calculator-btn-timer-start">{ui.timerStart}</button>
+        <button type="button" class="aeropress-ratio-calculator-btn aeropress-ratio-calculator-btn-secondary aeropress-ratio-calculator-btn-timer-reset">{ui.timerReset}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { AeropressCalculatorController } from './controller';
+  const root = document.getElementById('aeropress-calculator-root');
+  if (root) {
+    new AeropressCalculatorController(root);
+  }
+</script>

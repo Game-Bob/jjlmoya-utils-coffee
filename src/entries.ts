@@ -8,10 +8,20 @@ export { waterCalculator } from './tool/waterCalculator/entry';
 export type { WaterCalculatorLocaleContent } from './tool/waterCalculator/entry';
 export { brewFixer } from './tool/brewFixer/entry';
 export type { BrewFixerLocaleContent } from './tool/brewFixer/entry';
+export { aeropressRatioCalculator } from './tool/aeropress-ratio-calculator/entry';
+export type { AeropressRatioCalculatorLocaleContent } from './tool/aeropress-ratio-calculator/entry';
 export { coffeeCategory } from './category';
 import { brewRatioCalculator } from './tool/brewRatioCalculator/entry';
 import { coffeeTimer } from './tool/coffeeTimer/entry';
 import { grindConverter } from './tool/grindConverter/entry';
 import { waterCalculator } from './tool/waterCalculator/entry';
 import { brewFixer } from './tool/brewFixer/entry';
-export const ALL_ENTRIES = [brewRatioCalculator, coffeeTimer, grindConverter, waterCalculator, brewFixer];
+import { aeropressRatioCalculator } from './tool/aeropress-ratio-calculator/entry';
+export const ALL_ENTRIES = [
+  brewRatioCalculator,
+  coffeeTimer,
+  grindConverter,
+  waterCalculator,
+  brewFixer,
+  aeropressRatioCalculator,
+];

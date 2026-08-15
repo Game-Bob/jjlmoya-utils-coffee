@@ -3,10 +3,12 @@ import { brewRatioCalculator } from '../tool/brewRatioCalculator/entry';
 import { coffeeTimer } from '../tool/coffeeTimer/entry';
 import { waterCalculator } from '../tool/waterCalculator/entry';
 import { grindConverter } from '../tool/grindConverter/entry';
+import { brewFixer } from '../tool/brewFixer/entry';
+import { aeropressRatioCalculator } from '../tool/aeropress-ratio-calculator/entry';
 
 export const coffeeCategory: CoffeeCategoryEntry = {
   icon: 'mdi:coffee',
-  tools: [brewRatioCalculator, coffeeTimer, waterCalculator, grindConverter],
+  tools: [brewRatioCalculator, coffeeTimer, waterCalculator, grindConverter, brewFixer, aeropressRatioCalculator],
   i18n: {
     es: () => import('./i18n/es').then((m) => m.content),
     en: () => import('./i18n/en').then((m) => m.content),
