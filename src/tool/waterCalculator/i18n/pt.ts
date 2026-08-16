@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'O magnésio extrai compostos de sabor frutado e doce de forma mais eficiente e é o mineral preferido para métodos de filtro. O cálcio proporciona mais corpo e textura sedosa, mas tem uma maior tendência a formar depósitos de calcário nas caldeiras ao longo do tempo.',
  },
+ { question: 'Posso guardar as minhas concentrações habituais?', answer: 'Sim. A calculadora guarda os valores no navegador para que a sua receita personalizada fique disponível na próxima visita.' },
 ];
 
 const howToData = [

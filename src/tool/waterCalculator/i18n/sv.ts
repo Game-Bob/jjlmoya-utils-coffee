@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'Magnesium extraherar fruktiga och söta smakämnen mer effektivt och är den föredragna mineralen för filtermetoder. Kalcium ger mer fyllighet och silkeslen textur men har en större tendens att bilda kalkavlagringar i kokare över tid.',
  },
+ { question: 'Kan jag spara mina vanliga koncentrationer?', answer: 'Ja. Kalkylatorn sparar värdena i webbläsaren så att ditt anpassade recept finns kvar vid nästa besök.' },
 ];
 
 const howToData = [

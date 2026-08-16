@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'Magnesium mengekstraksi senyawa rasa buah dan manis dengan lebih efisien dan merupakan mineral pilihan untuk metode filter. Kalsium memberikan lebih banyak body dan tekstur halus tetapi memiliki kecenderungan lebih besar untuk membentuk endapan kerak di boiler seiring waktu.',
  },
+ { question: 'Bisakah konsentrasi biasa disimpan?', answer: 'Bisa. Kalkulator menyimpan nilai konsentrat di browser agar resep khusus tersedia saat Anda berkunjung lagi.' },
 ];
 
 const howToData = [

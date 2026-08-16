@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'Magnesium extraheert fruitige en zoete smaakverbindingen efficiënter en is het voorkeursmineraal voor filtermethoden. Calcium geeft meer body en een zijdezachte textuur, maar heeft een grotere neiging om na verloop van tijd kalkaanslag in boilers te vormen.',
  },
+ { question: 'Kan ik mijn gebruikelijke concentraties opslaan?', answer: 'Ja. De calculator bewaart de waarden in de browser zodat uw eigen recept bij een volgend bezoek beschikbaar is.' },
 ];
 
 const howToData = [

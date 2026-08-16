@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'Магний эффективнее экстрагирует фруктовые и сладкие вкусовые соединения и является предпочтительным минералом для фильтр-кофе. Кальций придает напитку больше тела и шелковистую текстуру, но имеет большую склонность к образованию накипи в бойлерах со временем.',
  },
+ { question: 'Можно ли сохранить обычные концентрации?', answer: 'Да. Калькулятор сохраняет введенные значения в браузере, поэтому ваш рецепт будет доступен при следующем посещении.' },
 ];
 
 const howToData = [
@@ -106,16 +107,16 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  seo: [
  {
  type: 'title',
- text: 'Química del Agua para Café: Por qué el H₂O es el ingrediente olvidado',
+ text: 'Вода для кофе: как минеральный состав меняет вкус',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'El café es agua en un 98-99%. Sin embargo, la composición mineral de ese agua es el factor diferencial más ignorado en la cadena de calidad. Un café de especialidad de Etiopía extraído con agua del grifo de Madrid puede saber completamente distinto al mismo café preparado con agua mineralizada siguiendo el estándar SCA. Nuestra <strong>calculadora de agua para café</strong> te permite formular el agua perfecta desde cero, usando sales minerales comunes y partiendo de agua destilada.',
+ html: 'Чашка кофе почти полностью состоит из воды. Жёсткость и минералы влияют на кислотность, сладость и плотность напитка. Калькулятор помогает подобрать воду по ориентирам SCA для конкретного зерна и способа заваривания.',
  },
  {
  type: 'summary',
- title: '¿Por qué la mineralización del agua importa tanto?',
+ title: 'Почему минералы так важны для вкуса',
  items: [
  '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
  '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
@@ -125,16 +126,16 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'El Estándar SCA: Los Límites Técnicos del Agua Perfecta para Café',
+ text: 'Рекомендации SCA для воды под кофе',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'La Specialty Coffee Association publicó en 2015 su estándar de calidad del agua. Tras años de investigación sensorial y química, estableció rangos ideales para cada parámetro. No son números arbitrarios: son el resultado de catas a ciegas con profesionales donde se maximizó la percepción de acidez equilibrada, dulzor y cuerpo.',
+ html: 'Стандарт SCA задаёт ориентиры для жёсткости, щёлочности, pH и TDS. Эти диапазоны помогают получить сбалансированную кислотность, сладость и плотность без лишней горечи.',
  },
  {
  type: 'table',
- headers: ['Parámetro', 'Mínimo', 'Ideal SCA', 'Máximo'],
+ headers: ['Параметр', 'Минимум', 'Ориентир SCA', 'Максимум'],
  rows: [
  ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
  ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
@@ -144,12 +145,12 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'Magnesio vs Calcio: La Batalla Mineral que Define tu Taza',
+ text: 'Магний и кальций: разные оттенки в чашке',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'No todos los minerales actúan igual sobre el café. El investigador Christopher Hendon demostró que el <strong>magnesio</strong> forma ligandos con las moléculas de sabor más complejas y volátiles, extrayendo notas frutales y florales con mayor eficiencia. El <strong>calcio</strong>, en cambio, extrae compuestos más pesados, aportando cuerpo y textura sedosa pero con menos brillo aromático.',
+ html: 'Минералы действуют по-разному. Магний лучше подчёркивает фруктовые и цветочные оттенки, а кальций добавляет плотность и мягкую текстуру.',
  },
  {
  type: 'list',
@@ -161,26 +162,26 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'El Semáforo de Seguridad: Protege tu Máquina de Espresso',
+ text: 'Как защитить эспрессо-машину качеством воды',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Nuestra calculadora incluye un <strong>análisis de riesgo en tiempo real</strong> basado en los valores de GH y KH que introduces. El índice de corrosión evalúa si el agua es demasiado pura y agresiva para los metales. El índice de cal mide si el KH y GH combinados generarán depósitos en calderas y tuberías.',
+ html: 'По значениям GH и KH калькулятор показывает, не слишком ли вода агрессивна для металла и не создаст ли она накипь в бойлере и трубках.',
  },
  {
  type: 'tip',
- title: 'Regla práctica del barista profesional',
- html: '<p>Para máquinas de espresso con caldera de latón o cobre, nunca uses perfiles con KH inferior a 40 mg/L de forma continua. El agua muy pura es corrosiva a largo plazo. Para métodos de filtro (V60, Chemex, Aeropress) no hay caldera que proteger, por lo que puedes usar perfiles más delicados como Melbourne sin problema.</p>',
+ title: 'Практическое правило бариста',
+ html: '<p>Для машин с латунным или медным бойлером не используйте постоянно воду с очень низким KH. Для фильтр-методов можно пробовать более мягкие минеральные профили.</p>',
  },
  {
  type: 'title',
- text: 'Cómo Preparar las Botellas de Concentrado en Casa',
+ text: 'Как приготовить концентрат минералов дома',
  level: 3,
  },
  {
  type: 'paragraph',
- html: 'La clave para una mineralización precisa es trabajar con <strong>concentrados stock</strong> en lugar de añadir sales directamente al agua final. Un concentrado de 2,46 g de sales de Epsom en 100 ml de agua destilada te permite dosificar con jeringas de 1 ml con una precisión de ±0,01 ml. Esta metodología, popularizada por Barista Hustle, convierte la química del café en algo tan sencillo como mezclar cócteles.',
+ html: 'Для точной минерализации удобнее приготовить концентрат и добавлять его малыми дозами, а не сыпать соль сразу в готовую воду. Используйте дистиллированную воду, точные весы и записывайте состав каждой смеси.',
  },
  {
  type: 'stats',

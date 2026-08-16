@@ -5,58 +5,23 @@ import { bibliography } from '../bibliography';
 
 const slug = 'sca-coffee-water-calculator';
 const title = 'SCA Coffee Water Calculator';
-const description =
- 'Calculate exact mineral concentrations for specialty coffee. SCA, Barista Hustle and Hendon profiles. Control Magnesium, Calcium and Bicarbonate to maximize flavor and protect your machine.';
+const description = 'Calculate custom mineral recipes for specialty coffee according to SCA guidelines for TDS, hardness, alkalinity, and pH.';
 
 const faqData = [
- {
- question: 'What is the SCA water quality standard?',
- answer:
- 'The Specialty Coffee Association defines a technical standard for brewing water, specifying optimal ranges for total hardness (GH), alkalinity (KH), pH and sodium to achieve balanced extraction that enhances flavor without damaging equipment.',
- },
- {
- question: 'Why not just use tap water?',
- answer:
- 'Tap water varies significantly by location and season. It may contain chlorine, excess limescale or mineral levels that mask specialty coffee flavors and damage boilers and seals. Mineralizing distilled water gives you full control and repeatable results.',
- },
- {
- question: 'Where do I get the mineral salts?',
- answer:
- 'Epsom salts (magnesium sulfate) and sodium bicarbonate are available at pharmacies and supermarkets. Calcium chloride is common in home brewing supply shops. Always ensure they are food-grade quality.',
- },
- {
- question: 'Is it safe for my espresso machine?',
- answer:
- 'The calculator includes a real-time risk indicator. Very pure water corrodes metal components; very hard water causes limescale buildup. The SCA Ideal and Barista Hustle profiles are designed to balance equipment longevity with flavor quality.',
- },
- {
- question: 'What is the difference between Magnesium and Calcium in coffee?',
- answer:
- 'Magnesium extracts fruity and sweet flavor compounds more efficiently and is the preferred mineral for filter methods. Calcium delivers more body and silky texture but has a greater tendency to form scale deposits in boilers over time.',
- },
+ { question: 'What is the SCA water standard?', answer: 'The Specialty Coffee Association defines target ranges for hardness, alkalinity, pH, and sodium to support balanced extraction and protect equipment.' },
+ { question: 'Why should I not use tap water directly?', answer: 'Tap water changes by city and season. Chlorine, scale, or unbalanced minerals can mute specialty coffee and damage boilers. Mineralising distilled water gives repeatable results.' },
+ { question: 'Where can I get the mineral salts?', answer: 'Epsom salt and baking soda are commonly available from pharmacies or supermarkets. Calcium chloride is often sold by home-brewing suppliers. Always choose food-grade products.' },
+ { question: 'Is this safe for my espresso machine?', answer: 'The calculator shows corrosion and scale risk. Very pure water can corrode metal, while very hard water creates deposits. SCA and Barista Hustle profiles balance equipment life and flavour.' },
+ { question: 'What is the difference between magnesium and calcium in coffee?', answer: 'Magnesium extracts fruity and sweet compounds efficiently. Calcium adds body and a silky texture but can create more boiler scale over time.' },
+ { question: 'Can I save my usual concentrations?', answer: 'Yes. The calculator stores the concentrate values you enter in your browser, so your customised recipe is ready the next time you open it.' },
 ];
 
 const howToData = [
- {
- name: 'Get pure base water',
- text: 'Purchase distilled or demineralized water, or use a reverse osmosis system. The goal is to start at 0 ppm total dissolved solids for complete control over mineralization.',
- },
- {
- name: 'Prepare your stock concentrate bottles',
- text: 'Dissolve each salt separately in 100ml of distilled water: 2.46g of Epsom salt for Magnesium, 1.47g of CaCl2 for Calcium, and 1.68g of bicarbonate for the Buffer.',
- },
- {
- name: 'Select your target profile',
- text: 'Choose SCA Ideal (balanced), Barista Hustle (sweetness and brightness), Hendon (body), Melbourne (delicate) or create a custom profile with your own GH and KH values.',
- },
- {
- name: 'Enter the final volume',
- text: 'Type the amount of water you want to mineralize in liters. The calculator automatically adjusts concentrate doses for that exact volume.',
- },
- {
- name: 'Add concentrates and top up with distilled water',
- text: 'Using a precision syringe, add the indicated milliliters of each concentrate to your container and fill to the total volume with distilled water.',
- },
+ { name: 'Get a pure base water', text: 'Use distilled, demineralised, or reverse-osmosis water. Starting near zero dissolved solids gives you full control.' },
+ { name: 'Prepare concentrate bottles', text: 'Dissolve each salt separately in 100 ml of distilled water using the recommended Epsom salt, calcium chloride, and bicarbonate amounts.' },
+ { name: 'Choose your target profile', text: 'Select SCA Ideal, Barista Hustle, Hendon, Melbourne, or create a custom profile with your own GH and KH values.' },
+ { name: 'Enter the final volume', text: 'Enter how many litres you want to mineralise. The calculator adjusts the concentrate doses for that exact volume.' },
+ { name: 'Add concentrates and top up', text: 'Use a precision syringe to add the indicated amounts, then fill the container to the final volume with distilled water.' },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -90,23 +55,19 @@ const appSchema: WithContext<SoftwareApplication> = {
  applicationCategory: 'UtilityApplication',
  operatingSystem: 'All',
  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
- inLanguage: 'en',
+ inLanguage: 'es',
 };
 
 export const content: ToolLocaleContent<WaterCalculatorUI> = {
  slug,
  title,
  description,
- faqTitle: 'Frequently Asked Questions about the SCA Coffee Water Calculator',
+ faqTitle: 'Preguntas Frecuentes sobre la Calculadora de Agua para Café',
  faq: faqData,
- bibliographyTitle: 'Technical References and SCA Standards',
+ bibliographyTitle: 'Referencias Técnicas y Estándares SCA',
  bibliography,
  howTo: howToData,
- schemas: [faqSchema, howToSchema, appSchema,
-  {
-  "question": "Can I use zero-water or 100% distilled water for coffee?",
-  "answer": "Distilled or reverse osmosis water with 0 TDS results in flat, hollow, and sharp acidic coffee because minerals are required to bind to aromatic compounds."
-}],
+ schemas: [faqSchema, howToSchema, appSchema],
  seo: [
  {
  type: 'title',
@@ -197,47 +158,48 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  ],
  ui: {
- sectionMixTitle: 'Mix Configuration',
- labelVolume: 'Final Volume',
- labelProfile: 'Target Water Profile',
- customProfileBtn: 'Custom',
- labelGH: 'Target GH',
- labelKH: 'Target KH',
- concentratesTitle: 'Stock Concentrate Bottles (g/100ml)',
- saltMgName: 'Magnesium (Epsom)',
- saltCaName: 'Calcium (CaCl2)',
- saltBufName: 'Bicarbonate (Sodium)',
- recipeTitle: 'Recipe',
- labelMg: 'Magnesium:',
- labelCa: 'Calcium:',
- labelBuffer: 'Bicarbonate:',
- labelDistilledWater: 'Distilled Water up to',
- copyBtn: 'Copy Recipe',
- copiedText: 'Copied!',
- safetyMetalsTitle: 'Metal Safety',
- safetyScaleTitle: 'Limescale Risk',
- calculatingText: 'Calculating...',
- glossaryTitle: 'Quick Mineral Guide',
- profileSubTemplate: 'Target: {gh} GH / {kh} KH',
- customProfileName: 'Custom',
- corrosionHigh: 'Danger: Very aggressive water. May corrode boilers and copper components.',
- corrosionMedium: 'Acceptable: Moderate corrosion risk. Recommended for filter methods with care on machines.',
- corrosionLow: 'Safe: Water has sufficient buffer capacity to protect metals.',
- scaleHigh: 'Danger: Imminent limescale buildup. Use only with manual filter methods.',
- scaleMedium: 'Caution: May generate scale deposits over time in espresso machines.',
- scaleLow: 'Safe: No significant risk of limescale buildup.',
+ sectionMixTitle: 'Configuración de Mezcla',
+ labelVolume: 'Volumen Final',
+ labelProfile: 'Perfil de Agua Objetivo',
+ customProfileBtn: 'Personalizado',
+ labelGH: 'GH Objetivo',
+ labelKH: 'KH Objetivo',
+ concentratesTitle: 'Botellas de Concentrado (g/100ml)',
+ saltMgName: 'Magnesio (Epsom)',
+ saltCaName: 'Calcio (CaCl2)',
+ saltBufName: 'Bicarbonato (Sodio)',
+ recipeTitle: 'Receta',
+ labelMg: 'Magnesio:',
+ labelCa: 'Calcio:',
+ labelBuffer: 'Bicarbonato:',
+ labelDistilledWater: 'Agua Destilada hasta',
+ copyBtn: 'Copiar Receta',
+ copiedText: '¡Copiado!',
+ safetyMetalsTitle: 'Seguridad Metales',
+ safetyScaleTitle: 'Riesgo de Cal',
+ calculatingText: 'Calculando...',
+ glossaryTitle: 'Guía Rápida de Minerales',
+ profileSubTemplate: 'Objetivo: {gh} GH / {kh} KH',
+ customProfileName: 'Personalizado',
+ corrosionHigh: 'Peligro: Agua muy agresiva. Puede corroer calderas y componentes de cobre.',
+ corrosionMedium: 'Aceptable: Riesgo moderado de corrosión. Recomendado para filtros.',
+ corrosionLow: 'Seguro: El agua tiene suficiente buffer para proteger los metales.',
+ scaleHigh: 'Peligro: Formación de cal inminente. Usar solo en métodos de filtrado manual.',
+ scaleMedium: 'Precaución: Puede generar depósitos de cal a largo plazo en máquinas de espresso.',
+ scaleLow: 'Seguro: No hay riesgo significativo de incrustaciones de cal.',
  copyTemplate:
- 'Coffee Water Recipe ({profileName}):\n- Volume: {liters}L\n- Magnesium concentrate: {mg}ml\n- Calcium concentrate: {ca}ml\n- Bicarbonate concentrate: {buf}ml\n- Distilled Water: {water}ml',
- glossary0Term: 'Total Hardness (GH)',
+ 'Receta de Agua Café ({profileName}):\n- Volumen: {liters}L\n- Concentrado Magnesio: {mg}ml\n- Concentrado Calcio: {ca}ml\n- Concentrado Bicarbonato: {buf}ml\n- Agua Destilada: {water}ml',
+ glossary0Term: 'Dureza Total (GH)',
  glossary0Desc:
- 'The sum of Calcium and Magnesium. Magnesium enhances sweetness and complexity; Calcium adds body and texture.',
- glossary1Term: 'Alkalinity (KH)',
+ 'La suma de Calcio y Magnesio. El Magnesio resalta el dulzor y la complejidad; el Calcio aporta cuerpo y textura.',
+ glossary1Term: 'Alcalinidad (KH)',
  glossary1Desc:
- 'The water capacity to neutralize acids. High KH suppresses coffee acidity; low KH makes it taste sour.',
- glossary2Term: 'TDS (Total Dissolved Solids)',
- glossary2Desc: 'In mineralized water, TDS represents the combined concentration of all added mineral salts.',
- glossary3Term: 'Magnesium',
+ 'Capacidad del agua para neutralizar ácidos. Un KH alto apaga la acidez del café; un KH bajo lo hace agrio.',
+ glossary2Term: 'TDS (Sólidos Disueltos)',
+ glossary2Desc:
+ 'Total de sólidos disueltos. En agua mineralizada, es la suma de todas nuestras sales añadidas.',
+ glossary3Term: 'Magnesio',
  glossary3Desc:
- 'Extracts complex fruity flavor compounds more efficiently. The preferred mineral for specialty coffee brewing.',
+ 'Extrae compuestos de sabor complejos y frutales. Es el mineral favorito para cafés de especialidad.',
  },
 };

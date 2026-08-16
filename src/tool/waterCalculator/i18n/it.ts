@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'Il magnesio estrae i composti del sapore fruttato e dolce in modo più efficiente ed è il minerale preferito per i metodi filtro. Il calcio conferisce più corpo e una consistenza setosa, ma ha una maggiore tendenza a formare depositi di calcare nelle caldaie nel tempo.',
  },
+ { question: 'Posso salvare le concentrazioni abituali?', answer: 'Sì. La calcolatrice salva i valori nel browser, così la ricetta personalizzata sarà disponibile alla prossima visita.' },
 ];
 
 const howToData = [

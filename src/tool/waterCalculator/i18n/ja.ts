@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'マグネシウムはフルーティーで甘い風味成分をより効率的に抽出し、フィルター抽出に好まれるミネラルです。カルシウムはよりコク（ボディ）とシルキーな質感をもたらしますが、時間の経過とともにボイラー内にスケールを形成しやすい傾向があります。',
  },
+ { question: 'いつもの濃縮液を保存できますか？', answer: 'はい。入力した濃縮液の値はブラウザに保存され、次回もカスタムレシピをすぐに呼び出せます。' },
 ];
 
 const howToData = [
@@ -106,16 +107,16 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  seo: [
  {
  type: 'title',
- text: 'Química del Agua para Café: Por qué el H₂O es el ingrediente olvidado',
+ text: 'コーヒーの水質と抽出を理解する',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'El café es agua en un 98-99%. Sin embargo, la composición mineral de ese agua es el factor diferencial más ignorado en la cadena de calidad. Un café de especialidad de Etiopía extraído con agua del grifo de Madrid puede saber completamente distinto al mismo café preparado con agua mineralizada siguiendo el estándar SCA. Nuestra <strong>calculadora de agua para café</strong> te permite formular el agua perfecta desde cero, usando sales minerales comunes y partiendo de agua destilada.',
+ html: '一杯のコーヒーはほとんどが水でできています。硬度やミネラルの違いは酸味、甘さ、コクに影響します。この計算機で SCA の目安を参考に、豆と器具に合う水を作れます。',
  },
  {
  type: 'summary',
- title: '¿Por qué la mineralización del agua importa tanto?',
+ title: '水のミネラルが味を変える理由',
  items: [
  '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
  '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
@@ -125,16 +126,16 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'El Estándar SCA: Los Límites Técnicos del Agua Perfecta para Café',
+ text: 'SCA が示す抽出用の水質基準',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'La Specialty Coffee Association publicó en 2015 su estándar de calidad del agua. Tras años de investigación sensorial y química, estableció rangos ideales para cada parámetro. No son números arbitrarios: son el resultado de catas a ciegas con profesionales donde se maximizó la percepción de acidez equilibrada, dulzor y cuerpo.',
+ html: 'SCA の水質基準には、硬度、アルカリ度、pH、TDS の目安があります。これらの範囲を確認すると、酸味、甘さ、コクをバランスよく引き出しやすくなります。',
  },
  {
  type: 'table',
- headers: ['Parámetro', 'Mínimo', 'Ideal SCA', 'Máximo'],
+ headers: ['項目', '最小', 'SCA の目安', '最大'],
  rows: [
  ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
  ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
@@ -144,12 +145,12 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'Magnesio vs Calcio: La Batalla Mineral que Define tu Taza',
+ text: 'マグネシウムとカルシウムが作る味の違い',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'No todos los minerales actúan igual sobre el café. El investigador Christopher Hendon demostró que el <strong>magnesio</strong> forma ligandos con las moléculas de sabor más complejas y volátiles, extrayendo notas frutales y florales con mayor eficiencia. El <strong>calcio</strong>, en cambio, extrae compuestos más pesados, aportando cuerpo y textura sedosa pero con menos brillo aromático.',
+ html: 'ミネラルは同じ働きをするわけではありません。マグネシウムは果実や花のような香りを引き出しやすく、カルシウムはコクとなめらかな質感を強めます。',
  },
  {
  type: 'list',
@@ -161,26 +162,26 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'El Semáforo de Seguridad: Protege tu Máquina de Espresso',
+ text: 'エスプレッソマシンを守る水質チェック',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Nuestra calculadora incluye un <strong>análisis de riesgo en tiempo real</strong> basado en los valores de GH y KH que introduces. El índice de corrosión evalúa si el agua es demasiado pura y agresiva para los metales. El índice de cal mide si el KH y GH combinados generarán depósitos en calderas y tuberías.',
+ html: '入力した GH と KH をもとに、水が金属を傷めるほど純粋でないか、ボイラーや配管にスケールがたまりやすくないかを確認します。',
  },
  {
  type: 'tip',
- title: 'Regla práctica del barista profesional',
- html: '<p>Para máquinas de espresso con caldera de latón o cobre, nunca uses perfiles con KH inferior a 40 mg/L de forma continua. El agua muy pura es corrosiva a largo plazo. Para métodos de filtro (V60, Chemex, Aeropress) no hay caldera que proteger, por lo que puedes usar perfiles más delicados como Melbourne sin problema.</p>',
+ title: 'プロのバリスタが守る基本',
+ html: '<p>真鍮や銅のボイラーでは KH が低すぎる水を連用しないでください。フィルター式では器具を守る必要が少ないため、より軽いミネラル構成も試せます。</p>',
  },
  {
  type: 'title',
- text: 'Cómo Preparar las Botellas de Concentrado en Casa',
+ text: '家庭でミネラル濃縮液を作る方法',
  level: 3,
  },
  {
  type: 'paragraph',
- html: 'La clave para una mineralización precisa es trabajar con <strong>concentrados stock</strong> en lugar de añadir sales directamente al agua final. Un concentrado de 2,46 g de sales de Epsom en 100 ml de agua destilada te permite dosificar con jeringas de 1 ml con una precisión de ±0,01 ml. Esta metodología, popularizada por Barista Hustle, convierte la química del café en algo tan sencillo como mezclar cócteles.',
+ html: '塩を完成した水へ直接入れるより、濃縮液を作って少量ずつ加える方が正確です。蒸留水と計量器具を使い、濃度と分量を記録して安全に調整してください。',
  },
  {
  type: 'stats',

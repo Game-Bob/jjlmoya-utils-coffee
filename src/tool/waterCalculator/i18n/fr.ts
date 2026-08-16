@@ -34,6 +34,11 @@ const faqData = [
  answer:
  "Le magnésium extrait des composés aromatiques fruités et complexes avec plus d'efficacité, étant le minéral préféré pour les méthodes filtre. Le calcium apporte plus de corps et une texture soyeuse, mais a une plus grande tendance à former des dépôts dans les chaudières.",
  },
+ {
+ question: 'Puis-je enregistrer mes concentrations habituelles ?',
+ answer:
+ "Oui. La calculatrice enregistre les valeurs de concentré dans votre navigateur afin que votre recette personnalisée soit disponible lors de votre prochaine visite.",
+ },
 ];
 
 const howToData = [

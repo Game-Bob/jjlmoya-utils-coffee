@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'Magnezyum, meyvemsi ve tatlı lezzet bileşiklerini daha verimli bir şekilde çıkarır ve filtre yöntemleri için tercih edilen mineraldir. Kalsiyum daha fazla gövde ve ipeksi bir doku sağlar ancak zamanla boylerlerde kireç tortusu oluşturma eğilimi daha fazladır.',
  },
+ { question: 'Sık kullandığım konsantrasyonları kaydedebilir miyim?', answer: 'Evet. Hesaplayıcı değerleri tarayıcıda saklar; özel tarifiniz bir sonraki ziyaretinizde hazır olur.' },
 ];
 
 const howToData = [

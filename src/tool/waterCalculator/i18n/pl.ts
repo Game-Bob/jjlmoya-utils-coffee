@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'Magnez skuteczniej ekstrahuje owocowe i słodkie związki smakowe i jest preferowanym minerałem w metodach przelewowych. Wapń zapewnia więcej ciała i jedwabistą teksturę, ale ma większą tendencję do tworzenia osadów kamienia w bojlerach.',
  },
+ { question: 'Czy mogę zapisać używane stężenia?', answer: 'Tak. Kalkulator zapisuje wartości w przeglądarce, aby własny przepis był dostępny podczas następnej wizyty.' },
 ];
 
 const howToData = [

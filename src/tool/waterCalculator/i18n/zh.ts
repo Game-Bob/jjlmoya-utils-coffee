@@ -34,6 +34,7 @@ const faqData = [
  answer:
  '镁能更有效地萃取果酸和甜味风味化合物，是手冲过滤的首选矿物质。钙能带来更多的醇厚度和丝滑质感，但随着时间的推移，钙更容易在锅炉中形成水垢沉积。',
  },
+ { question: '可以保存常用的浓缩液配方吗？', answer: '可以。计算器会将输入的浓缩液数值保存在浏览器中，下次访问时即可继续使用自定义配方。' },
 ];
 
 const howToData = [
@@ -106,16 +107,16 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  seo: [
  {
  type: 'title',
- text: 'Química del Agua para Café: Por qué el H₂O es el ingrediente olvidado',
+ text: '咖啡用水的矿物质与萃取原理',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'El café es agua en un 98-99%. Sin embargo, la composición mineral de ese agua es el factor diferencial más ignorado en la cadena de calidad. Un café de especialidad de Etiopía extraído con agua del grifo de Madrid puede saber completamente distinto al mismo café preparado con agua mineralizada siguiendo el estándar SCA. Nuestra <strong>calculadora de agua para café</strong> te permite formular el agua perfecta desde cero, usando sales minerales comunes y partiendo de agua destilada.',
+ html: '一杯咖啡几乎都是水。水的硬度和矿物质会影响酸质、甜感与醇厚度。这个计算器参考 SCA 指标，帮助您为不同豆子和冲煮方式调配合适的水。',
  },
  {
  type: 'summary',
- title: '¿Por qué la mineralización del agua importa tanto?',
+ title: '水中矿物质为什么会改变风味',
  items: [
  '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
  '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
@@ -125,16 +126,16 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'El Estándar SCA: Los Límites Técnicos del Agua Perfecta para Café',
+ text: 'SCA 对咖啡萃取水的建议范围',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'La Specialty Coffee Association publicó en 2015 su estándar de calidad del agua. Tras años de investigación sensorial y química, estableció rangos ideales para cada parámetro. No son números arbitrarios: son el resultado de catas a ciegas con profesionales donde se maximizó la percepción de acidez equilibrada, dulzor y cuerpo.',
+ html: 'SCA 的水质建议包含硬度、碱度、pH 和 TDS 的参考范围。按照这些范围调整，可以更稳定地呈现酸质、甜感和醇厚度。',
  },
  {
  type: 'table',
- headers: ['Parámetro', 'Mínimo', 'Ideal SCA', 'Máximo'],
+ headers: ['参数', '最低值', 'SCA 参考值', '最高值'],
  rows: [
  ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
  ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
@@ -144,12 +145,12 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'Magnesio vs Calcio: La Batalla Mineral que Define tu Taza',
+ text: '镁与钙如何塑造杯中风味',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'No todos los minerales actúan igual sobre el café. El investigador Christopher Hendon demostró que el <strong>magnesio</strong> forma ligandos con las moléculas de sabor más complejas y volátiles, extrayendo notas frutales y florales con mayor eficiencia. El <strong>calcio</strong>, en cambio, extrae compuestos más pesados, aportando cuerpo y textura sedosa pero con menos brillo aromático.',
+ html: '不同矿物质的萃取作用并不相同。镁更容易突出水果和花香，钙则会增加醇厚度与柔滑的口感。',
  },
  {
  type: 'list',
@@ -161,26 +162,26 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  },
  {
  type: 'title',
- text: 'El Semáforo de Seguridad: Protege tu Máquina de Espresso',
+ text: '用水质检查保护意式咖啡机',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Nuestra calculadora incluye un <strong>análisis de riesgo en tiempo real</strong> basado en los valores de GH y KH que introduces. El índice de corrosión evalúa si el agua es demasiado pura y agresiva para los metales. El índice de cal mide si el KH y GH combinados generarán depósitos en calderas y tuberías.',
+ html: '计算器根据输入的 GH 和 KH 判断水是否过于纯净而腐蚀金属，也会提示锅炉和管路是否容易形成水垢。',
  },
  {
  type: 'tip',
- title: 'Regla práctica del barista profesional',
- html: '<p>Para máquinas de espresso con caldera de latón o cobre, nunca uses perfiles con KH inferior a 40 mg/L de forma continua. El agua muy pura es corrosiva a largo plazo. Para métodos de filtro (V60, Chemex, Aeropress) no hay caldera que proteger, por lo que puedes usar perfiles más delicados como Melbourne sin problema.</p>',
+ title: '专业咖啡师的实用原则',
+ html: '<p>使用黄铜或铜锅炉的机器时，不要长期使用 KH 过低的水。滤泡方式没有锅炉需要保护，可以尝试更柔和的矿物质配方。</p>',
  },
  {
  type: 'title',
- text: 'Cómo Preparar las Botellas de Concentrado en Casa',
+ text: '在家制作矿物质浓缩液',
  level: 3,
  },
  {
  type: 'paragraph',
- html: 'La clave para una mineralización precisa es trabajar con <strong>concentrados stock</strong> en lugar de añadir sales directamente al agua final. Un concentrado de 2,46 g de sales de Epsom en 100 ml de agua destilada te permite dosificar con jeringas de 1 ml con una precisión de ±0,01 ml. Esta metodología, popularizada por Barista Hustle, convierte la química del café en algo tan sencillo como mezclar cócteles.',
+ html: '为了精确调整矿物质，建议先制作浓缩液，再少量加入最终用水，而不是直接撒盐。请使用蒸馏水和准确的称量工具，并记录每次配方。',
  },
  {
  type: 'stats',

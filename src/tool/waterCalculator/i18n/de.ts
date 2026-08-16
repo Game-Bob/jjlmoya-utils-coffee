@@ -34,6 +34,7 @@ const faqData = [
  answer:
  'Magnesium extrahiert fruchtige und süße Geschmacksverbindungen effizienter und ist das bevorzugte Mineral für Filtermethoden. Calcium liefert mehr Körper und eine seidige Textur, neigt aber eher dazu, im Laufe der Zeit Kalkablagerungen in Kesseln zu bilden.',
  },
+ { question: 'Kann ich meine üblichen Konzentrationen speichern?', answer: 'Ja. Der Rechner speichert die Konzentrationswerte in Ihrem Browser, damit Ihr eigenes Rezept beim nächsten Besuch wieder verfügbar ist.' },
 ];
 
 const howToData = [
