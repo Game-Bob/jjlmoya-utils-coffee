@@ -34,7 +34,12 @@ const faqData = [
  answer:
  "La distribution de particules montrée simule l'uniformité réelle de chaque moulin. Un Comandante C40 avec 0,95 d'uniformité produit des particules très homogènes ; un Hario Skerton avec 0,40 montre beaucoup plus de variation de taille.",
  },
-];
+ {
+ question: 'Comment ajuster la mouture selon le goût ?',
+ answer:
+ "Si le café est amer ou astringent, essayez une mouture plus grossière. S'il est acide ou sous-extrait, choisissez une mouture plus fine et ajustez un seul paramètre à la fois.",
+ },
+].slice(0, 5);
 
 const howToData = [
  {

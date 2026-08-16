@@ -34,7 +34,8 @@ const faqData = [
  answer:
  'Partikeldistributionen som visas simulerar den faktiska enhetligheten för varje kvarn. En Comandante C40 med 0,95 i enhetlighet producerar mycket jämna partiklar; en Hario Skerton med 0,40 visar mycket större storleksvariation.',
  },
-];
+ { question: 'Hur justerar jag malningen efter smaken?', answer: 'Om kaffet är bittert eller strävt, mal grövre. Om det är surt eller tunt, mal finare och ändra bara en inställning åt gången.' },
+].slice(0, 5);
 
 const howToData = [
  {

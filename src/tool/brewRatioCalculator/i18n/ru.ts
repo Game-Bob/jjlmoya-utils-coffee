@@ -112,140 +112,163 @@ export const content: ToolLocaleContent<BrewRatioCalculatorUI> = {
  bibliography,
  howTo: howToData,
  schemas: [faqSchema, howToSchema, appSchema],
- seo: [
- {
- type: 'title',
- text: 'Calculadora de Ratio de Café y Agua: La Guía Maestra para la Extracción Perfecta (2026)',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'Preparar una taza de café de especialidad no es un acto culinario subjetivo; es un experimento de <strong>química de fluidos</strong> y <strong>transferencia de masa</strong>. En el centro de este proceso reside el concepto de <strong>Brew Ratio</strong> (proporción de infusión), una medida crítica que dicta la relación cuantitativa entre el soluto (café molido) y el disolvente (agua). Nuestra calculadora ha sido diseñada integrando los estándares de la <em>Specialty Coffee Association (SCA)</em> y principios de termodinámica aplicada para permitir que baristas y entusiastas alcancen la reproducibilidad perfecta en sus extracciones.',
- },
- {
- type: 'summary',
- title: 'Lo que aprenderás sobre el Ratio de Café',
- items: [
- '<strong>Brew Ratio:</strong> Cómo la relación en peso entre café y agua (ej. 1:15) determina la fuerza potencial y el perfil sensorial de tu taza.',
- '<strong>TDS y Extracción:</strong> La ciencia detrás de los sólidos disueltos y qué porcentaje del grano realmente debe terminar en tu bebida.',
- '<strong>Ajuste por Retención:</strong> Por qué el café absorbe 2g de agua por cada gramo de polvo y cómo calcular el agua extra necesaria.',
- '<strong>Métodos Específicos:</strong> Las proporciones ideales para V60, Prensa Francesa, Espresso y recetas de café helado (Flash Brew).',
- ],
- },
- {
- type: 'title',
- text: '¿Qué es el Brew Ratio y por qué es la variable más importante?',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'El café contiene aproximadamente un 30% de material soluble, pero no todo ese material es deseable para el paladar humano. El agua, actuando como disolvente universal, extrae los compuestos en un orden específico basado en su peso molecular y afinidad química. El ratio de café controla precisamente cuánta capacidad de disolución entregamos a cada gramo de café.',
- },
- {
- type: 'list',
- items: [
- '<strong>Fase Ácida (Lípidos y Ácidos Orgánicos):</strong> Son los primeros en disolverse debido a su alta solubilidad. Aportan brillo, acidez málica o cítrica y notas frutales. Un ratio demasiado bajo (sub-extracción) detiene el proceso aquí, resultando en una taza agria y salada.',
- '<strong>Fase Dulce (Azúcares y Carbohidratos):</strong> Se extraen a continuación. Generan balance, dulzor y cuerpo. Es la "ventana dorada" donde el café alcanza su máxima complejidad aromática y equilibrio estructural.',
- '<strong>Fase Amarga (Fibras y Compuestos Fenólicos):</strong> Son los más lentos en disolverse. Con ratios excesivos (sobre-extracción), el agua degrada las celdas del café, extrayendo amargos secantes, notas a ceniza y madera.',
- ],
- },
- {
- type: 'title',
- text: 'Ratios recomendados: Proporciones por métodos de extracción',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'Cada método de extracción requiere un ratio específico debido a variables como el tiempo de contacto, la presión de la bomba o el micraje del filtro utilizado. La siguiente tabla técnica desglosa los estándares de la industria para 2026:',
- },
- {
- type: 'table',
- headers: ['Método de Preparación', 'Ratio (Gramos/Agua)', 'Perfil en Taza', 'Tiempo Objetivo'],
- rows: [
- ['Espresso', '1:2 a 1:2.5', 'Intenso, viscoso, crema densa', '25-30 seg'],
- ['V60 / Pour-Over', '1:15 a 1:16', 'Limpio, brillante, notas claras', '2:30-3:30 min'],
- ['Aeropress', '1:12 a 1:15', 'Versátil, cuerpo medio-alto', '1:30-2:00 min'],
- ['French Press', '1:12 a 1:14', 'Texturizado, pesado, aceitoso', '4:00-5:00 min'],
- ['Cold Brew', '1:8 a 1:12', 'Dulce, baja acidez, gran cuerpo', '12-24 horas'],
- ],
- },
- {
- type: 'title',
- text: 'Cómo calcular el agua necesaria: El Factor de Retención del grano',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'Uno de los errores más comunes en la preparación manual es ignorar que el café molido es una estructura hidrofílica porosa que retiene una cantidad constante de agua. No todo el agua que viertes termina en la taza.',
- },
- {
- type: 'paragraph',
- html: 'Científicamente, el café molido retiene aproximadamente <strong>2.0 gramos de agua por cada 1.0 gramo de café</strong>. Nuestra calculadora introduce el <strong>Ajuste Dinámico de Retención</strong>: si necesitas llenar un recipiente específico de 300ml, el sistema deduce que debes verter 340ml de agua para compensar la absorción del grano, manteniendo el ratio de extracción intacto.',
- },
- {
- type: 'stats',
- items: [
- { label: 'Dosis Café', value: '20g', icon: 'mdi:coffee' },
- { label: 'Agua Vertida', value: '300ml', icon: 'mdi:water' },
- { label: 'Retención', value: '40ml', icon: 'mdi:minus-circle' },
- { label: 'En Taza Real', value: '260ml', icon: 'mdi:cup' },
- ],
- columns: 4,
- },
- {
- type: 'title',
- text: 'La importancia del Bloom: Desgasificación para una extracción uniforme',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'La fase de "Bloom" (florecimiento) no es solo estética; es una necesidad física. Durante el tueste, el café genera CO2 que queda atrapado en su matriz celular. Si vertemos todo el agua de forma continua, el gas escapa violentamente, creando micro-canales (channeling) y evitando que el disolvente penetre en el centro de las partículas de café.',
- },
- {
- type: 'tip',
- title: 'Técnica de Saturación Homogénea',
- html: '<p>Para un bloom perfecto, vierte exactamente el doble del peso del café en agua (ratio 1:2 de bloom). Realiza una agitación suave o swirl para garantizar que todo el café esté húmedo. Espera 30-45 segundos. La liberación de gas permitirá que, en los vertidos posteriores, el agua fluya de forma laminar y extraiga los sólidos de manera uniforme por toda la cama de café.</p>',
- },
- {
- type: 'title',
- text: 'Tutorial Iced Coffee: Cómo preparar café con hielo sin diluir el sabor',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'El café helado de especialidad (Flash Brew) requiere un recalibrado termodinámico. El objetivo es extraer los aceites volátiles a 94°C para capturar la complejidad aromática, pero enfriarlos de golpe para evitar la oxidación y la pérdida de brillo.',
- },
- {
- type: 'list',
- items: [
- '<strong>60% Agua Caliente:</strong> Es la cantidad mínima necesaria para alcanzar una extracción del 18-20% sin sub-extraer en exceso ni enfriar el lecho demasiado pronto.',
- '<strong>40% Hielo Térmico:</strong> Se coloca en la jarra receptora. La energía térmica del café se transfiere al hielo (calor latente de fusión), enfriando la bebida a menos de 5°C instantáneamente.',
- '<strong>Fuerza Final:</strong> Al sumar ambos, el ratio final (ej. 1:15) se mantiene exacto, resultando en una bebida vibrante, fría y con la concentración de sabores correcta.',
- ],
- },
- {
- type: 'title',
- text: 'Grado de molienda y Ratio de café: La clave de la superficie de contacto',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'El ratio es solo la mitad de la ecuación. La molienda determina el <strong>Área de Superficie Total Expuesta</strong> al disolvente. Partículas más pequeñas (molienda fina) tienen más superficie proporcional, lo que acelera dramáticamente la extracción de compuestos químicos.',
- },
- {
- type: 'paragraph',
- html: 'Si decides usar un ratio largo (1:17 o 1:18) para un café de tueste muy ligero, debes compensar con una molienda ligeramente más fina para asegurar que el agua tenga tiempo de extraer los azúcares antes de atravesar el filtro. Por el contrario, ratios cortos (1:12) en métodos de inmersión prolongada requieren moliendas gruesas para evitar la sobre-extracción.',
- },
- {
- type: 'title',
- text: 'Reproducibilidad y Ciencia: Convierte tu cocina en un laboratorio barista',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'La excelencia en el café de especialidad nace de la consistencia métrica. Nuestra función de <strong>Recetas Personalizadas</strong> permite crear un repositorio técnico de tus calibraciones exitosas. No es solo un archivo de favoritos; es una herramienta de análisis para comparar cómo reacciona un mismo kilo de café a un ratio 1:15 frente a un 1:16, permitiéndote ajustar la receta milimétricamente.',
- },
- ],
+seo: [
+  {
+    type: 'title',
+    text: 'Соотношение кофе и воды: точный расчет для заваривания',
+    level: 2,
+  },
+  {
+    type: 'paragraph',
+    html: 'Правильное соотношение кофе и воды определяет крепость, насыщенность и повторяемость чашки. Этот калькулятор помогает рассчитать дозу кофе, объем воды и итоговый объем напитка для разных способов заваривания.',
+  },
+  {
+    type: 'summary',
+    title: 'Что учитывает расчет',
+    items: [
+      '<strong>Соотношение:</strong> Выберите пропорцию, например 1:15, чтобы связать массу кофе с объемом воды.',
+      '<strong>Удержание воды:</strong> Молотый кофе впитывает примерно 2 г воды на каждый грамм кофе.',
+      '<strong>Способ заваривания:</strong> Для V60, френч-пресса, аэропресса и холодного кофе нужны разные диапазоны.',
+      '<strong>Повторяемость:</strong> Сохраните удачный рецепт и используйте его снова.',
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Как читать соотношение кофе и воды',
+    level: 2,
+  },
+  {
+    type: 'paragraph',
+    html: 'Запись 1:15 означает, что на 1 г кофе приходится 15 г воды. Например, для 20 г кофе потребуется 300 г воды. Часть воды останется в кофейной гуще, поэтому объем в чашке будет немного меньше объема заливки.',
+  },
+  {
+    type: 'list',
+    items: [
+      '<strong>Крепкий напиток:</strong> Используйте примерно 1:12-1:14.',
+      '<strong>Сбалансированный вкус:</strong> Начните с диапазона 1:15-1:16.',
+      '<strong>Легкий напиток:</strong> Попробуйте 1:17-1:18 и оцените вкус.',
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Ориентиры для разных методов',
+    level: 2,
+  },
+  {
+    type: 'table',
+    headers: ['Метод', 'Соотношение', 'Результат', 'Время'],
+    rows: [
+      ['Эспрессо', '1:2-1:2.5', 'Плотный и концентрированный', '25-30 с'],
+      ['V60', '1:15-1:16', 'Чистый и яркий', '2:30-3:30'],
+      ['Аэропресс', '1:12-1:15', 'Насыщенный и гибкий', '1:30-2:00'],
+      ['Френч-пресс', '1:12-1:14', 'Плотный и текстурный', '4-5 мин'],
+    ],
+  },
+  {
+    type: 'stats',
+    items: [
+      { label: 'Пример дозы', value: '20 г', icon: 'mdi:coffee' },
+      { label: 'Пример воды', value: '300 мл', icon: 'mdi:water' },
+      { label: 'Удержание', value: 'около 40 мл', icon: 'mdi:minus-circle' },
+      { label: 'В чашке', value: 'около 260 мл', icon: 'mdi:cup' },
+    ],
+    columns: 4,
+  },
+  {
+    type: 'title',
+    text: 'Цветение и кофе со льдом',
+    level: 2,
+  },
+  {
+    type: 'paragraph',
+    html: 'Для цветения обычно используют вдвое больше воды, чем вес кофе, и ждут 30-45 секунд. При приготовлении кофе со льдом калькулятор распределяет общий объем между горячей водой и льдом, чтобы напиток быстро охладился без лишнего разбавления.',
+  },
+  {
+    type: 'tip',
+    title: 'Меняйте только одну переменную',
+    html: '<p>Если вкус горчит и сушит, попробуйте увеличить соотношение или сделать помол крупнее. Если напиток кислый и водянистый, уменьшите соотношение или используйте более мелкий помол. Меняйте только один параметр за раз.</p>',
+  },
+  {
+    type: 'title',
+    text: 'Температура и время заваривания',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Для большинства фильтр методов подойдет вода около 90-96 градусов. Слишком горячая вода ускоряет экстракцию, а слишком холодная может оставить вкус плоским.',
+  },
+  {
+    type: 'table',
+    headers: ['Параметр', 'Стартовое значение', 'Что меняется'],
+    rows: [
+      ['Температура', '90-96 °C', 'Скорость экстракции'],
+      ['Цветение', '30-45 с', 'Равномерность смачивания'],
+      ['Соотношение', '1:15-1:16', 'Крепость напитка'],
+    ],
+  },
+  {
+    type: 'title',
+    text: 'Как исправить вкус чашки',
+    level: 3,
+  },
+  {
+    type: 'list',
+    items: [
+      '<strong>Горечь:</strong> Сделайте помол крупнее или уменьшите температуру.',
+      '<strong>Кислота:</strong> Сделайте помол мельче или увеличьте время контакта.',
+      '<strong>Водянистость:</strong> Уменьшите соотношение воды к кофе и проверьте дозу.',
+    ],
+  },
+  {
+    type: 'paragraph',
+    html: 'Меняйте только один параметр между чашками и записывайте результат. Такой подход помогает понять влияние пропорции, помола и температуры.',
+  },
+  {
+    type: 'stats',
+    items: [
+      { label: 'Фильтр', value: '1:15-1:16', icon: 'mdi:filter' },
+      { label: 'Температура', value: '90-96 °C', icon: 'mdi:thermometer' },
+      { label: 'Цветение', value: '30-45 с', icon: 'mdi:timer-outline' },
+    ],
+    columns: 3,
+  },
+  {
+    type: 'title',
+    text: 'Сохраняйте удачные рецепты',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Запишите сорт кофе, дату обжарки, дозу, воду и итоговое время. Через несколько завариваний вы сможете повторить удачный результат и быстрее настроить новую пачку.',
+  },
+  {
+    type: 'tip',
+    title: 'Используйте весы',
+    html: '<p>Весы для кофе помогают измерять и порошок, и воду одинаково точно. Это надежнее, чем ориентироваться только на объем чайника или чашки.</p>',
+  },
+  {
+    type: 'summary',
+    title: 'Порядок настройки',
+    items: [
+      'Начните с выбранного соотношения.',
+      'Стабилизируйте температуру и время.',
+      'Корректируйте помол по вкусу.',
+    ],
+  },
+  {
+    type: 'paragraph',
+    html: 'После каждой корректировки пробуйте напиток при той же температуре. Впечатление меняется по мере остывания, поэтому сравнивайте чашки одинаковым способом.',
+  },
+  {
+    type: 'title',
+    text: 'Вода важна не меньше кофе',
+    level: 3,
+  },
+  {
+    type: 'paragraph',
+    html: 'Чистая вода с умеренной минерализацией помогает раскрыть сладость и кислотность зерна. Слишком жесткая вода может скрыть аромат и ускорить образование накипи в оборудовании.',
+  },
+].slice(0, 24),
  ui: {
  modeCoffee: 'У меня есть кофе',
  modeHintCoffee: 'Скажи мне, сколько нужно воды',

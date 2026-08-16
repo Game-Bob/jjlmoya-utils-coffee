@@ -39,7 +39,7 @@ const faqData = [
  answer:
  'Para molinos manuales, cada 2-3 semanas de uso diario. Para molinos eléctricos de uso doméstico, mensualmente. Los aceites del café acumulados pueden afectar la frescura del sabor y el comportamiento de la extracción.',
  },
-];
+].slice(0, 5);
 
 const howToData = [
  {

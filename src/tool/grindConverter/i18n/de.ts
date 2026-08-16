@@ -34,7 +34,8 @@ const faqData = [
  answer:
  'Die gezeigte Partikelverteilung simuliert die reale Gleichmäßigkeit jeder Mühle. Eine Comandante C40 mit 0,95 Gleichmäßigkeit erzeugt sehr konsistente Partikel; eine Hario Skerton mit 0,40 zeigt deutlich mehr Größenabweichungen.',
  },
-];
+ { question: 'Wie passe ich die Mahlung an den Geschmack an?', answer: 'Bei bitterem oder trockenem Kaffee mahlen Sie gröber. Bei saurem oder dünnem Kaffee mahlen Sie feiner und ändern jeweils nur einen Parameter.' },
+].slice(0, 5);
 
 const howToData = [
  {

@@ -34,7 +34,8 @@ const faqData = [
  answer:
  'Distribusi partikel yang ditampilkan menyimulasikan keseragaman nyata dari setiap penggiling. Comandante C40 dengan keseragaman 0,95 menghasilkan partikel yang sangat konsisten; Hario Skerton dengan 0,40 menunjukkan variasi ukuran yang jauh lebih banyak.',
  },
-];
+ { question: 'Bagaimana menyesuaikan ukuran gilingan dengan rasa?', answer: 'Jika kopi pahit atau sepat, gunakan gilingan lebih kasar. Jika asam atau encer, gunakan gilingan lebih halus dan ubah satu pengaturan saja.' },
+].slice(0, 5);
 
 const howToData = [
  {

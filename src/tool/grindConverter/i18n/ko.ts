@@ -34,7 +34,8 @@ const faqData = [
  answer:
  '표시된 입자 분포는 각 그라인더의 실제 균일성을 시뮬레이션한 것입니다. 균일성 0.95인 코만단테 C40은 매우 일정한 입자를 만드는 반면, 0.40인 하리오 스커튼은 크기 차이가 훨씬 많이 납니다.',
  },
-];
+ { question: '맛에 따라 분쇄도를 어떻게 조절하나요?', answer: '쓴맛이나 떫은맛이 강하면 더 굵게, 시거나 연하면 더 곱게 조절하세요. 한 번에 한 설정만 바꾸는 것이 좋습니다.' },
+].slice(0, 5);
 
 const howToData = [
  {
@@ -106,16 +107,16 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  seo: [
  {
  type: 'title',
- text: 'La Física de la Molienda: Por qué el Tamaño de Partícula lo Cambia Todo',
+ text: '분쇄 입자 크기가 추출을 바꾸는 원리',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Cuando mueles café, no solo estás reduciendo el tamaño del grano. Estás definiendo la <strong>superficie de contacto</strong> disponible para que el agua disuelva los compuestos de sabor. Una molienda demasiado fina expone tanta superficie que el agua extrae en exceso los compuestos amargos. Demasiado gruesa, y el agua pasa sin encontrar suficiente resistencia, resultando en un café débil y agrio. El conversor de molienda te da el punto exacto para cada método.',
+ html: '커피를 분쇄하는 것은 원두를 작게 만드는 일만이 아닙니다. 물이 맛 성분과 만나는 면적을 정하는 과정입니다. 너무 고우면 쓴맛이 많아지고 너무 굵으면 묽고 시게 느껴질 수 있어 추출 방식에 맞는 설정이 필요합니다.',
  },
  {
  type: 'summary',
- title: '¿Qué determina el grosor de molienda correcto?',
+ title: '적절한 분쇄도를 결정하는 요소',
  items: [
  '<strong>Método de extracción:</strong> La presión, el tiempo de contacto y el tipo de filtro dictan el rango de micras óptimo para cada método.',
  '<strong>Uniformidad del molino:</strong> Un molino de alta gama produce partículas homogéneas; uno de cuchillas genera polvo y trozos gruesos a la vez.',
@@ -125,20 +126,20 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  },
  {
  type: 'title',
- text: 'Espresso vs V60: Los Dos Extremos del Espectro',
+ text: '에스프레소와 V60의 분쇄도 차이',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'El <strong>espresso</strong> extrae a 9 bares de presión en apenas 25-30 segundos. Para que esto funcione, el café molido debe ofrecer exactamente la resistencia correcta: una molienda entre 300-500 micras crea ese lecho compacto. Demasiado grueso y el agua pasa en 10 segundos produciendo una taza aguada; demasiado fino y la máquina no puede generar flujo.',
+ html: '에스프레소는 높은 압력으로 짧은 시간에 추출하므로 고운 분쇄로 알맞은 저항을 만들어야 합니다. 너무 굵으면 물이 빠르게 흐르고 너무 고우면 흐름이 막힐 수 있습니다.',
  },
  {
  type: 'paragraph',
- html: 'El <strong>V60</strong>, en cambio, funciona por gravedad. El agua tiene que fluir a través de un lecho de partículas más gruesas (700-900 micras) durante 2-3 minutos completos. Si el grano está demasiado fino, el filtro de papel se satura y el café tarda demasiado, sobre-extrayendo. Si está muy grueso, el agua pasa en 60 segundos sin extraer suficiente sabor.',
+ html: 'V60는 중력으로 물을 통과시키므로 에스프레소보다 굵은 분쇄를 사용합니다. 너무 고우면 흐름이 느려지고 너무 굵으면 추출이 부족해지므로 시간과 맛을 함께 확인하세요.',
  },
  {
  type: 'table',
- headers: ['Método', 'Micras', 'Referencia táctil', 'Tiempo contacto'],
+ headers: ['방식', '입자 크기', '촉감 기준', '접촉 시간'],
  rows: [
  ['Ibrik (Turco)', '100-300 μm', 'Talco / Harina fina', '3-5 min ebullición'],
  ['Espresso', '300-500 μm', 'Sal fina', '25-30 seg'],
@@ -151,12 +152,12 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  },
  {
  type: 'title',
- text: 'Uniformidad: El Factor Diferencial entre Molinos',
+ text: '분쇄 균일도가 그라인더를 구분한다',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'La <strong>uniformidad de la partícula</strong> es la métrica real que separa un molino de gama alta de uno básico. Cuando un Comandante C40 muele a 20 clics, produce partículas casi idénticas entre sí (95% uniformidad). Cuando un molino de cuchillas "muele" al mismo tiempo, el resultado es caótico: polvo fino y trozos grandes conviven, extrayéndose a velocidades completamente diferentes.',
+ html: '입자 크기가 고를수록 커피 가루 전체가 비슷한 속도로 추출됩니다. 좋은 그라인더는 미분과 큰 입자의 차이를 줄여 맛의 재현성을 높입니다.',
  },
  {
  type: 'stats',
@@ -169,17 +170,17 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  },
  {
  type: 'title',
- text: 'Diagnóstico por Sabor: La Brújula del Barista',
+ text: '맛으로 분쇄도를 진단하는 방법',
  level: 3,
  },
  {
  type: 'paragraph',
- html: 'Ninguna tabla sustituye al paladar. El conversor te da el punto de partida técnico, pero el ajuste final siempre lo hace el sabor. <strong>Amargo y seco</strong> = sobre-extracción = muele más grueso. <strong>Agrio y acuoso</strong> = sub-extracción = muele más fino. Ajusta de uno en uno (un clic, un nivel) hasta encontrar el equilibrio perfecto para tu grano y agua específicos.',
+ html: '표는 시작점일 뿐이고 최종 판단은 맛으로 합니다. 쓰고 마르면 굵게, 시고 묽으면 곱게 조절하세요. 한 번에 한 단계만 바꾸며 원두와 물에 맞는 균형을 찾습니다.',
  },
  {
  type: 'tip',
- title: 'Regla de oro para nuevos cafés',
- html: '<p>Cuando abras un café nuevo, empieza siempre por el punto medio del rango recomendado para tu método. Desde ahí, ajusta según sabor en pasos de un clic. Anota el resultado de cada ajuste para construir un registro de referencia de tus cafés favoritos con cada molino.</p>',
+ title: '새 원두를 위한 기본 원칙',
+ html: '<p>새 원두는 방식별 권장 범위의 중간에서 시작하세요. 맛을 보고 한 단계씩 조절하며 결과를 기록하면 좋아하는 설정을 다시 재현할 수 있습니다.</p>',
  },
  ],
  ui: {

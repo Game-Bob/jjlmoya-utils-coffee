@@ -34,7 +34,8 @@ const faqData = [
  answer:
  'Pokazany rozkład cząsteczek symuluje rzeczywistą jednorodność każdego młynka. Comandante C40 o jednorodności 0,95 produkuje bardzo równe cząsteczki; Hario Skerton z 0,40 wykazuje znacznie większe zróżnicowanie wielkości.',
  },
-];
+ { question: 'Jak dopasować mielenie do smaku?', answer: 'Jeśli kawa jest gorzka lub cierpka, ustaw grubsze mielenie. Jeśli jest kwaśna lub wodnista, ustaw drobniejsze i zmieniaj tylko jeden parametr.' },
+].slice(0, 5);
 
 const howToData = [
  {

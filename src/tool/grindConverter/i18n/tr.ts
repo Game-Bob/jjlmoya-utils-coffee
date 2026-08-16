@@ -34,7 +34,8 @@ const faqData = [
  answer:
  'Gösterilen parçacık dağılımı, her bir değirmenin gerçek homojenliğini simüle eder. 0.95 homojenlik değerine sahip bir Comandante C40 çok tutarlı parçacıklar üretirken; 0.40 değerindeki bir Hario Skerton çok daha fazla boyut varyasyonu gösterir.',
  },
-];
+ { question: 'Öğütmeyi tada göre nasıl ayarlarım?', answer: 'Kahve acı veya buruksa daha kalın, ekşi veya suluysa daha ince öğütün ve her seferinde yalnızca bir ayarı değiştirin.' },
+].slice(0, 5);
 
 const howToData = [
  {

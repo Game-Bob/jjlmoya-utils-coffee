@@ -34,7 +34,8 @@ const faqData = [
  answer:
  'La distribuzione delle particelle mostrata simula la reale uniformità di ogni macinacaffè. Un Comandante C40 con uniformità 0,95 produce particelle molto costanti; un Hario Skerton con 0,40 mostra molta più variazione di dimensione.',
  },
-];
+ { question: 'Come regolare la macinatura in base al gusto?', answer: 'Se il caffè è amaro o astringente, macina più grosso. Se è acido o acquoso, macina più fine e cambia un solo parametro alla volta.' },
+].slice(0, 5);
 
 const howToData = [
  {

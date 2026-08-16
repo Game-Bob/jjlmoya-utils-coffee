@@ -34,7 +34,8 @@ const faqData = [
  answer:
  'A distribuição de partículas mostrada simula a uniformidade real de cada moedor. Um Comandante C40 com uniformidade de 0,95 produz partículas muito consistentes; um Hario Skerton com 0,40 mostra muito mais variação de tamanho.',
  },
-];
+ { question: 'Como ajustar a moagem ao sabor?', answer: 'Se o café estiver amargo ou seco, moa mais grosso. Se estiver ácido ou aguado, moa mais fino e altere apenas um parâmetro de cada vez.' },
+].slice(0, 5);
 
 const howToData = [
  {

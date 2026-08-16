@@ -34,7 +34,7 @@ const faqData = [
  answer:
  'The particle distribution shown simulates the real uniformity of each grinder. A Comandante C40 with 0.95 uniformity produces very consistent particles; a Hario Skerton with 0.40 shows much more size variation.',
  },
-];
+].slice(0, 5);
 
 const howToData = [
  {
@@ -184,26 +184,6 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  type: 'tip',
  title: 'Regla de oro para nuevos cafés',
  html: '<p>Cuando abras un café nuevo, empieza siempre por el punto medio del rango recomendado para tu método. Desde ahí, ajusta según sabor en pasos de un clic. Anota el resultado de cada ajuste para construir un registro de referencia de tus cafés favoritos con cada molino.</p>',
- },
- ],
- },
- {
- type: 'table',
- headers: ['Method', 'Microns', 'Tactile reference', 'Contact time'],
- rows: [
- ['Ibrik (Turkish)', '100-300 μm', 'Talc / Fine flour', '3-5 min boiling'],
- ['Espresso', '300-500 μm', 'Fine salt', '25-30 sec'],
- ['Moka / AeroPress', '500-700 μm', 'Table salt', '3-4 min'],
- ['V60 / Filter', '700-900 μm', 'Granulated sugar', '2:30-3:15 min'],
- ['Chemex / Clever', '900-1200 μm', 'Coarse sand', '3:30-4:30 min'],
- ['French Press', '1200-1500 μm', 'Coarse salt', '4 min immersion'],
- ['Cold Brew', '1500+ μm', 'Peppercorns', '12-24 h cold'],
- ],
- },
- {
- type: 'tip',
- title: 'Golden rule for new coffees',
- html: '<p>When you open a new coffee, always start at the midpoint of the recommended range for your method. From there, adjust by taste one click at a time. Keep notes on each adjustment to build a reference log of your favorite coffees with each grinder.</p>',
  },
  ],
  ui: {

@@ -34,7 +34,8 @@ const faqData = [
  answer:
  'De getoonde deeltjesverdeling simuleert de werkelijke gelijkmatigheid van elke molen. Een Comandante C40 met 0,95 gelijkmatigheid produceert zeer consistente deeltjes; een Hario Skerton met 0,40 laat veel meer variatie in grootte zien.',
  },
-];
+ { question: 'Hoe pas ik de maling aan op smaak?', answer: 'Is de koffie bitter of droog, maal dan grover. Is hij zuur of waterig, maal dan fijner en verander steeds één instelling.' },
+].slice(0, 5);
 
 const howToData = [
  {
