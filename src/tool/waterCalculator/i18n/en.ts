@@ -196,37 +196,6 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  columns: 3,
  },
  ],
- },
- {
- type: 'title',
- text: 'The SCA Standard: Technical Limits for Perfect Brewing Water',
- level: 2,
- },
- {
- type: 'table',
- headers: ['Parameter', 'Minimum', 'SCA Ideal', 'Maximum'],
- rows: [
- ['Total Hardness (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
- ['Alkalinity (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
- ['pH', '6.5', '7.0', '7.5'],
- ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
- ],
- },
- {
- type: 'title',
- text: 'Magnesium vs Calcium: The Mineral Battle That Defines Your Cup',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'Not all minerals behave the same way with coffee. Researcher Christopher Hendon demonstrated that <strong>magnesium</strong> forms ligands with complex volatile flavor molecules, extracting fruity and floral notes more efficiently. <strong>Calcium</strong> extracts heavier compounds, delivering body and silky mouthfeel but with less aromatic brightness.',
- },
- {
- type: 'tip',
- title: 'Professional barista rule of thumb',
- html: '<p>For espresso machines with brass or copper boilers, never use profiles with KH below 40 mg/L continuously. Very pure water is corrosive long-term. For filter methods (V60, Chemex, AeroPress) there is no boiler to protect, so you can safely use delicate profiles like Melbourne without concern.</p>',
- },
- ],
  ui: {
  sectionMixTitle: 'Mix Configuration',
  labelVolume: 'Final Volume',
