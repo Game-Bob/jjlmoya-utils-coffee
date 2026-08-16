@@ -106,51 +106,90 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  seo: [
  {
  type: 'title',
- text: 'Kahve Suyu Kimyası: H₂O Neden En Çok Gözden Kaçan Bileşendir?',
+ text: 'Química del Agua para Café: Por qué el H₂O es el ingrediente olvidado',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Kahve %98-99 sudur. Yine de bu suyun mineral bileşimi, tüm nitelikli kahve zincirinde en çok gözden kaçan kalite faktörüdür. Londra musluk suyuyla demlenmiş bir Etiyopya kahvesi ile SCA optimize edilmiş suyla demlenmiş aynı kahve, tamamen farklı iki kahve gibi tadabilir. <strong>SCA kahve suyu hesaplayıcımız</strong>, yaygın mineral tuzları ve saf su kullanarak sıfırdan mükemmel demleme suyu formüle etmenizi sağlar.',
+ html: 'El café es agua en un 98-99%. Sin embargo, la composición mineral de ese agua es el factor diferencial más ignorado en la cadena de calidad. Un café de especialidad de Etiopía extraído con agua del grifo de Madrid puede saber completamente distinto al mismo café preparado con agua mineralizada siguiendo el estándar SCA. Nuestra <strong>calculadora de agua para café</strong> te permite formular el agua perfecta desde cero, usando sales minerales comunes y partiendo de agua destilada.',
  },
  {
  type: 'summary',
- title: 'Su mineralizasyonu neden bu kadar önemlidir?',
+ title: '¿Por qué la mineralización del agua importa tanto?',
  items: [
- '<strong>GH (Genel Sertlik):</strong> Magnezyum ve Kalsiyum iyonlarının toplamı, suyun kahve lezzet bileşiklerini çözme kapasitesini belirler.',
- '<strong>KH (Karbonat Sertliği):</strong> Bikarbonat konsantrasyonu, ekstraksiyon sırasında pH\'ı kontrol eder. Düşük KH ekşi kahve üretir; yüksek KH kahveyi yavanlaştırır.',
- '<strong>Tekrarlanabilirlik:</strong> Şebeke suyu mevsime ve konuma göre değişir. Mineralize su sabittir ve her demlemede tekrarlanabilir.',
- '<strong>Ekipman koruması:</strong> Doğru mineral seviyeleri hem korozyonu (çok saf su) hem de kireç birikmesini (çok sert su) önler.',
+ '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
+ '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
+ '<strong>Repetibilidad:</strong> El agua municipal cambia por temporada y ciudad. El agua mineralizada es constante y reproducible.',
+ '<strong>Protección del equipo:</strong> Los niveles correctos evitan tanto la corrosión (agua muy pura) como las incrustaciones de cal (agua muy dura).',
  ],
  },
  {
  type: 'title',
- text: 'SCA Standardı: Mükemmel Demleme Suyu İçin Teknik Limitler',
+ text: 'El Estándar SCA: Los Límites Técnicos del Agua Perfecta para Café',
  level: 2,
  },
  {
+ type: 'paragraph',
+ html: 'La Specialty Coffee Association publicó en 2015 su estándar de calidad del agua. Tras años de investigación sensorial y química, estableció rangos ideales para cada parámetro. No son números arbitrarios: son el resultado de catas a ciegas con profesionales donde se maximizó la percepción de acidez equilibrada, dulzor y cuerpo.',
+ },
+ {
  type: 'table',
- headers: ['Parametre', 'Minimum', 'SCA Ideal', 'Maksimum'],
+ headers: ['Parámetro', 'Mínimo', 'Ideal SCA', 'Máximo'],
  rows: [
- ['Toplam Sertlik (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
- ['Alkalinite (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
+ ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
+ ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
  ['pH', '6.5', '7.0', '7.5'],
  ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
  ],
  },
  {
  type: 'title',
- text: 'Magnezyum vs Kalsiyum: Fincanınızı Tanımlayan Mineral Savaşı',
+ text: 'Magnesio vs Calcio: La Batalla Mineral que Define tu Taza',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Tüm mineraller kahve ile aynı şekilde davranmaz. Araştırmacı Christopher Hendon, <strong>magnezyumun</strong> karmaşık uçucu lezzet molekülleriyle ligandlar oluşturarak meyvemsi ve floral notaları daha verimli bir şekilde çıkardığını göstermiştir. <strong>Kalsiyum</strong> daha ağır bileşikleri çıkararak gövde ve ipeksi ağız hissi sağlar ancak aromatik parlaklığı daha azdır.',
+ html: 'No todos los minerales actúan igual sobre el café. El investigador Christopher Hendon demostró que el <strong>magnesio</strong> forma ligandos con las moléculas de sabor más complejas y volátiles, extrayendo notas frutales y florales con mayor eficiencia. El <strong>calcio</strong>, en cambio, extrae compuestos más pesados, aportando cuerpo y textura sedosa pero con menos brillo aromático.',
+ },
+ {
+ type: 'list',
+ items: [
+ '<strong>Magnesio puro (ratio 1:0):</strong> Máxima complejidad aromática y fruta. Ideal para cafés naturales o de perfil frutal. Mayor riesgo de sobresalir la acidez.',
+ '<strong>Calcio puro (ratio 0:1):</strong> Cuerpo denso y sedoso. Ideal para espresso clásico y tuestes oscuros. Mayor riesgo de incrustaciones en calderas.',
+ '<strong>Mix equilibrado (SCA 1:0, Hendon 1:1):</strong> La mayoría de perfiles de calidad usan magnesio como ión principal pero añaden algo de calcio para equilibrar la textura.',
+ ],
+ },
+ {
+ type: 'title',
+ text: 'El Semáforo de Seguridad: Protege tu Máquina de Espresso',
+ level: 2,
+ },
+ {
+ type: 'paragraph',
+ html: 'Nuestra calculadora incluye un <strong>análisis de riesgo en tiempo real</strong> basado en los valores de GH y KH que introduces. El índice de corrosión evalúa si el agua es demasiado pura y agresiva para los metales. El índice de cal mide si el KH y GH combinados generarán depósitos en calderas y tuberías.',
  },
  {
  type: 'tip',
- title: 'Profesyonel barista altın kuralı',
- html: '<p>Pirinç veya bakır boylerli espresso makineleri için, KH değeri sürekli 40 mg/L\'nin altında olan profilleri asla kullanmayın. Çok saf su uzun vadede aşındırıcıdır. Filtre yöntemleri (V60, Chemex, AeroPress) için korunacak bir boyler yoktur, bu nedenle Melbourne gibi hassas profilleri endişe duymadan güvenle kullanabilirsiniz.</p>',
+ title: 'Regla práctica del barista profesional',
+ html: '<p>Para máquinas de espresso con caldera de latón o cobre, nunca uses perfiles con KH inferior a 40 mg/L de forma continua. El agua muy pura es corrosiva a largo plazo. Para métodos de filtro (V60, Chemex, Aeropress) no hay caldera que proteger, por lo que puedes usar perfiles más delicados como Melbourne sin problema.</p>',
+ },
+ {
+ type: 'title',
+ text: 'Cómo Preparar las Botellas de Concentrado en Casa',
+ level: 3,
+ },
+ {
+ type: 'paragraph',
+ html: 'La clave para una mineralización precisa es trabajar con <strong>concentrados stock</strong> en lugar de añadir sales directamente al agua final. Un concentrado de 2,46 g de sales de Epsom en 100 ml de agua destilada te permite dosificar con jeringas de 1 ml con una precisión de ±0,01 ml. Esta metodología, popularizada por Barista Hustle, convierte la química del café en algo tan sencillo como mezclar cócteles.',
+ },
+ {
+ type: 'stats',
+ items: [
+ { label: 'GH ideal SCA', value: '68 mg/L', icon: 'mdi:water' },
+ { label: 'KH ideal SCA', value: '40 mg/L', icon: 'mdi:water-percent' },
+ { label: 'Coste aproximado por litro', value: '<0.05€', icon: 'mdi:currency-eur' },
+ ],
+ columns: 3,
  },
  ],
  ui: {

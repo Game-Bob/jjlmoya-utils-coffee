@@ -106,44 +106,80 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  seo: [
  {
  type: 'title',
- text: '研磨度の物理学：粒子サイズがすべてを変える理由',
+ text: 'La Física de la Molienda: Por qué el Tamaño de Partícula lo Cambia Todo',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'コーヒーを挽くとき、単に豆を小さくしているだけではありません。水が風味成分を溶かし出すための<strong>接触表面積</strong>を定義しているのです。細かすぎると、お湯が苦み成分を過剰に抽出してしまいます。粗すぎると、お湯が十分な抵抗なく通り抜け、弱くて酸っぱいカップになってしまいます。この変換器は、各メソッドの正確な範囲を提示します。',
+ html: 'Cuando mueles café, no solo estás reduciendo el tamaño del grano. Estás definiendo la <strong>superficie de contacto</strong> disponible para que el agua disuelva los compuestos de sabor. Una molienda demasiado fina expone tanta superficie que el agua extrae en exceso los compuestos amargos. Demasiado gruesa, y el agua pasa sin encontrar suficiente resistencia, resultando en un café débil y agrio. El conversor de molienda te da el punto exacto para cada método.',
  },
  {
  type: 'summary',
- title: '適切な研磨度を決定する要因とは？',
+ title: '¿Qué determina el grosor de molienda correcto?',
  items: [
- '<strong>抽出メソッド：</strong> 圧力、接触時間、フィルターの種類が、各抽出メソッドの最適なミクロン範囲を規定します。',
- '<strong>研磨の均一性：</strong> 高級な臼式（バー式）ミルは均質な粒子を生成しますが、プロペラ式ミルは微粉と大きな塊を同時に生成してしまいます。',
- '<strong>豆の鮮度：</strong> 焙煎したてのコーヒーは二酸化炭素を多く含んでおり、数週間経過した豆よりもわずかに粗い研磨が必要になる場合があります。',
- '<strong>味のキャリブレーション：</strong> 最終的な判断材料は味覚です。この表は出発点であり、求める風味こそが目的地です。',
- ],
- },
- {
- type: 'table',
- headers: ['メソッド', 'ミクロン (μm)', '触覚的なリファレンス', '接触時間'],
- rows: [
- ['イブリック（トルコ式）', '100-300 μm', '片栗粉 / 非常に細かい小麦粉', '3-5 分（煮沸）'],
- ['エスプレッソ', '300-500 μm', '精製塩', '25-30 秒'],
- ['マキネッタ / エアロプレス', '500-700 μm', '食卓塩', '3-4 分'],
- ['V60 / ペーパードリップ', '700-900 μm', 'グラニュー糖', '2:30-3:15 分'],
- ['ケメックス / クレバー', '900-1200 μm', '粗い砂', '3:30-4:30 分'],
- ['フレンチプレス', '1200-1500 μm', '粗塩', '4 分（浸漬）'],
- ['コールドブリュー', '1500+ μm', '粒胡椒', '12-24 時間（冷水）'],
+ '<strong>Método de extracción:</strong> La presión, el tiempo de contacto y el tipo de filtro dictan el rango de micras óptimo para cada método.',
+ '<strong>Uniformidad del molino:</strong> Un molino de alta gama produce partículas homogéneas; uno de cuchillas genera polvo y trozos gruesos a la vez.',
+ '<strong>Frescura del grano:</strong> El café recién tostado contiene más CO2 y puede requerir un ajuste ligeramente más grueso que el mismo café envejecido.',
+ '<strong>Calibración por sabor:</strong> El paladar es el instrumento final. La tabla es el punto de partida; el sabor es el destino.',
  ],
  },
  {
  type: 'title',
- text: '新しい豆を試すときの黄金律',
+ text: 'Espresso vs V60: Los Dos Extremos del Espectro',
  level: 2,
  },
  {
  type: 'paragraph',
- html: '<p>新しいコーヒー豆を使うときは、常にそのメソッドの推奨範囲の中間点から始めてください。そこから味を参考に、一クリックずつ調整します。グラインダーごとにお気に入りの豆の設定をメモに残し、リファレンスログを構築しましょう。</p>',
+ html: 'El <strong>espresso</strong> extrae a 9 bares de presión en apenas 25-30 segundos. Para que esto funcione, el café molido debe ofrecer exactamente la resistencia correcta: una molienda entre 300-500 micras crea ese lecho compacto. Demasiado grueso y el agua pasa en 10 segundos produciendo una taza aguada; demasiado fino y la máquina no puede generar flujo.',
+ },
+ {
+ type: 'paragraph',
+ html: 'El <strong>V60</strong>, en cambio, funciona por gravedad. El agua tiene que fluir a través de un lecho de partículas más gruesas (700-900 micras) durante 2-3 minutos completos. Si el grano está demasiado fino, el filtro de papel se satura y el café tarda demasiado, sobre-extrayendo. Si está muy grueso, el agua pasa en 60 segundos sin extraer suficiente sabor.',
+ },
+ {
+ type: 'table',
+ headers: ['Método', 'Micras', 'Referencia táctil', 'Tiempo contacto'],
+ rows: [
+ ['Ibrik (Turco)', '100-300 μm', 'Talco / Harina fina', '3-5 min ebullición'],
+ ['Espresso', '300-500 μm', 'Sal fina', '25-30 seg'],
+ ['Moka / Aeropress', '500-700 μm', 'Sal de mesa', '3-4 min'],
+ ['V60 / Filtro', '700-900 μm', 'Azúcar granulada', '2:30-3:15 min'],
+ ['Chemex / Clever', '900-1200 μm', 'Arena gruesa', '3:30-4:30 min'],
+ ['Prensa Francesa', '1200-1500 μm', 'Sal gorda', '4 min inmersión'],
+ ['Cold Brew', '1500+ μm', 'Granos de pimienta', '12-24 h en frío'],
+ ],
+ },
+ {
+ type: 'title',
+ text: 'Uniformidad: El Factor Diferencial entre Molinos',
+ level: 2,
+ },
+ {
+ type: 'paragraph',
+ html: 'La <strong>uniformidad de la partícula</strong> es la métrica real que separa un molino de gama alta de uno básico. Cuando un Comandante C40 muele a 20 clics, produce partículas casi idénticas entre sí (95% uniformidad). Cuando un molino de cuchillas "muele" al mismo tiempo, el resultado es caótico: polvo fino y trozos grandes conviven, extrayéndose a velocidades completamente diferentes.',
+ },
+ {
+ type: 'stats',
+ items: [
+ { label: 'Comandante C40', value: '95%', icon: 'mdi:star' },
+ { label: 'Timemore C2/C3', value: '85%', icon: 'mdi:star-half-full' },
+ { label: 'Hario Skerton', value: '40%', icon: 'mdi:star-outline' },
+ ],
+ columns: 3,
+ },
+ {
+ type: 'title',
+ text: 'Diagnóstico por Sabor: La Brújula del Barista',
+ level: 3,
+ },
+ {
+ type: 'paragraph',
+ html: 'Ninguna tabla sustituye al paladar. El conversor te da el punto de partida técnico, pero el ajuste final siempre lo hace el sabor. <strong>Amargo y seco</strong> = sobre-extracción = muele más grueso. <strong>Agrio y acuoso</strong> = sub-extracción = muele más fino. Ajusta de uno en uno (un clic, un nivel) hasta encontrar el equilibrio perfecto para tu grano y agua específicos.',
+ },
+ {
+ type: 'tip',
+ title: 'Regla de oro para nuevos cafés',
+ html: '<p>Cuando abras un café nuevo, empieza siempre por el punto medio del rango recomendado para tu método. Desde ahí, ajusta según sabor en pasos de un clic. Anota el resultado de cada ajuste para construir un registro de referencia de tus cafés favoritos con cada molino.</p>',
  },
  ],
  ui: {

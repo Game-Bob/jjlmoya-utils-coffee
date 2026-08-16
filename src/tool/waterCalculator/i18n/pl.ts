@@ -106,51 +106,90 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  seo: [
  {
  type: 'title',
- text: 'Chemia wody do kawy: Dlaczego H₂O jest najbardziej pomijanym składnikiem',
+ text: 'Química del Agua para Café: Por qué el H₂O es el ingrediente olvidado',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Kawa składa się w 98-99% z wody. Mimo to skład mineralny tej wody jest najczęściej pomijanym czynnikiem jakości w całym łańcuchu kawy specialty. Ta sama etiopska kawa single-origin ekstrahowana wodą z kranu w Londynie w porównaniu z wodą zoptymalizowaną przez SCA może smakować jak dwie zupełnie różne kawy. Nasz <strong>kalkulator wody do kawy SCA</strong> pozwala skomponować idealną wodę do parzenia od zera, używając zwykłych soli mineralnych i wody destylowanej.',
+ html: 'El café es agua en un 98-99%. Sin embargo, la composición mineral de ese agua es el factor diferencial más ignorado en la cadena de calidad. Un café de especialidad de Etiopía extraído con agua del grifo de Madrid puede saber completamente distinto al mismo café preparado con agua mineralizada siguiendo el estándar SCA. Nuestra <strong>calculadora de agua para café</strong> te permite formular el agua perfecta desde cero, usando sales minerales comunes y partiendo de agua destilada.',
  },
  {
  type: 'summary',
- title: 'Dlaczego mineralizacja wody ma tak duże znaczenie?',
+ title: '¿Por qué la mineralización del agua importa tanto?',
  items: [
- '<strong>GH (Twardość ogólna):</strong> Suma jonów magnezu i wapnia określa zdolność wody do rozpuszczania związków smakowych kawy.',
- '<strong>KH (Twardość węglanowa):</strong> Stężenie wodorowęglanów kontroluje pH podczas ekstrakcji. Niskie KH skutkuje kwaśną kawą; wysokie KH sprawia, że jest ona mdła.',
- '<strong>Powtarzalność:</strong> Woda miejska zmienia się w zależności od sezonu i lokalizacji. Woda mineralizowana jest stała i powtarzalna przy każdej partii.',
- '<strong>Ochrona sprzętu:</strong> Prawidłowy poziom minerałów zapobiega zarówno korozji (zbyt czysta woda), jak i osadzaniu się kamienia (zbyt twarda woda).',
+ '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
+ '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
+ '<strong>Repetibilidad:</strong> El agua municipal cambia por temporada y ciudad. El agua mineralizada es constante y reproducible.',
+ '<strong>Protección del equipo:</strong> Los niveles correctos evitan tanto la corrosión (agua muy pura) como las incrustaciones de cal (agua muy dura).',
  ],
  },
  {
  type: 'title',
- text: 'Standard SCA: Techniczne limity dla idealnej wody do parzenia',
+ text: 'El Estándar SCA: Los Límites Técnicos del Agua Perfecta para Café',
  level: 2,
  },
  {
+ type: 'paragraph',
+ html: 'La Specialty Coffee Association publicó en 2015 su estándar de calidad del agua. Tras años de investigación sensorial y química, estableció rangos ideales para cada parámetro. No son números arbitrarios: son el resultado de catas a ciegas con profesionales donde se maximizó la percepción de acidez equilibrada, dulzor y cuerpo.',
+ },
+ {
  type: 'table',
- headers: ['Parametr', 'Minimum', 'SCA Ideal', 'Maksimum'],
+ headers: ['Parámetro', 'Mínimo', 'Ideal SCA', 'Máximo'],
  rows: [
- ['Twardość ogólna (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
- ['Zasadowość (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
+ ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
+ ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
  ['pH', '6.5', '7.0', '7.5'],
  ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
  ],
  },
  {
  type: 'title',
- text: 'Magnez vs Wapń: Mineralna bitwa, która definiuje Twoją filiżankę',
+ text: 'Magnesio vs Calcio: La Batalla Mineral que Define tu Taza',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Nie wszystkie minerały zachowują się tak samo w kontakcie z kawą. Badacz Christopher Hendon wykazał, że <strong>magnez</strong> tworzy ligandy ze złożonymi lotnymi cząsteczkami smaku, skuteczniej wydobywając nuty owocowe i kwiatowe. <strong>Wapń</strong> ekstrahuje cięższe związki, zapewniając ciało i jedwabiste odczucie w ustach, ale z mniejszą jasnością aromatyczną.',
+ html: 'No todos los minerales actúan igual sobre el café. El investigador Christopher Hendon demostró que el <strong>magnesio</strong> forma ligandos con las moléculas de sabor más complejas y volátiles, extrayendo notas frutales y florales con mayor eficiencia. El <strong>calcio</strong>, en cambio, extrae compuestos más pesados, aportando cuerpo y textura sedosa pero con menos brillo aromático.',
+ },
+ {
+ type: 'list',
+ items: [
+ '<strong>Magnesio puro (ratio 1:0):</strong> Máxima complejidad aromática y fruta. Ideal para cafés naturales o de perfil frutal. Mayor riesgo de sobresalir la acidez.',
+ '<strong>Calcio puro (ratio 0:1):</strong> Cuerpo denso y sedoso. Ideal para espresso clásico y tuestes oscuros. Mayor riesgo de incrustaciones en calderas.',
+ '<strong>Mix equilibrado (SCA 1:0, Hendon 1:1):</strong> La mayoría de perfiles de calidad usan magnesio como ión principal pero añaden algo de calcio para equilibrar la textura.',
+ ],
+ },
+ {
+ type: 'title',
+ text: 'El Semáforo de Seguridad: Protege tu Máquina de Espresso',
+ level: 2,
+ },
+ {
+ type: 'paragraph',
+ html: 'Nuestra calculadora incluye un <strong>análisis de riesgo en tiempo real</strong> basado en los valores de GH y KH que introduces. El índice de corrosión evalúa si el agua es demasiado pura y agresiva para los metales. El índice de cal mide si el KH y GH combinados generarán depósitos en calderas y tuberías.',
  },
  {
  type: 'tip',
- title: 'Zasada profesjonalnego baristy',
- html: '<p>W przypadku ekspresów do kawy z bojlerami mosiężnymi lub miedzianymi, nigdy nie używaj w sposób ciągły profili o KH poniżej 40 mg/L. Bardzo czysta woda jest na dłuższą metę korozyjna. W metodach przelewowych (V60, Chemex, AeroPress) nie ma bojlera do ochrony, więc bez obaw możesz używać delikatnych profili, takich jak Melbourne.</p>',
+ title: 'Regla práctica del barista profesional',
+ html: '<p>Para máquinas de espresso con caldera de latón o cobre, nunca uses perfiles con KH inferior a 40 mg/L de forma continua. El agua muy pura es corrosiva a largo plazo. Para métodos de filtro (V60, Chemex, Aeropress) no hay caldera que proteger, por lo que puedes usar perfiles más delicados como Melbourne sin problema.</p>',
+ },
+ {
+ type: 'title',
+ text: 'Cómo Preparar las Botellas de Concentrado en Casa',
+ level: 3,
+ },
+ {
+ type: 'paragraph',
+ html: 'La clave para una mineralización precisa es trabajar con <strong>concentrados stock</strong> en lugar de añadir sales directamente al agua final. Un concentrado de 2,46 g de sales de Epsom en 100 ml de agua destilada te permite dosificar con jeringas de 1 ml con una precisión de ±0,01 ml. Esta metodología, popularizada por Barista Hustle, convierte la química del café en algo tan sencillo como mezclar cócteles.',
+ },
+ {
+ type: 'stats',
+ items: [
+ { label: 'GH ideal SCA', value: '68 mg/L', icon: 'mdi:water' },
+ { label: 'KH ideal SCA', value: '40 mg/L', icon: 'mdi:water-percent' },
+ { label: 'Coste aproximado por litro', value: '<0.05€', icon: 'mdi:currency-eur' },
+ ],
+ columns: 3,
  },
  ],
  ui: {

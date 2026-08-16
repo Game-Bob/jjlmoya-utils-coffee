@@ -106,44 +106,80 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  seo: [
  {
  type: 'title',
- text: 'Физика помола: почему размер частиц меняет всё',
+ text: 'La Física de la Molienda: Por qué el Tamaño de Partícula lo Cambia Todo',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'Когда вы мелете кофе, вы не просто уменьшаете размер зерен. Вы определяете <strong>площадь поверхности контакта</strong>, доступную воде для растворения вкусоароматических соединений. Слишком тонкий помол - и вода извлекает избыток горьких веществ. Слишком грубый - и вода проходит через кофе без достаточного сопротивления, создавая слабый и кислый напиток. Конвертер помола подскажет вам точный диапазон для каждого метода.',
+ html: 'Cuando mueles café, no solo estás reduciendo el tamaño del grano. Estás definiendo la <strong>superficie de contacto</strong> disponible para que el agua disuelva los compuestos de sabor. Una molienda demasiado fina expone tanta superficie que el agua extrae en exceso los compuestos amargos. Demasiado gruesa, y el agua pasa sin encontrar suficiente resistencia, resultando en un café débil y agrio. El conversor de molienda te da el punto exacto para cada método.',
  },
  {
  type: 'summary',
- title: 'Что определяет правильный размер помола?',
+ title: '¿Qué determina el grosor de molienda correcto?',
  items: [
- '<strong>Метод экстракции:</strong> Давление, время контакта и тип фильтра диктуют оптимальный диапазон микронов для каждого способа заваривания.',
- '<strong>Однородность кофемолки:</strong> Жерновая кофемолка высокого класса дает гомогенные частицы; ножевая генерирует мелкую пыль и крупные куски одновременно.',
- '<strong>Свежесть зерен:</strong> Свежеобжаренный кофе содержит больше CO2 и может потребовать чуть более грубого помола, чем тот же кофе через несколько недель.',
- '<strong>Калибровка вкуса:</strong> Вкус - это финальный инструмент. Таблица - ваша точка отсчета, а идеальный вкус - цель.',
- ],
- },
- {
- type: 'table',
- headers: ['Метод', 'Микроны', 'Тактильный ориентир', 'Время контакта'],
- rows: [
- ['Ибрик (Турка)', '100-300 μм', 'Талк / Мука тонкого помола', '3-5 мин (варка)'],
- ['Эспрессо', '300-500 μм', 'Мелкая соль', '25-30 сек'],
- ['Мока / Аэропресс', '500-700 μм', 'Поваренная соль', '3-4 мин'],
- ['V60 / Фильтр', '700-900 μм', 'Сахарный песок', '2:30-3:15 мин'],
- ['Кемекс / Клевер', '900-1200 μм', 'Крупный песок', '3:30-4:30 мин'],
- ['Френч-пресс', '1200-1500 μм', 'Крупная соль', '4 мин (иммерсия)'],
- ['Колд-брю', '1500+ μм', 'Горошины перца', '12-24 ч (в холоде)'],
+ '<strong>Método de extracción:</strong> La presión, el tiempo de contacto y el tipo de filtro dictan el rango de micras óptimo para cada método.',
+ '<strong>Uniformidad del molino:</strong> Un molino de alta gama produce partículas homogéneas; uno de cuchillas genera polvo y trozos gruesos a la vez.',
+ '<strong>Frescura del grano:</strong> El café recién tostado contiene más CO2 y puede requerir un ajuste ligeramente más grueso que el mismo café envejecido.',
+ '<strong>Calibración por sabor:</strong> El paladar es el instrumento final. La tabla es el punto de partida; el sabor es el destino.',
  ],
  },
  {
  type: 'title',
- text: 'Золотое правило для нового кофе',
+ text: 'Espresso vs V60: Los Dos Extremos del Espectro',
  level: 2,
  },
  {
  type: 'paragraph',
- html: '<p>Открывая новый кофе, всегда начинайте с середины рекомендованного диапазона для вашего метода. Оттуда настраивайте по вкусу, меняя помол на один клик за раз. Записывайте изменения, чтобы создать справочный журнал для ваших любимых сортов и кофемолки.</p>',
+ html: 'El <strong>espresso</strong> extrae a 9 bares de presión en apenas 25-30 segundos. Para que esto funcione, el café molido debe ofrecer exactamente la resistencia correcta: una molienda entre 300-500 micras crea ese lecho compacto. Demasiado grueso y el agua pasa en 10 segundos produciendo una taza aguada; demasiado fino y la máquina no puede generar flujo.',
+ },
+ {
+ type: 'paragraph',
+ html: 'El <strong>V60</strong>, en cambio, funciona por gravedad. El agua tiene que fluir a través de un lecho de partículas más gruesas (700-900 micras) durante 2-3 minutos completos. Si el grano está demasiado fino, el filtro de papel se satura y el café tarda demasiado, sobre-extrayendo. Si está muy grueso, el agua pasa en 60 segundos sin extraer suficiente sabor.',
+ },
+ {
+ type: 'table',
+ headers: ['Método', 'Micras', 'Referencia táctil', 'Tiempo contacto'],
+ rows: [
+ ['Ibrik (Turco)', '100-300 μm', 'Talco / Harina fina', '3-5 min ebullición'],
+ ['Espresso', '300-500 μm', 'Sal fina', '25-30 seg'],
+ ['Moka / Aeropress', '500-700 μm', 'Sal de mesa', '3-4 min'],
+ ['V60 / Filtro', '700-900 μm', 'Azúcar granulada', '2:30-3:15 min'],
+ ['Chemex / Clever', '900-1200 μm', 'Arena gruesa', '3:30-4:30 min'],
+ ['Prensa Francesa', '1200-1500 μm', 'Sal gorda', '4 min inmersión'],
+ ['Cold Brew', '1500+ μm', 'Granos de pimienta', '12-24 h en frío'],
+ ],
+ },
+ {
+ type: 'title',
+ text: 'Uniformidad: El Factor Diferencial entre Molinos',
+ level: 2,
+ },
+ {
+ type: 'paragraph',
+ html: 'La <strong>uniformidad de la partícula</strong> es la métrica real que separa un molino de gama alta de uno básico. Cuando un Comandante C40 muele a 20 clics, produce partículas casi idénticas entre sí (95% uniformidad). Cuando un molino de cuchillas "muele" al mismo tiempo, el resultado es caótico: polvo fino y trozos grandes conviven, extrayéndose a velocidades completamente diferentes.',
+ },
+ {
+ type: 'stats',
+ items: [
+ { label: 'Comandante C40', value: '95%', icon: 'mdi:star' },
+ { label: 'Timemore C2/C3', value: '85%', icon: 'mdi:star-half-full' },
+ { label: 'Hario Skerton', value: '40%', icon: 'mdi:star-outline' },
+ ],
+ columns: 3,
+ },
+ {
+ type: 'title',
+ text: 'Diagnóstico por Sabor: La Brújula del Barista',
+ level: 3,
+ },
+ {
+ type: 'paragraph',
+ html: 'Ninguna tabla sustituye al paladar. El conversor te da el punto de partida técnico, pero el ajuste final siempre lo hace el sabor. <strong>Amargo y seco</strong> = sobre-extracción = muele más grueso. <strong>Agrio y acuoso</strong> = sub-extracción = muele más fino. Ajusta de uno en uno (un clic, un nivel) hasta encontrar el equilibrio perfecto para tu grano y agua específicos.',
+ },
+ {
+ type: 'tip',
+ title: 'Regla de oro para nuevos cafés',
+ html: '<p>Cuando abras un café nuevo, empieza siempre por el punto medio del rango recomendado para tu método. Desde ahí, ajusta según sabor en pasos de un clic. Anota el resultado de cada ajuste para construir un registro de referencia de tus cafés favoritos con cada molino.</p>',
  },
  ],
  ui: {

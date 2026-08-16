@@ -106,51 +106,90 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  seo: [
  {
  type: 'title',
- text: '咖啡水化学：为什么 H₂O 是最容易被忽视的成分',
+ text: 'Química del Agua para Café: Por qué el H₂O es el ingrediente olvidado',
  level: 2,
  },
  {
  type: 'paragraph',
- html: '咖啡中 98-99% 都是水。然而，这种水的矿物质成分却是整个精品咖啡产业链中最容易被忽视的质量因素。同一种埃塞俄比亚单品咖啡，使用伦敦自来水与使用 SCA 优化水萃取出来的口感可能完全不同。我们的 <strong>SCA 咖啡用水计算器</strong> 让您可以使用常见的矿物盐和蒸馏水，从零开始调制完美的冲煮用水。',
+ html: 'El café es agua en un 98-99%. Sin embargo, la composición mineral de ese agua es el factor diferencial más ignorado en la cadena de calidad. Un café de especialidad de Etiopía extraído con agua del grifo de Madrid puede saber completamente distinto al mismo café preparado con agua mineralizada siguiendo el estándar SCA. Nuestra <strong>calculadora de agua para café</strong> te permite formular el agua perfecta desde cero, usando sales minerales comunes y partiendo de agua destilada.',
  },
  {
  type: 'summary',
- title: '为什么水质矿化如此重要？',
+ title: '¿Por qué la mineralización del agua importa tanto?',
  items: [
- '<strong>GH (总硬度):</strong> 镁离子和钙离子的总和决定了水溶解咖啡风味化合物的能力。',
- '<strong>KH (碳酸盐硬度):</strong> 碳酸氢盐浓度控制萃取过程中的 pH 值。KH 过低会使咖啡发酸；KH 过高则会使咖啡口感平淡。',
- '<strong>可重复性:</strong> 市政自来水随季节和地点变化。矿化水则保持恒定，确保每一批次的咖啡品质始终如一。',
- '<strong>设备保护:</strong> 正确的矿物质水平既能防止腐蚀（水质过纯），又能防止水垢积聚（硬度过高）。',
+ '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
+ '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
+ '<strong>Repetibilidad:</strong> El agua municipal cambia por temporada y ciudad. El agua mineralizada es constante y reproducible.',
+ '<strong>Protección del equipo:</strong> Los niveles correctos evitan tanto la corrosión (agua muy pura) como las incrustaciones de cal (agua muy dura).',
  ],
  },
  {
  type: 'title',
- text: 'SCA 标准：完美冲煮用水的技术指标',
+ text: 'El Estándar SCA: Los Límites Técnicos del Agua Perfecta para Café',
  level: 2,
  },
  {
+ type: 'paragraph',
+ html: 'La Specialty Coffee Association publicó en 2015 su estándar de calidad del agua. Tras años de investigación sensorial y química, estableció rangos ideales para cada parámetro. No son números arbitrarios: son el resultado de catas a ciegas con profesionales donde se maximizó la percepción de acidez equilibrada, dulzor y cuerpo.',
+ },
+ {
  type: 'table',
- headers: ['参数', '最小值', 'SCA 理想值', '最大值'],
+ headers: ['Parámetro', 'Mínimo', 'Ideal SCA', 'Máximo'],
  rows: [
- ['总硬度 (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
- ['总碱度 (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
- ['pH 值', '6.5', '7.0', '7.5'],
+ ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
+ ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
+ ['pH', '6.5', '7.0', '7.5'],
  ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
  ],
  },
  {
  type: 'title',
- text: '镁 vs 钙：决定您那杯咖啡的矿物质之战',
+ text: 'Magnesio vs Calcio: La Batalla Mineral que Define tu Taza',
  level: 2,
  },
  {
  type: 'paragraph',
- html: '并非所有矿物质在咖啡中的表现都相同。研究员 Christopher Hendon 证明，<strong>镁</strong>能与复杂的挥发性风味分子形成配位键，从而更有效地萃取水果和花香笔记。<strong>钙</strong>则萃取较重的化合物，带来醇厚度和丝滑的口感，但香气的鲜明度较低。',
+ html: 'No todos los minerales actúan igual sobre el café. El investigador Christopher Hendon demostró que el <strong>magnesio</strong> forma ligandos con las moléculas de sabor más complejas y volátiles, extrayendo notas frutales y florales con mayor eficiencia. El <strong>calcio</strong>, en cambio, extrae compuestos más pesados, aportando cuerpo y textura sedosa pero con menos brillo aromático.',
+ },
+ {
+ type: 'list',
+ items: [
+ '<strong>Magnesio puro (ratio 1:0):</strong> Máxima complejidad aromática y fruta. Ideal para cafés naturales o de perfil frutal. Mayor riesgo de sobresalir la acidez.',
+ '<strong>Calcio puro (ratio 0:1):</strong> Cuerpo denso y sedoso. Ideal para espresso clásico y tuestes oscuros. Mayor riesgo de incrustaciones en calderas.',
+ '<strong>Mix equilibrado (SCA 1:0, Hendon 1:1):</strong> La mayoría de perfiles de calidad usan magnesio como ión principal pero añaden algo de calcio para equilibrar la textura.',
+ ],
+ },
+ {
+ type: 'title',
+ text: 'El Semáforo de Seguridad: Protege tu Máquina de Espresso',
+ level: 2,
+ },
+ {
+ type: 'paragraph',
+ html: 'Nuestra calculadora incluye un <strong>análisis de riesgo en tiempo real</strong> basado en los valores de GH y KH que introduces. El índice de corrosión evalúa si el agua es demasiado pura y agresiva para los metales. El índice de cal mide si el KH y GH combinados generarán depósitos en calderas y tuberías.',
  },
  {
  type: 'tip',
- title: '专业咖啡师的经验法则',
- html: '<p>对于配有黄铜或铜质锅炉的意式咖啡机，切勿长期使用 KH 低于 40 mg/L 的配方。极纯的水具有长期腐蚀性。对于手冲过滤方法（如 V60、Chemex、AeroPress），由于没有需要保护的锅炉，您可以放心使用像 Melbourne 这样精致的配方。</p>',
+ title: 'Regla práctica del barista profesional',
+ html: '<p>Para máquinas de espresso con caldera de latón o cobre, nunca uses perfiles con KH inferior a 40 mg/L de forma continua. El agua muy pura es corrosiva a largo plazo. Para métodos de filtro (V60, Chemex, Aeropress) no hay caldera que proteger, por lo que puedes usar perfiles más delicados como Melbourne sin problema.</p>',
+ },
+ {
+ type: 'title',
+ text: 'Cómo Preparar las Botellas de Concentrado en Casa',
+ level: 3,
+ },
+ {
+ type: 'paragraph',
+ html: 'La clave para una mineralización precisa es trabajar con <strong>concentrados stock</strong> en lugar de añadir sales directamente al agua final. Un concentrado de 2,46 g de sales de Epsom en 100 ml de agua destilada te permite dosificar con jeringas de 1 ml con una precisión de ±0,01 ml. Esta metodología, popularizada por Barista Hustle, convierte la química del café en algo tan sencillo como mezclar cócteles.',
+ },
+ {
+ type: 'stats',
+ items: [
+ { label: 'GH ideal SCA', value: '68 mg/L', icon: 'mdi:water' },
+ { label: 'KH ideal SCA', value: '40 mg/L', icon: 'mdi:water-percent' },
+ { label: 'Coste aproximado por litro', value: '<0.05€', icon: 'mdi:currency-eur' },
+ ],
+ columns: 3,
  },
  ],
  ui: {

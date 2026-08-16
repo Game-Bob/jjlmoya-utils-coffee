@@ -106,51 +106,90 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  seo: [
  {
  type: 'title',
- text: 'コーヒー水質の化学：なぜH₂Oは最も見落とされている成分なのか',
+ text: 'Química del Agua para Café: Por qué el H₂O es el ingrediente olvidado',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'コーヒーの98〜99％は水です。しかし、その水のミネラル組成は、スペシャルティコーヒーの品質チェーン全体において最も見落とされている要素です。同じエチオピア産のシングルオリジンコーヒーでも、ロンドンの水道水で抽出した場合とSCA最適化水で抽出した場合では、全く別のコーヒーのように感じられます。当サイトの<strong>SCA コーヒー水質計算機</strong>を使えば、一般的なミネラル塩と蒸留水を使用して、完璧な抽出用水をゼロから作成できます。',
+ html: 'El café es agua en un 98-99%. Sin embargo, la composición mineral de ese agua es el factor diferencial más ignorado en la cadena de calidad. Un café de especialidad de Etiopía extraído con agua del grifo de Madrid puede saber completamente distinto al mismo café preparado con agua mineralizada siguiendo el estándar SCA. Nuestra <strong>calculadora de agua para café</strong> te permite formular el agua perfecta desde cero, usando sales minerales comunes y partiendo de agua destilada.',
  },
  {
  type: 'summary',
- title: 'なぜ水のミネラル化がそれほど重要なのか？',
+ title: '¿Por qué la mineralización del agua importa tanto?',
  items: [
- '<strong>GH（総硬度）：</strong> マグネシウムイオンとカルシウムイオンの合計が、コーヒーの風味成分を溶解する水の能力を決定します。',
- '<strong>KH（炭酸塩硬度）：</strong> 重炭酸塩濃度が抽出中のpHをコントロールします。KHが低いと酸っぱいコーヒーになり、高いと平坦な味になります。',
- '<strong>再現性：</strong> 水道水は季節や場所によって変化します。ミネラル化された水は常に一定で、何度でも同じ結果を再現できます。',
- '<strong>機器の保護：</strong> 適切なミネラルレベルは、腐食（純粋すぎる水）とスケール蓄積（硬すぎる水）の両方を防ぎます。',
+ '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
+ '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
+ '<strong>Repetibilidad:</strong> El agua municipal cambia por temporada y ciudad. El agua mineralizada es constante y reproducible.',
+ '<strong>Protección del equipo:</strong> Los niveles correctos evitan tanto la corrosión (agua muy pura) como las incrustaciones de cal (agua muy dura).',
  ],
  },
  {
  type: 'title',
- text: 'SCA基準：完璧な抽出用水のための技術的限界',
+ text: 'El Estándar SCA: Los Límites Técnicos del Agua Perfecta para Café',
  level: 2,
  },
  {
+ type: 'paragraph',
+ html: 'La Specialty Coffee Association publicó en 2015 su estándar de calidad del agua. Tras años de investigación sensorial y química, estableció rangos ideales para cada parámetro. No son números arbitrarios: son el resultado de catas a ciegas con profesionales donde se maximizó la percepción de acidez equilibrada, dulzor y cuerpo.',
+ },
+ {
  type: 'table',
- headers: ['項目', '最小値', 'SCA理想値', '最大値'],
+ headers: ['Parámetro', 'Mínimo', 'Ideal SCA', 'Máximo'],
  rows: [
- ['総硬度 (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
- ['アルカリ度 (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
+ ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
+ ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
  ['pH', '6.5', '7.0', '7.5'],
  ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
  ],
  },
  {
  type: 'title',
- text: 'マグネシウム vs カルシウム：一杯の味を決めるミネラルの戦い',
+ text: 'Magnesio vs Calcio: La Batalla Mineral que Define tu Taza',
  level: 2,
  },
  {
  type: 'paragraph',
- html: 'すべてのミネラルがコーヒーに対して同じように振る舞うわけではありません。研究者のクリストファー・ヘンドンは、<strong>マグネシウム</strong>が複雑な揮発性風味分子と結合し、フルーティーでフローラルなノートをより効率的に抽出することを実証しました。一方、<strong>カルシウム</strong>はより重い化合物を抽出し、コクとシルキーな口当たりをもたらしますが、アロマの明るさは控えめになります。',
+ html: 'No todos los minerales actúan igual sobre el café. El investigador Christopher Hendon demostró que el <strong>magnesio</strong> forma ligandos con las moléculas de sabor más complejas y volátiles, extrayendo notas frutales y florales con mayor eficiencia. El <strong>calcio</strong>, en cambio, extrae compuestos más pesados, aportando cuerpo y textura sedosa pero con menos brillo aromático.',
+ },
+ {
+ type: 'list',
+ items: [
+ '<strong>Magnesio puro (ratio 1:0):</strong> Máxima complejidad aromática y fruta. Ideal para cafés naturales o de perfil frutal. Mayor riesgo de sobresalir la acidez.',
+ '<strong>Calcio puro (ratio 0:1):</strong> Cuerpo denso y sedoso. Ideal para espresso clásico y tuestes oscuros. Mayor riesgo de incrustaciones en calderas.',
+ '<strong>Mix equilibrado (SCA 1:0, Hendon 1:1):</strong> La mayoría de perfiles de calidad usan magnesio como ión principal pero añaden algo de calcio para equilibrar la textura.',
+ ],
+ },
+ {
+ type: 'title',
+ text: 'El Semáforo de Seguridad: Protege tu Máquina de Espresso',
+ level: 2,
+ },
+ {
+ type: 'paragraph',
+ html: 'Nuestra calculadora incluye un <strong>análisis de riesgo en tiempo real</strong> basado en los valores de GH y KH que introduces. El índice de corrosión evalúa si el agua es demasiado pura y agresiva para los metales. El índice de cal mide si el KH y GH combinados generarán depósitos en calderas y tuberías.',
  },
  {
  type: 'tip',
- title: 'プロのバリスタの鉄則',
- html: '<p>真鍮や銅製のボイラーを備えたエスプレッソマシンの場合、KHが40 mg/L未満のプロファイルを継続して使用しないでください。非常に純粋な水は長期的には腐食の原因となります。フィルター抽出（V60、ケメックス、エアロプレスなど）の場合、保護すべきボイラーがないため、メルボルンのような繊細なプロファイルも安心して使用できます。</p>',
+ title: 'Regla práctica del barista profesional',
+ html: '<p>Para máquinas de espresso con caldera de latón o cobre, nunca uses perfiles con KH inferior a 40 mg/L de forma continua. El agua muy pura es corrosiva a largo plazo. Para métodos de filtro (V60, Chemex, Aeropress) no hay caldera que proteger, por lo que puedes usar perfiles más delicados como Melbourne sin problema.</p>',
+ },
+ {
+ type: 'title',
+ text: 'Cómo Preparar las Botellas de Concentrado en Casa',
+ level: 3,
+ },
+ {
+ type: 'paragraph',
+ html: 'La clave para una mineralización precisa es trabajar con <strong>concentrados stock</strong> en lugar de añadir sales directamente al agua final. Un concentrado de 2,46 g de sales de Epsom en 100 ml de agua destilada te permite dosificar con jeringas de 1 ml con una precisión de ±0,01 ml. Esta metodología, popularizada por Barista Hustle, convierte la química del café en algo tan sencillo como mezclar cócteles.',
+ },
+ {
+ type: 'stats',
+ items: [
+ { label: 'GH ideal SCA', value: '68 mg/L', icon: 'mdi:water' },
+ { label: 'KH ideal SCA', value: '40 mg/L', icon: 'mdi:water-percent' },
+ { label: 'Coste aproximado por litro', value: '<0.05€', icon: 'mdi:currency-eur' },
+ ],
+ columns: 3,
  },
  ],
  ui: {
