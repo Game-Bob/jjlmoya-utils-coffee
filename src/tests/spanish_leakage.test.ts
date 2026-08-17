@@ -22,10 +22,12 @@ const TRANSLATABLE_KEYS = [
   'title',
   'description',
   'faqTitle',
+  'bibliographyTitle',
   'faq',
   'howTo',
   'seo',
   'schemas',
+  'ui',
 ] as const;
 
 const COPY_THRESHOLD = 0.9;
