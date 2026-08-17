@@ -2,6 +2,7 @@
 import type { ToolLocaleContent } from '../../../types';
 import type { WaterCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
+import { buildWaterSeo } from '../../seoTranslations';
 
 const slug = 'sca-coffee-water-calculator';
 const title = 'SCA 커피 워터 계산기';
@@ -104,95 +105,7 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  bibliography,
  howTo: howToData,
  schemas: [faqSchema, howToSchema, appSchema],
- seo: [
- {
- type: 'title',
- text: '커피 추출수의 미네랄과 수질 이해하기',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '커피 한 잔은 대부분 물로 이루어집니다. 물의 경도와 미네랄은 산미, 단맛, 바디감에 영향을 줍니다. 이 계산기로 SCA 기준을 참고해 원두와 추출 방식에 맞는 물을 설계할 수 있습니다.',
- },
- {
- type: 'summary',
- title: '물의 미네랄이 맛을 바꾸는 이유',
- items: [
- '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
- '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
- '<strong>Repetibilidad:</strong> El agua municipal cambia por temporada y ciudad. El agua mineralizada es constante y reproducible.',
- '<strong>Protección del equipo:</strong> Los niveles correctos evitan tanto la corrosión (agua muy pura) como las incrustaciones de cal (agua muy dura).',
- ],
- },
- {
- type: 'title',
- text: 'SCA가 제시하는 추출수 기준',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'SCA 수질 기준은 경도, 알칼리도, pH, TDS의 권장 범위를 제시합니다. 이 범위를 참고하면 산미와 단맛, 바디감이 균형 있게 느껴지도록 조정할 수 있습니다.',
- },
- {
- type: 'table',
- headers: ['항목', '최소', 'SCA 권장', '최대'],
- rows: [
- ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
- ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
- ['pH', '6.5', '7.0', '7.5'],
- ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
- ],
- },
- {
- type: 'title',
- text: '마그네슘과 칼슘이 만드는 맛의 차이',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '미네랄은 같은 방식으로 작용하지 않습니다. 마그네슘은 과일과 꽃 같은 향을 잘 끌어내고, 칼슘은 바디감과 부드러운 질감을 더해 줍니다.',
- },
- {
- type: 'list',
- items: [
- '<strong>Magnesio puro (ratio 1:0):</strong> Máxima complejidad aromática y fruta. Ideal para cafés naturales o de perfil frutal. Mayor riesgo de sobresalir la acidez.',
- '<strong>Calcio puro (ratio 0:1):</strong> Cuerpo denso y sedoso. Ideal para espresso clásico y tuestes oscuros. Mayor riesgo de incrustaciones en calderas.',
- '<strong>Mix equilibrado (SCA 1:0, Hendon 1:1):</strong> La mayoría de perfiles de calidad usan magnesio como ión principal pero añaden algo de calcio para equilibrar la textura.',
- ],
- },
- {
- type: 'title',
- text: '에스프레소 머신을 지키는 수질 점검',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '입력한 GH와 KH를 바탕으로 물이 금속을 부식시킬 만큼 순수한지, 보일러와 배관에 물때가 생기기 쉬운지 확인합니다.',
- },
- {
- type: 'tip',
- title: '프로 바리스타가 지키는 기본 원칙',
- html: '<p>황동이나 구리 보일러를 사용하는 머신에는 KH가 너무 낮은 물을 계속 사용하지 마세요. 필터 방식은 더 부드러운 미네랄 조성도 시험할 수 있습니다.</p>',
- },
- {
- type: 'title',
- text: '집에서 미네랄 농축액을 만드는 방법',
- level: 3,
- },
- {
- type: 'paragraph',
- html: '완성된 물에 소금을 바로 넣기보다 농축액을 만들어 조금씩 섞으면 더 정확합니다. 증류수와 계량 도구를 사용하고 농도와 양을 기록하며 안전하게 조절하세요.',
- },
- {
- type: 'stats',
- items: [
- { label: 'GH ideal SCA', value: '68 mg/L', icon: 'mdi:water' },
- { label: 'KH ideal SCA', value: '40 mg/L', icon: 'mdi:water-percent' },
- { label: 'Coste aproximado por litro', value: '<0.05€', icon: 'mdi:currency-eur' },
- ],
- columns: 3,
- },
- ],
+ seo: buildWaterSeo({ title, description, faq: faqData, howTo: howToData }),
  ui: {
  sectionMixTitle: '배합 설정',
  labelVolume: '최종 용량',

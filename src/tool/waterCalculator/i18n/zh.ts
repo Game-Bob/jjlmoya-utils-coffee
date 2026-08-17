@@ -2,6 +2,7 @@
 import type { ToolLocaleContent } from '../../../types';
 import type { WaterCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
+import { buildWaterSeo } from '../../seoTranslations';
 
 const slug = 'sca-coffee-water-calculator';
 const title = 'SCA 精品咖啡用水计算器';
@@ -104,95 +105,7 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  bibliography,
  howTo: howToData,
  schemas: [faqSchema, howToSchema, appSchema],
- seo: [
- {
- type: 'title',
- text: '咖啡用水的矿物质与萃取原理',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '一杯咖啡几乎都是水。水的硬度和矿物质会影响酸质、甜感与醇厚度。这个计算器参考 SCA 指标，帮助您为不同豆子和冲煮方式调配合适的水。',
- },
- {
- type: 'summary',
- title: '水中矿物质为什么会改变风味',
- items: [
- '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
- '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
- '<strong>Repetibilidad:</strong> El agua municipal cambia por temporada y ciudad. El agua mineralizada es constante y reproducible.',
- '<strong>Protección del equipo:</strong> Los niveles correctos evitan tanto la corrosión (agua muy pura) como las incrustaciones de cal (agua muy dura).',
- ],
- },
- {
- type: 'title',
- text: 'SCA 对咖啡萃取水的建议范围',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'SCA 的水质建议包含硬度、碱度、pH 和 TDS 的参考范围。按照这些范围调整，可以更稳定地呈现酸质、甜感和醇厚度。',
- },
- {
- type: 'table',
- headers: ['参数', '最低值', 'SCA 参考值', '最高值'],
- rows: [
- ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
- ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
- ['pH', '6.5', '7.0', '7.5'],
- ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
- ],
- },
- {
- type: 'title',
- text: '镁与钙如何塑造杯中风味',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '不同矿物质的萃取作用并不相同。镁更容易突出水果和花香，钙则会增加醇厚度与柔滑的口感。',
- },
- {
- type: 'list',
- items: [
- '<strong>Magnesio puro (ratio 1:0):</strong> Máxima complejidad aromática y fruta. Ideal para cafés naturales o de perfil frutal. Mayor riesgo de sobresalir la acidez.',
- '<strong>Calcio puro (ratio 0:1):</strong> Cuerpo denso y sedoso. Ideal para espresso clásico y tuestes oscuros. Mayor riesgo de incrustaciones en calderas.',
- '<strong>Mix equilibrado (SCA 1:0, Hendon 1:1):</strong> La mayoría de perfiles de calidad usan magnesio como ión principal pero añaden algo de calcio para equilibrar la textura.',
- ],
- },
- {
- type: 'title',
- text: '用水质检查保护意式咖啡机',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '计算器根据输入的 GH 和 KH 判断水是否过于纯净而腐蚀金属，也会提示锅炉和管路是否容易形成水垢。',
- },
- {
- type: 'tip',
- title: '专业咖啡师的实用原则',
- html: '<p>使用黄铜或铜锅炉的机器时，不要长期使用 KH 过低的水。滤泡方式没有锅炉需要保护，可以尝试更柔和的矿物质配方。</p>',
- },
- {
- type: 'title',
- text: '在家制作矿物质浓缩液',
- level: 3,
- },
- {
- type: 'paragraph',
- html: '为了精确调整矿物质，建议先制作浓缩液，再少量加入最终用水，而不是直接撒盐。请使用蒸馏水和准确的称量工具，并记录每次配方。',
- },
- {
- type: 'stats',
- items: [
- { label: 'GH ideal SCA', value: '68 mg/L', icon: 'mdi:water' },
- { label: 'KH ideal SCA', value: '40 mg/L', icon: 'mdi:water-percent' },
- { label: 'Coste aproximado por litro', value: '<0.05€', icon: 'mdi:currency-eur' },
- ],
- columns: 3,
- },
- ],
+ seo: buildWaterSeo({ title, description, faq: faqData, howTo: howToData }),
  ui: {
  sectionMixTitle: '混合配置',
  labelVolume: '最终水量',

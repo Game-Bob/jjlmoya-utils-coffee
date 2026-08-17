@@ -2,6 +2,7 @@
 import type { ToolLocaleContent } from '../../../types';
 import type { GrindConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
+import { buildGrindSeo } from '../../seoTranslations';
 
 const slug = 'coffee-grind-size-converter';
 const title = '커피 분쇄도 변환기';
@@ -104,85 +105,7 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  bibliography,
  howTo: howToData,
  schemas: [faqSchema, howToSchema, appSchema],
- seo: [
- {
- type: 'title',
- text: '분쇄 입자 크기가 추출을 바꾸는 원리',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '커피를 분쇄하는 것은 원두를 작게 만드는 일만이 아닙니다. 물이 맛 성분과 만나는 면적을 정하는 과정입니다. 너무 고우면 쓴맛이 많아지고 너무 굵으면 묽고 시게 느껴질 수 있어 추출 방식에 맞는 설정이 필요합니다.',
- },
- {
- type: 'summary',
- title: '적절한 분쇄도를 결정하는 요소',
- items: [
- '<strong>Método de extracción:</strong> La presión, el tiempo de contacto y el tipo de filtro dictan el rango de micras óptimo para cada método.',
- '<strong>Uniformidad del molino:</strong> Un molino de alta gama produce partículas homogéneas; uno de cuchillas genera polvo y trozos gruesos a la vez.',
- '<strong>Frescura del grano:</strong> El café recién tostado contiene más CO2 y puede requerir un ajuste ligeramente más grueso que el mismo café envejecido.',
- '<strong>Calibración por sabor:</strong> El paladar es el instrumento final. La tabla es el punto de partida; el sabor es el destino.',
- ],
- },
- {
- type: 'title',
- text: '에스프레소와 V60의 분쇄도 차이',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '에스프레소는 높은 압력으로 짧은 시간에 추출하므로 고운 분쇄로 알맞은 저항을 만들어야 합니다. 너무 굵으면 물이 빠르게 흐르고 너무 고우면 흐름이 막힐 수 있습니다.',
- },
- {
- type: 'paragraph',
- html: 'V60는 중력으로 물을 통과시키므로 에스프레소보다 굵은 분쇄를 사용합니다. 너무 고우면 흐름이 느려지고 너무 굵으면 추출이 부족해지므로 시간과 맛을 함께 확인하세요.',
- },
- {
- type: 'table',
- headers: ['방식', '입자 크기', '촉감 기준', '접촉 시간'],
- rows: [
- ['Ibrik (Turco)', '100-300 μm', 'Talco / Harina fina', '3-5 min ebullición'],
- ['Espresso', '300-500 μm', 'Sal fina', '25-30 seg'],
- ['Moka / Aeropress', '500-700 μm', 'Sal de mesa', '3-4 min'],
- ['V60 / Filtro', '700-900 μm', 'Azúcar granulada', '2:30-3:15 min'],
- ['Chemex / Clever', '900-1200 μm', 'Arena gruesa', '3:30-4:30 min'],
- ['Prensa Francesa', '1200-1500 μm', 'Sal gorda', '4 min inmersión'],
- ['Cold Brew', '1500+ μm', 'Granos de pimienta', '12-24 h en frío'],
- ],
- },
- {
- type: 'title',
- text: '분쇄 균일도가 그라인더를 구분한다',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '입자 크기가 고를수록 커피 가루 전체가 비슷한 속도로 추출됩니다. 좋은 그라인더는 미분과 큰 입자의 차이를 줄여 맛의 재현성을 높입니다.',
- },
- {
- type: 'stats',
- items: [
- { label: 'Comandante C40', value: '95%', icon: 'mdi:star' },
- { label: 'Timemore C2/C3', value: '85%', icon: 'mdi:star-half-full' },
- { label: 'Hario Skerton', value: '40%', icon: 'mdi:star-outline' },
- ],
- columns: 3,
- },
- {
- type: 'title',
- text: '맛으로 분쇄도를 진단하는 방법',
- level: 3,
- },
- {
- type: 'paragraph',
- html: '표는 시작점일 뿐이고 최종 판단은 맛으로 합니다. 쓰고 마르면 굵게, 시고 묽으면 곱게 조절하세요. 한 번에 한 단계만 바꾸며 원두와 물에 맞는 균형을 찾습니다.',
- },
- {
- type: 'tip',
- title: '새 원두를 위한 기본 원칙',
- html: '<p>새 원두는 방식별 권장 범위의 중간에서 시작하세요. 맛을 보고 한 단계씩 조절하며 결과를 기록하면 좋아하는 설정을 다시 재현할 수 있습니다.</p>',
- },
- ],
+ seo: buildGrindSeo({ title, description, faq: faqData, howTo: howToData }),
  ui: {
  step1Label: '1단계: 장비 선택',
  step2Label: '2단계: 추출 방식',

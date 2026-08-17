@@ -2,6 +2,7 @@
 import type { ToolLocaleContent } from '../../../types';
 import type { GrindConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
+import { buildGrindSeo } from '../../seoTranslations';
 
 const slug = 'coffee-grind-size-converter';
 const title = 'コーヒー研磨度（グラインドサイズ）変換器';
@@ -104,85 +105,7 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  bibliography,
  howTo: howToData,
  schemas: [faqSchema, howToSchema, appSchema],
- seo: [
- {
- type: 'title',
- text: '挽き目の物理学と粒子サイズの重要性',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'コーヒーを挽くことは、豆を小さくするだけではありません。水が味の成分に触れる面積を決める作業です。細かすぎると苦味が出やすく、粗すぎると薄く酸っぱい味になりやすいため、器具に合う挽き目を選びます。',
- },
- {
- type: 'summary',
- title: '適切な挽き目を決める要素',
- items: [
- '<strong>Método de extracción:</strong> La presión, el tiempo de contacto y el tipo de filtro dictan el rango de micras óptimo para cada método.',
- '<strong>Uniformidad del molino:</strong> Un molino de alta gama produce partículas homogéneas; uno de cuchillas genera polvo y trozos gruesos a la vez.',
- '<strong>Frescura del grano:</strong> El café recién tostado contiene más CO2 y puede requerir un ajuste ligeramente más grueso que el mismo café envejecido.',
- '<strong>Calibración por sabor:</strong> El paladar es el instrumento final. La tabla es el punto de partida; el sabor es el destino.',
- ],
- },
- {
- type: 'title',
- text: 'エスプレッソと V60 の挽き目の違い',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'エスプレッソは高い圧力で短時間に抽出するため、細かい粉で適度な抵抗を作ります。粗すぎると湯が速く流れ、細かすぎると流れが止まりやすくなります。',
- },
- {
- type: 'paragraph',
- html: 'V60 は重力で湯を通す器具なので、エスプレッソより粗い粉を使います。細かすぎると流れが遅くなり、粗すぎると抽出不足になりやすいので時間も確認します。',
- },
- {
- type: 'table',
- headers: ['方法', '粒径', '触感の目安', '接触時間'],
- rows: [
- ['Ibrik (Turco)', '100-300 μm', 'Talco / Harina fina', '3-5 min ebullición'],
- ['Espresso', '300-500 μm', 'Sal fina', '25-30 seg'],
- ['Moka / Aeropress', '500-700 μm', 'Sal de mesa', '3-4 min'],
- ['V60 / Filtro', '700-900 μm', 'Azúcar granulada', '2:30-3:15 min'],
- ['Chemex / Clever', '900-1200 μm', 'Arena gruesa', '3:30-4:30 min'],
- ['Prensa Francesa', '1200-1500 μm', 'Sal gorda', '4 min inmersión'],
- ['Cold Brew', '1500+ μm', 'Granos de pimienta', '12-24 h en frío'],
- ],
- },
- {
- type: 'title',
- text: '粒の均一性がミルを分ける',
- level: 2,
- },
- {
- type: 'paragraph',
- html: '粒の大きさがそろっているほど、粉全体が似た速さで抽出されます。高性能なミルは微粉と粗い粒の差が小さく、味の再現性を高めます。',
- },
- {
- type: 'stats',
- items: [
- { label: 'Comandante C40', value: '95%', icon: 'mdi:star' },
- { label: 'Timemore C2/C3', value: '85%', icon: 'mdi:star-half-full' },
- { label: 'Hario Skerton', value: '40%', icon: 'mdi:star-outline' },
- ],
- columns: 3,
- },
- {
- type: 'title',
- text: '味で挽き目を診断する',
- level: 3,
- },
- {
- type: 'paragraph',
- html: '表は出発点であり、最後の判断は味で行います。苦く乾くなら粗く、酸っぱく薄いなら細かくします。一度に一段階だけ変えて、豆と水に合う位置を探してください。',
- },
- {
- type: 'tip',
- title: '初めての豆に使える基本ルール',
- html: '<p>新しい豆は方法ごとの推奨範囲の中央から始めます。味を確認して一段階ずつ調整し、各結果を記録するとお気に入りの設定を再現できます。</p>',
- },
- ],
+ seo: buildGrindSeo({ title, description, faq: faqData, howTo: howToData }),
  ui: {
  step1Label: 'ステップ 1：器具の選択',
  step2Label: 'ステップ 2：抽出メソッド',

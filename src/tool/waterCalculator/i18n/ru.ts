@@ -2,6 +2,7 @@
 import type { ToolLocaleContent } from '../../../types';
 import type { WaterCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
+import { buildWaterSeo } from '../../seoTranslations';
 
 const slug = 'sca-kalkulator-vody-dlya-kofe';
 const title = 'Калькулятор воды для кофе SCA';
@@ -104,95 +105,7 @@ export const content: ToolLocaleContent<WaterCalculatorUI> = {
  bibliography,
  howTo: howToData,
  schemas: [faqSchema, howToSchema, appSchema],
- seo: [
- {
- type: 'title',
- text: 'Вода для кофе: как минеральный состав меняет вкус',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'Чашка кофе почти полностью состоит из воды. Жёсткость и минералы влияют на кислотность, сладость и плотность напитка. Калькулятор помогает подобрать воду по ориентирам SCA для конкретного зерна и способа заваривания.',
- },
- {
- type: 'summary',
- title: 'Почему минералы так важны для вкуса',
- items: [
- '<strong>GH (Dureza General):</strong> La suma de iones Magnesio y Calcio determina la capacidad del agua para disolver compuestos de sabor del café.',
- '<strong>KH (Alcalinidad):</strong> La cantidad de bicarbonato controla el pH durante la extracción. Un KH bajo produce café agrio; un KH alto lo aplana.',
- '<strong>Repetibilidad:</strong> El agua municipal cambia por temporada y ciudad. El agua mineralizada es constante y reproducible.',
- '<strong>Protección del equipo:</strong> Los niveles correctos evitan tanto la corrosión (agua muy pura) como las incrustaciones de cal (agua muy dura).',
- ],
- },
- {
- type: 'title',
- text: 'Рекомендации SCA для воды под кофе',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'Стандарт SCA задаёт ориентиры для жёсткости, щёлочности, pH и TDS. Эти диапазоны помогают получить сбалансированную кислотность, сладость и плотность без лишней горечи.',
- },
- {
- type: 'table',
- headers: ['Параметр', 'Минимум', 'Ориентир SCA', 'Максимум'],
- rows: [
- ['Dureza Total (GH)', '50 mg/L', '68 mg/L', '175 mg/L'],
- ['Alcalinidad (KH)', '40 mg/L', '40 mg/L', '70 mg/L'],
- ['pH', '6.5', '7.0', '7.5'],
- ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
- ],
- },
- {
- type: 'title',
- text: 'Магний и кальций: разные оттенки в чашке',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'Минералы действуют по-разному. Магний лучше подчёркивает фруктовые и цветочные оттенки, а кальций добавляет плотность и мягкую текстуру.',
- },
- {
- type: 'list',
- items: [
- '<strong>Magnesio puro (ratio 1:0):</strong> Máxima complejidad aromática y fruta. Ideal para cafés naturales o de perfil frutal. Mayor riesgo de sobresalir la acidez.',
- '<strong>Calcio puro (ratio 0:1):</strong> Cuerpo denso y sedoso. Ideal para espresso clásico y tuestes oscuros. Mayor riesgo de incrustaciones en calderas.',
- '<strong>Mix equilibrado (SCA 1:0, Hendon 1:1):</strong> La mayoría de perfiles de calidad usan magnesio como ión principal pero añaden algo de calcio para equilibrar la textura.',
- ],
- },
- {
- type: 'title',
- text: 'Как защитить эспрессо-машину качеством воды',
- level: 2,
- },
- {
- type: 'paragraph',
- html: 'По значениям GH и KH калькулятор показывает, не слишком ли вода агрессивна для металла и не создаст ли она накипь в бойлере и трубках.',
- },
- {
- type: 'tip',
- title: 'Практическое правило бариста',
- html: '<p>Для машин с латунным или медным бойлером не используйте постоянно воду с очень низким KH. Для фильтр-методов можно пробовать более мягкие минеральные профили.</p>',
- },
- {
- type: 'title',
- text: 'Как приготовить концентрат минералов дома',
- level: 3,
- },
- {
- type: 'paragraph',
- html: 'Для точной минерализации удобнее приготовить концентрат и добавлять его малыми дозами, а не сыпать соль сразу в готовую воду. Используйте дистиллированную воду, точные весы и записывайте состав каждой смеси.',
- },
- {
- type: 'stats',
- items: [
- { label: 'GH ideal SCA', value: '68 mg/L', icon: 'mdi:water' },
- { label: 'KH ideal SCA', value: '40 mg/L', icon: 'mdi:water-percent' },
- { label: 'Coste aproximado por litro', value: '<0.05€', icon: 'mdi:currency-eur' },
- ],
- columns: 3,
- },
- ],
+ seo: buildWaterSeo({ title, description, faq: faqData, howTo: howToData }),
  ui: {
  sectionMixTitle: 'Конфигурация смеси',
  labelVolume: 'Итоговый объем',

@@ -2,6 +2,7 @@
 import type { ToolLocaleContent } from '../../../types';
 import type { GrindConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
+import { buildGrindSeo } from '../../seoTranslations';
 
 const slug = 'coffee-grind-size-converter';
 const title = '咖啡研磨度转换器';
@@ -104,83 +105,7 @@ export const content: ToolLocaleContent<GrindConverterUI> = {
  bibliography,
  howTo: howToData,
  schemas: [faqSchema, howToSchema, appSchema],
-seo: [
-  {
-    type: 'title',
-    text: '咖啡研磨度: 为每种冲煮方式找到合适设置',
-    level: 2,
-  },
-  {
-    type: 'paragraph',
-    html: '颗粒大小决定咖啡粉与水的接触面积、水流速度以及萃取出的风味物质。这个转换器把磨豆机设置与意式浓缩、滤泡、爱乐压和冷萃的参考范围对应起来。',
-  },
-  {
-    type: 'summary',
-    title: '选择研磨度时要考虑什么',
-    items: [
-      '<strong>冲煮方式:</strong> 压力和接触时间决定合适的颗粒范围。',
-      '<strong>均匀度:</strong> 优质磨豆机能减少细粉和过大的颗粒。',
-      '<strong>咖啡新鲜度:</strong> 脱气过程会改变咖啡豆的表现，因此需要重新校准。',
-      '<strong>口感:</strong> 图表提供起点，最终判断应以杯中风味为准。',
-    ],
-  },
-  {
-    type: 'title',
-    text: '意式浓缩与滤泡的不同范围',
-    level: 2,
-  },
-  {
-    type: 'paragraph',
-    html: '意式浓缩需要较细的研磨，让加压的水在 25-30 秒内通过紧密的粉饼。V60 等滤泡方式使用更粗的颗粒，水会在重力作用下经过咖啡粉层，整个过程持续数分钟。',
-  },
-  {
-    type: 'table',
-    headers: ['方式', '颗粒大小', '触感参考', '时间'],
-    rows: [
-      ['土耳其咖啡', '100-300 微米', '面粉', '3-5 分钟'],
-      ['意式浓缩', '300-500 微米', '细盐', '25-30 秒'],
-      ['摩卡壶和爱乐压', '500-700 微米', '食盐', '3-4 分钟'],
-      ['V60 手冲', '700-900 微米', '砂糖', '2:30-3:15'],
-      ['法压壶', '1200-1500 微米', '粗盐', '4 分钟'],
-    ],
-  },
-  {
-    type: 'title',
-    text: '为什么研磨均匀度很重要',
-    level: 2,
-  },
-  {
-    type: 'paragraph',
-    html: '过细的颗粒容易过度萃取并产生苦味，过大的颗粒则会萃取不足并让味道单薄。均匀的研磨能让水流更稳定，让每次冲煮更容易重复。',
-  },
-  {
-    type: 'stats',
-    items: [
-      { label: '意式浓缩', value: '300-500 微米', icon: 'mdi:coffee' },
-      { label: '滤泡', value: '700-900 微米', icon: 'mdi:filter' },
-      { label: '法压壶', value: '1200-1500 微米', icon: 'mdi:cup' },
-    ],
-    columns: 3,
-  },
-  {
-    type: 'title',
-    text: '根据口味校准',
-    level: 3,
-  },
-  {
-    type: 'paragraph',
-    html: '苦、干涩和厚重通常表示萃取过度，可以尝试调粗研磨。酸、咸或水感明显通常表示萃取不足，可以尝试调细研磨。每次只改变一个刻度。',
-  },
-  {
-    type: 'tip',
-    title: '从推荐范围中间开始',
-    html: '<p>使用新咖啡豆时，先选择冲煮方式推荐范围的中间值，记录杯中风味，再每次调整一个刻度，直到味道平衡。</p>',
-  },
-  {
-    type: 'paragraph',
-    html: '连续冲煮几杯后再比较结果，并且每次只调整一个设置。',
-  },
-],
+seo: buildGrindSeo({ title, description, faq: faqData, howTo: howToData }),
  ui: {
  step1Label: '第一步：设备选择',
  step2Label: '第二步：萃取方法',
