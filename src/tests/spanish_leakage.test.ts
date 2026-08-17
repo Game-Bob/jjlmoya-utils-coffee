@@ -28,6 +28,8 @@ const TRANSLATABLE_KEYS = [
   'schemas',
 ] as const;
 
+const COPY_THRESHOLD = 0.9;
+
 const SPANISH_MARKERS = [
   ['sangre', /\bsangre\b/gi],
   ['molino', /\bmolino\b/gi],
@@ -111,10 +113,28 @@ function findSpanishMarkers(text: string[]): string[] {
   );
 }
 
+function similarity(left: string, right: string): number {
+  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+  for (let row = 1; row <= left.length; row += 1) {
+    let diagonal = previous[0];
+    previous[0] = row;
+    for (let column = 1; column <= right.length; column += 1) {
+      const above = previous[column];
+      previous[column] = left[row - 1] === right[column - 1]
+        ? diagonal
+        : 1 + Math.min(diagonal, above, previous[column - 1]);
+      diagonal = above;
+    }
+  }
+  return 1 - previous[right.length] / Math.max(left.length, right.length);
+}
+
 function findCopiedFragments(spanish: string[], translated: string[]): string[] {
-  const corpus = translated.join(' ');
   return spanish
-    .filter((fragment) => fragment.length >= 80 && corpus.includes(fragment))
+    .filter((fragment) => fragment.length >= 80)
+    .filter((fragment) => translated.some((candidate) =>
+      candidate.length >= 80 && similarity(fragment, candidate) >= COPY_THRESHOLD,
+    ))
     .sort((a, b) => b.length - a.length)
     .slice(0, 3);
 }
