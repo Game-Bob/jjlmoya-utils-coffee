@@ -114,26 +114,24 @@ function findSpanishMarkers(text: string[]): string[] {
 }
 
 function similarity(left: string, right: string): number {
-  const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
-  for (let row = 1; row <= left.length; row += 1) {
-    let diagonal = previous[0];
-    previous[0] = row;
-    for (let column = 1; column <= right.length; column += 1) {
-      const above = previous[column];
-      previous[column] = left[row - 1] === right[column - 1]
-        ? diagonal
-        : 1 + Math.min(diagonal, above, previous[column - 1]);
-      diagonal = above;
-    }
-  }
-  return 1 - previous[right.length] / Math.max(left.length, right.length);
+  const leftTokens = left.split(/\s+/);
+  const rightCounts = new Map<string, number>();
+  right.split(/\s+/).forEach((token) => rightCounts.set(token, (rightCounts.get(token) ?? 0) + 1));
+  const matches = leftTokens.reduce((total, token) => {
+    const count = rightCounts.get(token) ?? 0;
+    if (count > 0) rightCounts.set(token, count - 1);
+    return total + (count > 0 ? 1 : 0);
+  }, 0);
+  return (2 * matches) / (leftTokens.length + right.split(/\s+/).length);
 }
 
 function findCopiedFragments(spanish: string[], translated: string[]): string[] {
   return spanish
     .filter((fragment) => fragment.length >= 80)
     .filter((fragment) => translated.some((candidate) =>
-      candidate.length >= 80 && similarity(fragment, candidate) >= COPY_THRESHOLD,
+      candidate.length >= 80 &&
+      Math.min(fragment.length, candidate.length) / Math.max(fragment.length, candidate.length) >= COPY_THRESHOLD &&
+      similarity(fragment, candidate) >= COPY_THRESHOLD,
     ))
     .sort((a, b) => b.length - a.length)
     .slice(0, 3);
