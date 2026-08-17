@@ -31,30 +31,46 @@ const table = (headers: string[], rows: string[][]): SEOSection => ({
   rows,
 });
 
-export function buildGrindSeo(source: LocalizedSeoSource): SEOSection[] {
+const summary = (source: LocalizedSeoSource): SEOSection => ({
+  type: 'summary',
+  title: question(source, 0),
+  items: [0, 1, 2, 3].map((index) => answerItem(source, index)),
+});
+
+const stepList = (source: LocalizedSeoSource, indexes: number[]): SEOSection => ({
+  type: 'list',
+  items: indexes.map((index) => `<strong>${stepName(source, index)}:</strong> ${step(source, index)}`),
+});
+
+function grindOpening(source: LocalizedSeoSource): SEOSection[] {
   return [
     { type: 'title', text: source.title, level: 2 },
     { type: 'paragraph', html: source.description },
-    {
-      type: 'summary',
-      title: question(source, 0),
-      items: [0, 1, 2, 3].map((index) => answerItem(source, index)),
-    },
+    summary(source),
     { type: 'title', text: question(source, 1), level: 2 },
     { type: 'paragraph', html: text(source, 1) },
     { type: 'paragraph', html: step(source, 0) },
-    table(
-      [source.title, 'μm', 'Reference', 'Time'],
-      [
-        ['Turkish', '100-300', 'Fine powder', '3-5 min'],
-        ['Espresso', '300-500', 'Fine salt', '25-30 s'],
-        ['Moka / Aeropress', '500-700', 'Table salt', '3-4 min'],
-        ['V60 / Filter', '700-900', 'Granulated sugar', '2:30-3:15 min'],
-        ['Chemex / Clever', '900-1200', 'Coarse sand', '3:30-4:30 min'],
-        ['French Press', '1200-1500', 'Coarse salt', '4 min'],
-        ['Cold Brew', '1500+', 'Peppercorns', '12-24 h'],
-      ],
-    ),
+  ];
+}
+
+function grindTable(source: LocalizedSeoSource): SEOSection {
+  return table(
+    [source.title, 'μm', 'Reference', 'Time'],
+    [
+      ['Turkish', '100-300', 'Fine powder', '3-5 min'],
+      ['Espresso', '300-500', 'Fine salt', '25-30 s'],
+      ['Moka / Aeropress', '500-700', 'Table salt', '3-4 min'],
+      ['V60 / Filter', '700-900', 'Granulated sugar', '2:30-3:15 min'],
+      ['Chemex / Clever', '900-1200', 'Coarse sand', '3:30-4:30 min'],
+      ['French Press', '1200-1500', 'Coarse salt', '4 min'],
+      ['Cold Brew', '1500+', 'Peppercorns', '12-24 h'],
+    ],
+  );
+}
+
+function grindClosing(source: LocalizedSeoSource): SEOSection[] {
+  return [
+    grindTable(source),
     { type: 'title', text: question(source, 2), level: 2 },
     { type: 'paragraph', html: text(source, 2) },
     {
@@ -76,33 +92,39 @@ export function buildGrindSeo(source: LocalizedSeoSource): SEOSection[] {
   ];
 }
 
-export function buildBrewRatioSeo(source: LocalizedSeoSource): SEOSection[] {
+export function buildGrindSeo(source: LocalizedSeoSource): SEOSection[] {
+  return [...grindOpening(source), ...grindClosing(source)];
+}
+
+function brewOpening(source: LocalizedSeoSource): SEOSection[] {
   return [
     { type: 'title', text: source.title, level: 2 },
     { type: 'paragraph', html: source.description },
-    {
-      type: 'summary',
-      title: question(source, 0),
-      items: [0, 1, 2, 3].map((index) => answerItem(source, index)),
-    },
+    summary(source),
     { type: 'title', text: question(source, 1), level: 2 },
     { type: 'paragraph', html: text(source, 1) },
-    {
-      type: 'list',
-      items: [0, 1, 2].map((index) => `<strong>${stepName(source, index)}:</strong> ${step(source, index)}`),
-    },
+    stepList(source, [0, 1, 2]),
+  ];
+}
+
+function brewTable(source: LocalizedSeoSource): SEOSection {
+  return table(
+    [source.title, 'Ratio', 'Profile', 'Time'],
+    [
+      ['Espresso', '1:2-1:2.5', 'Concentrated', '25-30 s'],
+      ['V60 / Pour-over', '1:15-1:16', 'Clean and bright', '2:30-3:30 min'],
+      ['Aeropress', '1:12-1:15', 'Versatile', '1:30-2:00 min'],
+      ['French Press', '1:12-1:14', 'Full-bodied', '4:00-5:00 min'],
+      ['Cold Brew', '1:8-1:12', 'Sweet and smooth', '12-24 h'],
+    ],
+  );
+}
+
+function brewMiddle(source: LocalizedSeoSource): SEOSection[] {
+  return [
     { type: 'title', text: question(source, 2), level: 2 },
     { type: 'paragraph', html: text(source, 2) },
-    table(
-      [source.title, 'Ratio', 'Profile', 'Time'],
-      [
-        ['Espresso', '1:2-1:2.5', 'Concentrated', '25-30 s'],
-        ['V60 / Pour-over', '1:15-1:16', 'Clean and bright', '2:30-3:30 min'],
-        ['Aeropress', '1:12-1:15', 'Versatile', '1:30-2:00 min'],
-        ['French Press', '1:12-1:14', 'Full-bodied', '4:00-5:00 min'],
-        ['Cold Brew', '1:8-1:12', 'Sweet and smooth', '12-24 h'],
-      ],
-    ),
+    brewTable(source),
     { type: 'title', text: question(source, 3), level: 2 },
     { type: 'paragraph', html: text(source, 3) },
     { type: 'paragraph', html: step(source, 0) },
@@ -115,19 +137,17 @@ export function buildBrewRatioSeo(source: LocalizedSeoSource): SEOSection[] {
       ],
       columns: 3,
     },
+  ];
+}
+
+function brewClosing(source: LocalizedSeoSource): SEOSection[] {
+  return [
     { type: 'title', text: stepName(source, 3), level: 2 },
     { type: 'paragraph', html: step(source, 3) },
-    {
-      type: 'tip',
-      title: stepName(source, 4),
-      html: `<p>${text(source, 4)}</p>`,
-    },
+    { type: 'tip', title: stepName(source, 4), html: `<p>${text(source, 4)}</p>` },
     { type: 'title', text: question(source, 4), level: 2 },
     { type: 'paragraph', html: text(source, 4) },
-    {
-      type: 'list',
-      items: [3, 4, 5].map((index) => `<strong>${stepName(source, index)}:</strong> ${step(source, index)}`),
-    },
+    stepList(source, [3, 4, 5]),
     { type: 'title', text: stepName(source, 5), level: 2 },
     { type: 'paragraph', html: step(source, 5) },
     { type: 'paragraph', html: source.description },
@@ -136,15 +156,15 @@ export function buildBrewRatioSeo(source: LocalizedSeoSource): SEOSection[] {
   ];
 }
 
-export function buildWaterSeo(source: LocalizedSeoSource): SEOSection[] {
+export function buildBrewRatioSeo(source: LocalizedSeoSource): SEOSection[] {
+  return [...brewOpening(source), ...brewMiddle(source), ...brewClosing(source)];
+}
+
+function waterOpening(source: LocalizedSeoSource): SEOSection[] {
   return [
     { type: 'title', text: source.title, level: 2 },
     { type: 'paragraph', html: source.description },
-    {
-      type: 'summary',
-      title: question(source, 0),
-      items: [0, 1, 2, 3].map((index) => answerItem(source, index)),
-    },
+    summary(source),
     { type: 'title', text: question(source, 1), level: 2 },
     { type: 'paragraph', html: text(source, 1) },
     table(
@@ -156,24 +176,18 @@ export function buildWaterSeo(source: LocalizedSeoSource): SEOSection[] {
         ['TDS', '75 mg/L', '150 mg/L', '250 mg/L'],
       ],
     ),
+  ];
+}
+
+function waterClosing(source: LocalizedSeoSource): SEOSection[] {
+  return [
     { type: 'title', text: question(source, 2), level: 2 },
     { type: 'paragraph', html: text(source, 2) },
-    {
-      type: 'list',
-      items: [2, 3, 4].map((index) => `<strong>${stepName(source, index)}:</strong> ${step(source, index)}`),
-    },
+    stepList(source, [2, 3, 4]),
     { type: 'title', text: question(source, 3), level: 2 },
     { type: 'paragraph', html: text(source, 3) },
-    {
-      type: 'tip',
-      title: stepName(source, 0),
-      html: `<p>${step(source, 0)}</p>`,
-    },
-    {
-      type: 'title',
-      text: stepName(source, 1),
-      level: 2,
-    },
+    { type: 'tip', title: stepName(source, 0), html: `<p>${step(source, 0)}</p>` },
+    { type: 'title', text: stepName(source, 1), level: 2 },
     { type: 'paragraph', html: step(source, 1) },
     {
       type: 'stats',
@@ -185,4 +199,8 @@ export function buildWaterSeo(source: LocalizedSeoSource): SEOSection[] {
       columns: 3,
     },
   ];
+}
+
+export function buildWaterSeo(source: LocalizedSeoSource): SEOSection[] {
+  return [...waterOpening(source), ...waterClosing(source)];
 }
