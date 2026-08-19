@@ -1,0 +1,194 @@
+---
+import type { KnownLocale } from '../../types';
+import type { ColdBrewRatioCalculatorUI } from './ui';
+import { coldBrewRatioCalculator } from './entry';
+import './cold-brew-coffee-ratio-calculator.css';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: ColdBrewRatioCalculatorUI;
+}
+
+const { locale = 'en', ui: propUi } = Astro.props;
+const loadedContent = propUi ? null : await coldBrewRatioCalculator.i18n[locale]?.();
+const ui = propUi ?? loadedContent?.ui;
+if (!ui) return null;
+
+const initialState = {
+  mode: 'ready',
+  presetId: 'classic',
+  unitSystem: 'metric',
+  brewWaterMl: 1000,
+  ratio: 8,
+  dilutionRatio: 0,
+  steepHours: 14,
+};
+---
+
+<div class="cold-brew-ratio-calculator" data-initial-state={JSON.stringify(initialState)}>
+  <script is:inline type="application/json" id="cold-brew-ratio-calculator-ui" set:html={JSON.stringify(ui)}></script>
+
+  <section class="cold-brew-controls" aria-labelledby="cold-brew-controls-title">
+    <h2 id="cold-brew-controls-title">{ui.controlTitle}</h2>
+
+    <div class="cold-brew-unit-toggle" role="group" aria-label={ui.unitSystemLabel}>
+      <button class="cold-brew-unit-button is-active" data-unit-system="metric" type="button" aria-pressed="true">{ui.unitMetric}</button>
+      <button class="cold-brew-unit-button" data-unit-system="imperial" type="button" aria-pressed="false">{ui.unitImperial}</button>
+    </div>
+
+    <div class="cold-brew-mode-grid" role="group" aria-label={ui.modeReady}>
+      <button class="cold-brew-mode-button is-active" data-mode="ready" type="button" aria-pressed="true">
+        <span class="cold-brew-mode-icon" aria-hidden="true">◒</span>
+        <span>{ui.modeReady}</span>
+        <small>{ui.modeReadyHint}</small>
+      </button>
+      <button class="cold-brew-mode-button" data-mode="concentrate" type="button" aria-pressed="false">
+        <span class="cold-brew-mode-icon" aria-hidden="true">◐</span>
+        <span>{ui.modeConcentrate}</span>
+        <small>{ui.modeConcentrateHint}</small>
+      </button>
+    </div>
+
+    <div class="cold-brew-form-section">
+      <p class="cold-brew-section-label">{ui.presetTitle}</p>
+      <div class="cold-brew-preset-grid" role="group" aria-label={ui.presetTitle}>
+        <button class="cold-brew-preset is-active" data-preset="classic" type="button" aria-pressed="true">{ui.presetClassic}</button>
+        <button class="cold-brew-preset" data-preset="smooth" type="button" aria-pressed="false">{ui.presetSmooth}</button>
+        <button class="cold-brew-preset" data-preset="concentrate" type="button" aria-pressed="false">{ui.presetConcentrate}</button>
+        <button class="cold-brew-preset" data-preset="custom" type="button" aria-pressed="false">{ui.presetCustom}</button>
+      </div>
+    </div>
+
+    <div class="cold-brew-form-section">
+      <div class="cold-brew-label-row">
+        <label for="cold-brew-water-range">{ui.brewWaterLabel}</label>
+        <span>{ui.brewWaterHint}</span>
+      </div>
+      <div class="cold-brew-input-row">
+        <input id="cold-brew-water-range" class="cold-brew-range" data-range-key="brewWaterMl" type="range" min="250" max="4000" step="50" value="1000" />
+        <input class="cold-brew-number" data-number-key="brewWaterMl" type="number" min="250" max="4000" step="50" value="1000" aria-label={ui.brewWaterLabel} />
+        <span class="cold-brew-unit" data-ref="input-water-unit">{ui.unitWaterMetric}</span>
+      </div>
+    </div>
+
+    <div class="cold-brew-form-section">
+      <div class="cold-brew-label-row">
+        <label for="cold-brew-ratio-range">{ui.ratioLabel}</label>
+        <span>{ui.ratioHint}</span>
+      </div>
+      <div class="cold-brew-input-row">
+        <input id="cold-brew-ratio-range" class="cold-brew-range" data-range-key="ratio" type="range" min="4" max="12" step="0.5" value="8" />
+        <span class="cold-brew-ratio-display">1:<span data-ref="ratio-control">8</span></span>
+      </div>
+    </div>
+
+    <div class="cold-brew-form-section cold-brew-concentrate-only">
+      <div class="cold-brew-label-row">
+        <label for="cold-brew-dilution-range">{ui.dilutionLabel}</label>
+        <span>{ui.dilutionHint}</span>
+      </div>
+      <div class="cold-brew-input-row">
+        <input id="cold-brew-dilution-range" class="cold-brew-range" data-range-key="dilutionRatio" type="range" min="0" max="2" step="0.25" value="1" />
+        <span class="cold-brew-ratio-display">1:<span data-ref="dilution-ratio">1</span></span>
+      </div>
+    </div>
+
+    <div class="cold-brew-form-section">
+      <div class="cold-brew-label-row">
+        <label for="cold-brew-steep-range">{ui.steepLabel}</label>
+        <span>{ui.steepHint}</span>
+      </div>
+      <div class="cold-brew-input-row">
+        <input id="cold-brew-steep-range" class="cold-brew-range" data-range-key="steepHours" type="range" min="8" max="24" step="1" value="14" />
+        <span class="cold-brew-time-display"><span data-ref="steep-control">14</span> {ui.hoursUnit}</span>
+      </div>
+    </div>
+
+    <div class="cold-brew-control-actions">
+      <button class="cold-brew-action cold-brew-action-primary" data-action="copy" type="button">{ui.copyRecipe}</button>
+      <button class="cold-brew-action cold-brew-action-quiet" data-action="reset" type="button">{ui.resetText}</button>
+    </div>
+  </section>
+
+  <section class="cold-brew-results" aria-labelledby="cold-brew-results-title">
+    <div class="cold-brew-result-heading">
+      <div>
+        <p class="cold-brew-kicker">{ui.resultTitle}</p>
+        <h2 id="cold-brew-results-title" data-ref="stage-caption">{ui.stageCaption}</h2>
+      </div>
+      <span class="cold-brew-result-badge" data-ref="result-badge">{ui.resultBadgeReady}</span>
+    </div>
+
+    <div class="cold-brew-visual-stage" aria-labelledby="cold-brew-visual-title">
+      <div class="cold-brew-visual-heading">
+        <h3 id="cold-brew-visual-title">{ui.visualTitle}</h3>
+      </div>
+      <div class="cold-brew-flow-lanes">
+        <div class="cold-brew-flow-lane">
+          <div class="cold-brew-flow-label">{ui.visualBrewCaption}</div>
+          <div class="cold-brew-flow-track">
+            <span class="cold-brew-flow-segment cold-brew-flow-coffee" data-ref="flow-coffee"><b data-ref="flow-coffee-label">125 g</b></span>
+            <span class="cold-brew-flow-segment cold-brew-flow-water" data-ref="flow-brew-water"><b data-ref="flow-brew-water-label">1000 ml</b></span>
+          </div>
+        </div>
+        <div class="cold-brew-flow-lane">
+          <div class="cold-brew-flow-label">{ui.visualFilterCaption}</div>
+          <div class="cold-brew-flow-track">
+            <span class="cold-brew-flow-segment cold-brew-flow-yield" data-ref="flow-yield"><b data-ref="flow-yield-label">750 ml</b></span>
+            <span class="cold-brew-flow-segment cold-brew-flow-retained" data-ref="flow-retained"><b data-ref="flow-retained-label">250 ml</b></span>
+          </div>
+        </div>
+        <div class="cold-brew-flow-lane">
+          <div class="cold-brew-flow-label">{ui.visualServeCaption}</div>
+          <div class="cold-brew-flow-track">
+            <span class="cold-brew-flow-segment cold-brew-flow-served" data-ref="flow-served"><b data-ref="flow-served-label">750 ml</b></span>
+            <span class="cold-brew-flow-segment cold-brew-flow-dilution" data-ref="flow-dilution"><b data-ref="flow-dilution-label">0 ml</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="cold-brew-flow-legend">
+        <span><i class="cold-brew-legend-dot cold-brew-legend-coffee"></i>{ui.visualCoffeeDose}</span>
+        <span><i class="cold-brew-legend-dot cold-brew-legend-water"></i>{ui.visualWaterInput}</span>
+        <span><i class="cold-brew-legend-dot cold-brew-legend-retained"></i>{ui.visualRetained}</span>
+        <span><i class="cold-brew-legend-dot cold-brew-legend-served"></i>{ui.visualServed}</span>
+        <span><i class="cold-brew-legend-dot cold-brew-legend-dilution"></i>{ui.visualDilution}</span>
+      </div>
+    </div>
+
+    <div class="cold-brew-stat-grid">
+      <div class="cold-brew-stat cold-brew-stat-feature"><span>{ui.coffeeLabel}</span><strong data-ref="coffee">125 g</strong></div>
+      <div class="cold-brew-stat"><span>{ui.brewWaterResultLabel}</span><strong data-ref="brew-water">1000 ml</strong></div>
+      <div class="cold-brew-stat cold-brew-stat-total"><span>{ui.servedYieldLabel}</span><strong data-ref="served-yield">750 ml</strong></div>
+    </div>
+
+    <div class="cold-brew-result-meta">
+      <span><b>{ui.ratioResultLabel}</b> <span data-ref="ratio-meta">1:8</span></span>
+      <span><b>{ui.steepResultLabel}</b> <span data-ref="steep-meta">14 {ui.hoursUnit}</span></span>
+      <span><b>{ui.retainedLabel}</b> <span data-ref="retained">250 ml</span></span>
+      <span class="cold-brew-dilution-meta"><b>{ui.dilutionWaterLabel}</b> <span data-ref="dilution-water">0 ml</span></span>
+      <span class="cold-brew-status cold-brew-status-balanced" data-ref="steep-status">Balanced steep</span>
+    </div>
+
+    <div class="cold-brew-steps">
+      <h3>{ui.stepsTitle}</h3>
+      <ol data-ref="steps">
+        <li><span>1</span><p>{ui.stepCoffee.replace('{coffee}', '125').replace('{coffeeUnit}', ui.unitWeightMetric)}</p></li>
+        <li><span>2</span><p>{ui.stepWater.replace('{water}', '1000').replace('{waterUnit}', ui.unitWaterMetric)}</p></li>
+        <li><span>3</span><p>{ui.stepSteep.replace('{hours}', '14')}</p></li>
+        <li><span>4</span><p>{ui.stepServe.replace('{yield}', '750').replace('{waterUnit}', ui.unitWaterMetric)}</p></li>
+      </ol>
+    </div>
+
+  </section>
+</div>
+
+<script>
+  import { ColdBrewRatioController } from './controller';
+
+  const root = document.querySelector<HTMLElement>('.cold-brew-ratio-calculator');
+  const uiScript = document.getElementById('cold-brew-ratio-calculator-ui');
+  if (root && uiScript) {
+    const ui = JSON.parse(uiScript.textContent ?? '{}');
+    new ColdBrewRatioController(root, ui);
+  }
+</script>

@@ -6,6 +6,7 @@ import { WATER_CALCULATOR_TOOL } from './tool/waterCalculator';
 import { GRIND_CONVERTER_TOOL } from './tool/grindConverter';
 import { BREW_FIXER_TOOL } from './tool/brewFixer';
 import { AEROPRESS_RATIO_CALCULATOR_TOOL } from './tool/aeropress-ratio-calculator';
+import { COLD_BREW_RATIO_CALCULATOR_TOOL } from './tool/cold-brew-ratio-calculator';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   BREW_RATIO_CALCULATOR_TOOL,
@@ -14,6 +15,6 @@ export const ALL_TOOLS: ToolDefinition[] = [
   GRIND_CONVERTER_TOOL,
   BREW_FIXER_TOOL,
   AEROPRESS_RATIO_CALCULATOR_TOOL,
+  COLD_BREW_RATIO_CALCULATOR_TOOL,
 ];
-
 

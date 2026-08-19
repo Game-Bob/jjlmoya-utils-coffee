@@ -10,6 +10,8 @@ export { brewFixer } from './tool/brewFixer/entry';
 export type { BrewFixerLocaleContent } from './tool/brewFixer/entry';
 export { aeropressRatioCalculator } from './tool/aeropress-ratio-calculator/entry';
 export type { AeropressRatioCalculatorLocaleContent } from './tool/aeropress-ratio-calculator/entry';
+export { coldBrewRatioCalculator } from './tool/cold-brew-ratio-calculator/entry';
+export type { ColdBrewRatioCalculatorLocaleContent } from './tool/cold-brew-ratio-calculator/entry';
 export { coffeeCategory } from './category';
 import { brewRatioCalculator } from './tool/brewRatioCalculator/entry';
 import { coffeeTimer } from './tool/coffeeTimer/entry';
@@ -17,6 +19,7 @@ import { grindConverter } from './tool/grindConverter/entry';
 import { waterCalculator } from './tool/waterCalculator/entry';
 import { brewFixer } from './tool/brewFixer/entry';
 import { aeropressRatioCalculator } from './tool/aeropress-ratio-calculator/entry';
+import { coldBrewRatioCalculator } from './tool/cold-brew-ratio-calculator/entry';
 export const ALL_ENTRIES = [
   brewRatioCalculator,
   coffeeTimer,
@@ -24,4 +27,5 @@ export const ALL_ENTRIES = [
   waterCalculator,
   brewFixer,
   aeropressRatioCalculator,
+  coldBrewRatioCalculator,
 ];
