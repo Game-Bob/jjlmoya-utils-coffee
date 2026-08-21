@@ -1,0 +1,223 @@
+---
+import type { KnownLocale } from '../../types';
+import type { EspressoExtractionUI } from './ui';
+import { espressoExtractionCalculator } from './entry';
+import { DEFAULT_STATE } from './logic';
+import { PREINFUSION_CHIPS, PRESET_ORDER } from './evaluator';
+import './espresso-extraction-calculator.css';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: EspressoExtractionUI;
+}
+
+const { locale = 'en', ui: propUi } = Astro.props;
+const loadedContent = propUi ? null : await espressoExtractionCalculator.i18n[locale]?.();
+const ui = propUi ?? loadedContent?.ui;
+if (!ui) return null;
+
+const presetLabels: Record<string, string> = {
+  classic: ui.presetClassic,
+  ristretto: ui.presetRistretto,
+  lungo: ui.presetLungo,
+  single: ui.presetSingle,
+  turbo: ui.presetTurbo,
+};
+
+const preLabels: Record<number, string> = {
+  0: ui.preZero,
+  4: ui.preShort,
+  8: ui.preLong,
+};
+---
+
+<div class="eec-root" data-initial-state={JSON.stringify(DEFAULT_STATE)}>
+  <script is:inline type="application/json" id="espresso-extraction-calculator-ui" set:html={JSON.stringify(ui)}></script>
+
+  <section class="eec-stage" aria-label={ui.ratioReadout}>
+    <div class="eec-scene-frame">
+      <header class="eec-stage-head">
+        <span class="eec-kicker">{ui.kicker}</span>
+        <p class="eec-status" data-ref="status">{ui.statusClassic}</p>
+      </header>
+
+      <svg class="eec-svg" viewBox="0 0 440 470" role="img" aria-label={ui.ratioReadout}>
+        <defs>
+          <linearGradient id="eecWood" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="var(--n-wood-top)" />
+            <stop offset="100%" stop-color="var(--n-wood-bot)" />
+          </linearGradient>
+          <linearGradient id="eecEspresso" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="var(--n-espresso-top)" />
+            <stop offset="55%" stop-color="var(--n-espresso-mid)" />
+            <stop offset="100%" stop-color="var(--n-espresso-bot)" />
+          </linearGradient>
+          <linearGradient id="eecChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--n-chrome)" />
+            <stop offset="45%" stop-color="var(--n-chrome-dark)" />
+            <stop offset="100%" stop-color="var(--n-chrome)" />
+          </linearGradient>
+          <clipPath id="eecGlassClip">
+            <path d="M176 148 L162 304 Q220 346 278 304 L264 148 Q220 130 176 148 Z" />
+          </clipPath>
+        </defs>
+
+        <rect class="eec-backdrop" x="0" y="0" width="440" height="470" rx="26" />
+        <ellipse class="eec-spot" cx="220" cy="180" rx="150" ry="110" />
+
+        <g class="eec-machine">
+          <rect x="132" y="14" width="176" height="26" rx="5" fill="url(#eecChrome)" />
+          <rect x="178" y="40" width="84" height="16" rx="3" fill="url(#eecChrome)" />
+          <path class="eec-basket" d="M176 56 Q220 78 264 56 L270 70 Q220 98 170 70 Z" />
+          <rect class="eec-handle" x="264" y="62" width="52" height="11" rx="5" />
+          <circle class="eec-knob" cx="322" cy="67" r="10" />
+          <rect class="eec-lcd" x="338" y="14" width="86" height="36" rx="6" />
+          <text class="eec-lcd-label" x="381" y="28" text-anchor="middle">{ui.timeReadout}</text>
+          <text class="eec-lcd-time" x="381" y="44" text-anchor="middle" data-ref="time">28s</text>
+        </g>
+
+        <g class="eec-drip-group">
+          <circle class="eec-drop eec-drop-a" cx="204" cy="108" r="3.5" />
+          <circle class="eec-drop eec-drop-b" cx="220" cy="124" r="4" />
+          <circle class="eec-drop eec-drop-c" cx="236" cy="110" r="3" />
+        </g>
+
+        <path class="eec-steam eec-steam-a" d="M150 90 C142 70, 158 58, 148 40" />
+        <path class="eec-steam eec-steam-b" d="M292 88 C302 68, 286 54, 298 36" />
+
+        <ellipse class="eec-saucer" cx="220" cy="358" rx="78" ry="12" />
+        <path class="eec-foot" d="M198 332 L190 352 Q220 366 250 352 L242 332 Z" />
+        <path class="eec-glass" d="M174 146 L160 306 Q220 350 280 306 L266 146 Q220 126 174 146 Z" />
+
+        <g clip-path="url(#eecGlassClip)">
+          <rect class="eec-liquid" x="158" y="218" width="124" height="110" fill="url(#eecEspresso)" />
+          <ellipse class="eec-crema" cx="220" cy="224" rx="46" ry="9" />
+          <g class="eec-foam" transform="translate(0, 70)">
+            <circle cx="198" cy="150" r="3.2" />
+            <circle cx="214" cy="146" r="4.1" />
+            <circle cx="230" cy="151" r="2.8" />
+            <circle cx="244" cy="147" r="3.6" />
+            <circle cx="206" cy="158" r="2.2" />
+          </g>
+        </g>
+        <path class="eec-shine" d="M190 160 L182 290" />
+
+        <line class="eec-mark-line" data-mark-line="1" x1="136" x2="164" y1="268" y2="268" />
+        <text class="eec-mark-text" data-mark-label="1" x="130" y="272" text-anchor="end">{ui.markOne}</text>
+        <line class="eec-mark-line eec-mark-gold" data-mark-line="2" x1="136" x2="164" y1="218" y2="218" />
+        <text class="eec-mark-text eec-mark-gold" data-mark-label="2" x="130" y="222" text-anchor="end">{ui.markTwo}</text>
+        <line class="eec-mark-line" data-mark-line="3" x1="136" x2="164" y1="176" y2="176" />
+        <text class="eec-mark-text" data-mark-label="3" x="130" y="180" text-anchor="end">{ui.markThree}</text>
+
+        <line class="eec-pin" x1="268" x2="318" y1="224" y2="224" />
+        <g class="eec-ratio-badge" transform="translate(318, 208)">
+          <rect x="0" y="0" width="92" height="36" rx="8" />
+          <text class="eec-badge-kicker" x="10" y="14">{ui.ratioReadout}</text>
+          <text class="eec-badge-value" x="10" y="30" data-ref="ratio">1:2.00</text>
+        </g>
+
+        <text class="eec-delta" x="220" y="392" text-anchor="middle" data-ref="delta">{ui.deltaOnLine}</text>
+        <rect x="0" y="408" width="440" height="62" fill="url(#eecWood)" />
+        <rect class="eec-rail" x="18" y="402" width="404" height="8" rx="2" />
+      </svg>
+
+      <div class="eec-ticker">
+        <span><small data-ref="style">{ui.styleNormale}</small></span>
+        <span><strong data-ref="pace">{ui.paceTypical}</strong></span>
+        <span><small>{ui.flowReadout}</small> <strong data-ref="flow">1.29 g/s</strong></span>
+        <span class="eec-ey"><small>{ui.yieldReadout}</small> <strong data-ref="yield">{ui.yieldEmpty}</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="eec-controls" aria-labelledby="eec-controls-title">
+    <div class="eec-controls-head">
+      <h2 id="eec-controls-title">{ui.presetTitle}</h2>
+      <div class="eec-unit" role="group" aria-label={ui.unitSystemLabel}>
+        <button class="eec-chip is-active" data-unit-system="metric" type="button">{ui.unitMetric}</button>
+        <button class="eec-chip" data-unit-system="imperial" type="button">{ui.unitImperial}</button>
+      </div>
+    </div>
+
+    <div class="eec-presets" role="group" aria-label={ui.presetTitle}>
+      {PRESET_ORDER.map((id) => (
+        <button
+          class:list={['eec-preset', { 'is-active': id === 'classic' }]}
+          data-preset={id}
+          type="button"
+        >
+          {presetLabels[id]}
+        </button>
+      ))}
+    </div>
+
+    <div class="eec-field">
+      <span>{ui.doseLabel}</span>
+      <div class="eec-input-row">
+        <input class="eec-range" data-range-key="doseGrams" type="range" min="7" max="25" step="0.5" value="18" aria-label={ui.doseLabel} />
+        <input class="eec-number" data-number-key="doseGrams" type="number" min="7" max="25" step="0.5" value="18" aria-label={ui.doseLabel} />
+        <span class="eec-unit-pill" data-mass-unit>{ui.unitGrams}</span>
+      </div>
+    </div>
+
+    <div class="eec-field">
+      <span>{ui.yieldLabel}</span>
+      <div class="eec-input-row">
+        <input class="eec-range" data-range-key="yieldGrams" type="range" min="8" max="70" step="0.5" value="36" aria-label={ui.yieldLabel} />
+        <input class="eec-number" data-number-key="yieldGrams" type="number" min="8" max="70" step="0.5" value="36" aria-label={ui.yieldLabel} />
+        <span class="eec-unit-pill" data-mass-unit>{ui.unitGrams}</span>
+      </div>
+    </div>
+
+    <div class="eec-ratio-row" role="group" aria-label={ui.ratioTargetsLabel}>
+      <span>{ui.ratioTargetsLabel}</span>
+      <button class="eec-chip" data-ratio-target="1" type="button">{ui.ratioTargetOne}</button>
+      <button class="eec-chip is-active" data-ratio-target="2" type="button">{ui.ratioTargetTwo}</button>
+      <button class="eec-chip" data-ratio-target="3" type="button">{ui.ratioTargetThree}</button>
+    </div>
+
+    <div class="eec-field">
+      <span>{ui.timeLabel}</span>
+      <div class="eec-input-row">
+        <input class="eec-range" data-range-key="timeSeconds" type="range" min="8" max="50" step="1" value="28" aria-label={ui.timeLabel} />
+        <input class="eec-number" data-number-key="timeSeconds" type="number" min="8" max="50" step="1" value="28" aria-label={ui.timeLabel} />
+        <span class="eec-unit-pill">{ui.unitSeconds}</span>
+      </div>
+    </div>
+
+    <div class="eec-ratio-row" role="group" aria-label={ui.preinfusionLabel}>
+      <span>{ui.preinfusionLabel}</span>
+      {PREINFUSION_CHIPS.map((sec) => (
+        <button
+          class:list={['eec-chip', { 'is-active': sec === 0 }]}
+          data-pre={sec}
+          type="button"
+        >
+          {preLabels[sec]}
+        </button>
+      ))}
+    </div>
+
+    <button class="eec-tds-toggle" data-action="tds" type="button" aria-pressed="false">{ui.tdsToggle}</button>
+    <div class="eec-field eec-tds-field">
+      <span>{ui.tdsHint}</span>
+      <div class="eec-input-row">
+        <input class="eec-range" data-range-key="tdsPercent" type="range" min="0" max="16" step="0.1" value="0" aria-label={ui.tdsLabel} />
+        <input class="eec-number" data-number-key="tdsPercent" type="number" min="0" max="16" step="0.1" value="0" aria-label={ui.tdsLabel} />
+        <span class="eec-unit-pill">{ui.unitPercent}</span>
+      </div>
+    </div>
+
+    <button class="eec-reset" data-action="reset" type="button">{ui.resetText}</button>
+  </section>
+</div>
+
+<script>
+  import { EspressoExtractionController } from './controller';
+
+  const root = document.querySelector<HTMLElement>('.eec-root');
+  const uiNode = document.getElementById('espresso-extraction-calculator-ui');
+  if (root && uiNode?.textContent) {
+    new EspressoExtractionController(root, JSON.parse(uiNode.textContent));
+  }
+</script>
