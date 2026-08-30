@@ -35,7 +35,7 @@ export const content: CategoryLocaleContent = {
  },
  {
  type: 'paragraph',
- html: 'En el café de filtro (V60, Chemex, AeroPress), el tiempo de contacto es crítico. Nuestro <strong>cronómetro especializado</strong> te ayuda a mantener el ritmo mediante avisos visuales para la fase de pre-infusión (Bloom) y las etapas sucesivas de vertido (Pour), garantizando una extracción uniforme y controlada en cada sesión.',
+ html: 'En el café de filtro (V60, Chemex, AeroPress), el tiempo de contacto es crítico. Nuestro <strong>cronómetro especializado</strong> te ayuda a mantener el ritmo mediante avisos visuales para la fase de pre-infusión (Bloom) y las etapas sucesivas de vertido (Pour), para que puedas repetir y comparar cada sesión.',
  },
  {
  type: 'title',
@@ -79,10 +79,6 @@ export const content: CategoryLocaleContent = {
  html: 'La temperatura del agua es donde comienzan la mayoría de los errores. El agua a 95°C extrae diferentes compuestos que agua a 88°C. Demasiado calor (&gt;96°C) sobre-extrae y produce sabor amargo astringente. Demasiado frío (&lt;87°C) sub-extrae y la bebida resulta plana, desabrida. La ventana óptima para la mayoría de café es 90-94°C, ajustable según el tostado (tostados claros prefieren más calor; tostados oscuros, menos).',
  },
  {
- type: 'paragraph',
- html: 'Además, el enfriamiento es exponencial. Una taza a 65°C se enfría más rápido que una a 50°C. Conocer la curva de enfriamiento permite saborear el café en sus múltiples notas: caído a 65°C tiene una acidez viva; a 45°C, esa acidez se integra mejor con los cuerpos. Muchos aficionados pierden notas nobles porque saborean el café a temperatura equivocada.',
- },
- {
  type: 'title',
  text: 'Consistencia de Molienda: Bimodalidad y Finos',
  level: 2,
@@ -92,10 +88,6 @@ export const content: CategoryLocaleContent = {
  html: 'Un molino bien calibrado produce partículas de tamaño consistente. Uno mal calibrado o desgastado produce "bimodalidad": principalmente partículas grandes PERO también un polvo fino (finos). Los finos extraen muy rápido (crean amargura), mientras que las grandes extraen lentamente (crean astringencia). El resultado es café desequilibrado pese a usar método y tiempo correcto.',
  },
  {
- type: 'paragraph',
- html: 'Los molinos de burr (disco o cónico) producen distribución más consistente que los de cuchilla. Un molino de $50 vs $300 es diferencia drástica en sabor final. Nuestro conversor de molienda ayuda, pero solo mitigará parcialmente un molino pésimo. Esto es inversión legítima: un molino de calidad es diferenciador mayor que un método de preparación específico.',
- },
- {
  type: 'title',
  text: 'Catación y Puntuación: Perfiles de Sabor Científicos',
  level: 2,
@@ -103,10 +95,6 @@ export const content: CategoryLocaleContent = {
  {
  type: 'paragraph',
  html: 'Los catadores profesionales utilizan un "protocolo SCA" (Specialty Coffee Association) para puntuar café en una escala de 100 puntos. Las dimensiones incluyen: aroma, sabor, post-gusto, acidez, cuerpo, balance, uniformidad, limpieza y puntuación global. Un café puntuado 85+ es considerado "de especialidad". Esta estandarización permite comparación objetiva entre cafés de origen, tostadores y métodos.',
- },
- {
- type: 'paragraph',
- html: 'Aprender a catar (probar) café como lo hacen los profesionales amplía tu capacidad de evaluar calidad. Identificar notas (chocolate, caramelo, frutas, florales) requiere entrenamiento olfativo. La mayoría de lo que percibimos como "sabor" es en realidad "aroma retronasal" (olor que pasa desde la boca a la nariz desde adentro). Un café con buen aroma pero sabor plano señala nariz menos sensible o problemas con la extracción.',
  },
  {
  type: 'title',
