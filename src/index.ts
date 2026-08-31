@@ -32,3 +32,5 @@ export type { GrindConverterUI, GrindConverterLocaleContent } from './tool/grind
 export { brewFixer, BREW_FIXER_TOOL } from './tool/brewFixer';
 export type { BrewFixerUI, BrewFixerLocaleContent } from './tool/brewFixer';
 
+export { coffeeGrinderDoseRetentionCalculator, COFFEE_GRINDER_DOSE_RETENTION_CALCULATOR_TOOL } from './tool/coffee-grinder-dose-retention-calculator';
+export type { GrinderRetentionCalculatorUI, GrinderRetentionCalculatorLocaleContent } from './tool/coffee-grinder-dose-retention-calculator';

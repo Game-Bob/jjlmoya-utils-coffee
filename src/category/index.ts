@@ -7,10 +7,11 @@ import { brewFixer } from '../tool/brewFixer/entry';
 import { aeropressRatioCalculator } from '../tool/aeropress-ratio-calculator/entry';
 import { coldBrewRatioCalculator } from '../tool/cold-brew-ratio-calculator/entry';
 import { espressoExtractionCalculator } from '../tool/espresso-extraction-calculator/entry';
+import { coffeeGrinderDoseRetentionCalculator } from '../tool/coffee-grinder-dose-retention-calculator/entry';
 
 export const coffeeCategory: CoffeeCategoryEntry = {
   icon: 'mdi:coffee',
-  tools: [brewRatioCalculator, coffeeTimer, waterCalculator, grindConverter, brewFixer, aeropressRatioCalculator, coldBrewRatioCalculator, espressoExtractionCalculator],
+  tools: [brewRatioCalculator, coffeeTimer, waterCalculator, grindConverter, brewFixer, aeropressRatioCalculator, coldBrewRatioCalculator, espressoExtractionCalculator, coffeeGrinderDoseRetentionCalculator],
   i18n: {
     es: () => import('./i18n/es').then((m) => m.content),
     en: () => import('./i18n/en').then((m) => m.content),

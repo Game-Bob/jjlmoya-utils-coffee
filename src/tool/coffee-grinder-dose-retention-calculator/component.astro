@@ -1,0 +1,47 @@
+---
+import type { KnownLocale } from '../../types';
+import type { GrinderRetentionCalculatorUI } from './ui';
+import { coffeeGrinderDoseRetentionCalculator } from './entry';
+import { CURRENCY_OPTIONS, getCurrencyDefinition, getDefaultCurrencyForLocale } from './logic';
+import './coffee-grinder-dose-retention-calculator.css';
+
+interface Props { locale?: KnownLocale; ui?: GrinderRetentionCalculatorUI; }
+const { locale = 'en', ui: propUi } = Astro.props;
+const loadedContent = propUi ? null : await coffeeGrinderDoseRetentionCalculator.i18n[locale]?.();
+const ui = propUi ?? loadedContent?.ui;
+if (!ui) return null;
+const initialCurrency = getDefaultCurrencyForLocale(locale);
+const initialState = { presetId: 'singleDose', unitSystem: 'metric', currency: initialCurrency, targetDoseG: 18, trialInputG: 20, trialOutputG: 19.5, purgeG: 0, sessionsPerDay: 2, costPerKg: 28 * getCurrencyDefinition(initialCurrency).eurRate };
+---
+
+<div class="coffee-grinder-retention-calculator" data-locale={locale} data-initial-state={JSON.stringify(initialState)}>
+  <script is:inline type="application/json" id="coffee-grinder-retention-ui" set:html={JSON.stringify(ui)}></script>
+  <section class="retention-controls" aria-labelledby="retention-controls-title">
+    <div class="retention-control-heading"><div><p class="retention-eyebrow">Calibration desk</p><h2 id="retention-controls-title">{ui.controlTitle}</h2></div><div class="retention-unit-toggle" role="group" aria-label={ui.unitSystemLabel}><button type="button" data-unit-system="metric" class="is-active" aria-pressed="true">{ui.unitMetric}</button><button type="button" data-unit-system="imperial" aria-pressed="false">{ui.unitImperial}</button></div></div>
+    <div class="retention-form-section"><p class="retention-section-label">{ui.presetTitle}</p><div class="retention-preset-grid" role="group" aria-label={ui.presetTitle}><button type="button" data-preset="singleDose" class="is-active" aria-pressed="true">{ui.presetSingleDose}</button><button type="button" data-preset="espressoBar" aria-pressed="false">{ui.presetEspressoBar}</button><button type="button" data-preset="zeroPurge" aria-pressed="false">{ui.presetZeroPurge}</button><button type="button" data-preset="custom" aria-pressed="false">{ui.presetCustom}</button></div></div>
+    <div class="retention-input-grid">
+      <div class="retention-input-card"><label for="retention-target">{ui.targetDoseLabel}</label><span>{ui.targetDoseHint}</span><div><input id="retention-target" type="range" data-range-key="targetDoseG" min="5" max="60" step="0.5" value="18"><input type="number" data-number-key="targetDoseG" min="5" max="60" step="0.1" value="18" aria-label={ui.targetDoseLabel}><b data-ref="weight-unit">g</b></div></div>
+      <div class="retention-input-card"><label for="retention-input">{ui.trialInputLabel}</label><span>{ui.trialInputHint}</span><div><input id="retention-input" type="range" data-range-key="trialInputG" min="5" max="100" step="0.5" value="20"><input type="number" data-number-key="trialInputG" min="5" max="100" step="0.1" value="20" aria-label={ui.trialInputLabel}><b data-ref="weight-unit">g</b></div></div>
+      <div class="retention-input-card"><label for="retention-output">{ui.trialOutputLabel}</label><span>{ui.trialOutputHint}</span><div><input id="retention-output" type="range" data-range-key="trialOutputG" min="0" max="100" step="0.5" value="19.5"><input type="number" data-number-key="trialOutputG" min="0" max="100" step="0.1" value="19.5" aria-label={ui.trialOutputLabel}><b data-ref="weight-unit">g</b></div></div>
+      <div class="retention-input-card"><label for="retention-purge">{ui.purgeLabel}</label><span>{ui.purgeHint}</span><div><input id="retention-purge" type="range" data-range-key="purgeG" min="0" max="20" step="0.5" value="0"><input type="number" data-number-key="purgeG" min="0" max="20" step="0.1" value="0" aria-label={ui.purgeLabel}><b data-ref="weight-unit">g</b></div></div>
+      <div class="retention-input-card"><label for="retention-sessions">{ui.sessionsLabel}</label><span>{ui.sessionsHint}</span><div><input id="retention-sessions" type="range" data-range-key="sessionsPerDay" min="1" max="80" step="1" value="2"><input type="number" data-number-key="sessionsPerDay" min="1" max="80" step="1" value="2" aria-label={ui.sessionsLabel}><b>×</b></div></div>
+      <div class="retention-input-card retention-cost-card"><label for="retention-cost">{ui.costLabel}</label><span>{ui.costHint}</span><div class="retention-currency-control"><label for="retention-currency">{ui.currencyLabel}</label><select id="retention-currency" data-currency-select aria-label={ui.currencyLabel}>{CURRENCY_OPTIONS.map((currency) => <option value={currency.id}>{currency.id} ({currency.symbol})</option>)}</select></div><p class="retention-currency-note" data-ref="currency-rate-note">{ui.currencyHint} · {ui.currencyRateNote}</p><div><input id="retention-cost" type="range" data-range-key="costPerKg" min="0" max="200" step="1" value="28"><input type="number" data-number-key="costPerKg" min="0" max="200" step="0.5" value="28" aria-label={ui.costLabel}><b data-ref="currency-symbol">€</b></div></div>
+    </div>
+    <div class="retention-actions"><button type="button" data-action="copy" class="retention-button-primary">{ui.copyResult}</button><button type="button" data-action="reset" class="retention-button-quiet">{ui.resetText}</button></div>
+  </section>
+  <section class="retention-results" aria-labelledby="retention-results-title">
+    <div class="retention-result-heading"><div><p class="retention-eyebrow">{ui.resultTitle}</p><h2 id="retention-results-title">{ui.calibrationTitle}</h2></div><span data-ref="status" class="retention-status retention-status-moderate">{ui.statusModerate}</span></div>
+    <p class="retention-warning" data-ref="mismatch-warning" role="alert"></p>
+    <div class="retention-stat-grid"><div class="retention-stat retention-stat-feature"><span>{ui.retentionLabel}</span><strong data-ref="retention">2.5%</strong></div><div class="retention-stat"><span>{ui.chargeDoseLabel}</span><strong data-ref="charge-dose">18.5 g</strong></div><div class="retention-stat"><span>{ui.deliveredLabel}</span><strong data-ref="delivered-dose">18 g</strong></div><div class="retention-stat"><span>{ui.wasteLabel}</span><strong data-ref="waste">0.5 g</strong></div><div class="retention-stat"><span>{ui.costPerSessionLabel}</span><strong data-ref="cost-session">€0.52</strong></div><div class="retention-stat"><span>{ui.dailyCostLabel}</span><strong data-ref="daily-cost">€1.04</strong></div></div>
+    <div class="retention-visual"><div class="retention-visual-heading"><h3>{ui.visualTitle}</h3><span><b data-ref="sessions">2</b> sessions</span></div><div class="retention-flow"><div class="retention-flow-track"><span class="retention-flow-delivered" data-ref="flow-delivered"></span><span class="retention-flow-retained" data-ref="flow-retained"></span><span class="retention-flow-purge" data-ref="flow-purge"></span></div><div class="retention-flow-labels"><span>{ui.visualDelivered} <b data-ref="flow-delivered-label">18 g</b></span><span>{ui.visualRetained} <b data-ref="flow-retained-label">0.5 g</b></span><span>{ui.visualPurge} <b data-ref="flow-purge-label">0 g</b></span></div></div><p class="retention-loaded-note">{ui.visualLoaded}: <b data-ref="flow-loaded-label">18.5 g</b> · {ui.dailyWasteLabel}: <b data-ref="daily-waste">1 g</b></p></div>
+    <div class="retention-secondary-grid"><div class="retention-note"><h3>{ui.calibrationTitle}</h3><p>{ui.calibrationText}</p></div><div class="retention-note"><h3>{ui.actionTitle}</h3><p>{ui.actionText}</p></div></div>
+    <div class="retention-steps"><h3>{ui.actionTitle}</h3><ol data-ref="steps"><li><span>1</span><p>{ui.stepMeasure}</p></li><li><span>2</span><p>{ui.stepCompare}</p></li><li><span>3</span><p>{ui.stepLoad}</p></li></ol></div>
+  </section>
+</div>
+
+<script>
+  import { GrinderRetentionController } from './controller';
+  const root = document.querySelector<HTMLElement>('.coffee-grinder-retention-calculator');
+  const uiScript = document.getElementById('coffee-grinder-retention-ui');
+  if (root && uiScript) new GrinderRetentionController(root, JSON.parse(uiScript.textContent ?? '{}'));
+</script>
