@@ -1,605 +1,605 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-03T20:32:29.138Z",
+  "generatedAt": "2026-09-04T09:09:29.187Z",
   "pages": {
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/aeropress-verhaeltnis-rechner/": {
-      "hash": "2cb7edd8c3c833765d64b9b46a12c0a99dce18619677968663040d9245e0c65f",
+      "hash": "4c8418340f9a49cfaf73ff71814a83db7744cd8d1c2dfd67744919350cbbc8ed",
       "route": "/de/werkzeuge/kategorien/kaffee/aeropress-verhaeltnis-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/cold-brew-kaffee-verhaeltnis-rechner/": {
-      "hash": "19116b7e12e0d5abe4a5f85e7989e5cf59c792de14f9053b2f12e1c66a732615",
+      "hash": "d11bb1208cb32cb457f24d3649757e43f93b7bada0e9feffe6b0eb687281674d",
       "route": "/de/werkzeuge/kategorien/kaffee/cold-brew-kaffee-verhaeltnis-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/espresso-extraktionsrechner/": {
-      "hash": "744cb665fd0e475daf841471b8e622cfa6adf4c0db5ad2d125c8350067147e4b",
+      "hash": "aaaee7be6e7bfdfbb3cee3b438238291039e6ab2a776b28084f060c36b4c9925",
       "route": "/de/werkzeuge/kategorien/kaffee/espresso-extraktionsrechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/": {
-      "hash": "44ab105f453edd7b4b5855fb4683f58264c302939e09990a59d39a6d16c35fa4",
+      "hash": "fd860a44415660a9769bb2cc02033ea2f0bd977cb6416b352a1295d286dfc30c",
       "route": "/de/werkzeuge/kategorien/kaffee/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/kaffee-extraktions-diagnose-braufehler/": {
-      "hash": "d540f5e4e9265f557d258744801171577774f165009eebf598cf223d78eb0b69",
+      "hash": "f30dd4502c11c8028b3ca163a5c548386b03415c6663290f63930b7d537ae7e5",
       "route": "/de/werkzeuge/kategorien/kaffee/kaffee-extraktions-diagnose-braufehler/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/kaffee-mahlgrad-rechner/": {
-      "hash": "87c87c67fd85727eb3c5a86e49dd820e9a227e9d2f0019703082bc0118b588db",
+      "hash": "ec30b7b5628fc54966565e537acc184ff85aff2ecc3acaeaaa5e9ad2edc9756f",
       "route": "/de/werkzeuge/kategorien/kaffee/kaffee-mahlgrad-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/kaffee-timer/": {
-      "hash": "499efe41413d07a5e0452deaeb62b31cfa0c3e596ea5135d3209424633d73f77",
+      "hash": "cf0e693d5cd04b30f81cb1323e64998e5958e72c001e6e3d29c70a9a0d415aba",
       "route": "/de/werkzeuge/kategorien/kaffee/kaffee-timer/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/kaffee-verhaeltnis-rechner/": {
-      "hash": "ea030bcf9a719fde95d3c523c206ae12c89c746837c4ea4b89d1ab5f153d36ae",
+      "hash": "fe277a7584b54c1cfdb268f01be8a5cf91d6bbb1f731d5424d2aa543b885a48a",
       "route": "/de/werkzeuge/kategorien/kaffee/kaffee-verhaeltnis-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/kaffeemuehlen-retention-rechner/": {
-      "hash": "c6f6811786344529b06e30caded5f3d771eb2c5fe7ebede0abd1975d91e44794",
+      "hash": "2adc3613ba4bb0cfe5102759f728be0d1954abe416124364b2f41cfa70b88b0b",
       "route": "/de/werkzeuge/kategorien/kaffee/kaffeemuehlen-retention-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/kaffee/sca-kaffee-wasser-rechner/": {
-      "hash": "c7c5f7440342053ef68ffecc4aaf58d5512c2c819f49a3d1cef8c83730d16b04",
+      "hash": "23942069916f98769cb46584df439bcb6318478c0e7183fd9530521b46598a62",
       "route": "/de/werkzeuge/kategorien/kaffee/sca-kaffee-wasser-rechner/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/aeropress-ratio-calculator/": {
-      "hash": "4fe741ff7ef5165600e5b3007bbd3351ec205980d19d34462532ae54165fc48a",
+      "hash": "ee5b6fa0322401d8f035c1ba141c5d7657574d9a392f7c4476c4150e3ce868cb",
       "route": "/en/utilities/categories/coffee/aeropress-ratio-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/coffee-brew-timer/": {
-      "hash": "95a945bca4a87e2fe1aaa30bc3a864b2ff7f77b004499f224b9b7a4460abe056",
+      "hash": "6bd9b97f06cef799730e130360507527d0119d483049b065d994c4083da79074",
       "route": "/en/utilities/categories/coffee/coffee-brew-timer/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/coffee-flavor-diagnosis-extraction-problems/": {
-      "hash": "bc09d9db6497cd450cd418d2e8bea8f8af0be3c26d651121293eeb9e14854b40",
+      "hash": "0ee15df840c089dca0eb54e1d2885d7d5bcabe25abbb03900655acebcffad798",
       "route": "/en/utilities/categories/coffee/coffee-flavor-diagnosis-extraction-problems/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/coffee-grind-size-converter/": {
-      "hash": "94e9e56224b7e604e604432a3cb561d1e440624c8272c4750686e335f1d4c695",
+      "hash": "8c8c1313b325a94216b129d2502bf1c544bf7e6800cab60c2ee2d2a41a352dd1",
       "route": "/en/utilities/categories/coffee/coffee-grind-size-converter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/coffee-grinder-dose-retention-calculator/": {
-      "hash": "ebcc8b0e525e495690c52e9d36dfa42dbb49918079b1622ea2038e6d7c97270a",
+      "hash": "a31de0ce72ef06468c7d9ec9da9ad14dd058180cb3f31392fc914462d98fc18f",
       "route": "/en/utilities/categories/coffee/coffee-grinder-dose-retention-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/coffee-ratio-calculator/": {
-      "hash": "5ee83333089988880e878911167ba5ab7ccaa09f83a73d2729728eb62568e2d9",
+      "hash": "4525d1cbe1650bfcea074975dd4e99af3e78098379b256d5e4e31428982f5f3d",
       "route": "/en/utilities/categories/coffee/coffee-ratio-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/cold-brew-coffee-ratio-calculator/": {
-      "hash": "d8ed2d0b78d3811cc69d65094a701ad8444dddbebf9122763cd187122a66381d",
+      "hash": "1766815700c746bc9c7ed49802d4ec7d129b61cf853d9e3390815aea05a046d0",
       "route": "/en/utilities/categories/coffee/cold-brew-coffee-ratio-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/espresso-extraction-calculator/": {
-      "hash": "14ab175d9f0b5701703aed256c972c83ef14e396daa985a0966bf90d06e40a84",
+      "hash": "e41d4fbf2d1ed27b5be8400ec4aadabdc9c6755f53d722668037cd9c43a17e8a",
       "route": "/en/utilities/categories/coffee/espresso-extraction-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/": {
-      "hash": "9503506b664ad2af20c727bc0cc824dcf92f32886dfb185a1cda62e7e3257fcb",
+      "hash": "058d588178834787741782bbde45c411cb54e7ddd3685ed213b55717ca2eb98c",
       "route": "/en/utilities/categories/coffee/"
     },
     "https://www.gamebob.dev/en/utilities/categories/coffee/sca-coffee-water-calculator/": {
-      "hash": "f8202231b4f4b527ce77ae49a9d7c3a898ba43680295d22436de76ce5f8a8035",
+      "hash": "0d34f5641bc6ddbefbe39da06ac453fe738a4c7a13db087b6c7a06577633023c",
       "route": "/en/utilities/categories/coffee/sca-coffee-water-calculator/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/calculateur-eau-cafe-sca/": {
-      "hash": "cc0092e5f4596a820eca9cff95b939add510935b6d2c3f3edbd81301c096861b",
+      "hash": "7ce1108c9bf55d861d92836f55a21098a8cc3d18345eca14127aa24e70d2d6d0",
       "route": "/fr/utilitaires/categories/cafe-specialite/calculateur-eau-cafe-sca/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/calculateur-extraction-espresso/": {
-      "hash": "4868e89068c7b9eb702ebad63e1f88162faba1e9702d4539b4f09ee9760eaf4a",
+      "hash": "26d7a0a9280458381cf21aa8a491696a35d153657cc828fb67f8ef1b065ea933",
       "route": "/fr/utilitaires/categories/cafe-specialite/calculateur-extraction-espresso/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/calculateur-proportion-cafe-cold-brew/": {
-      "hash": "12489d4508e62f90a7b8653956e2f291da8d63f0098a66b28072cf8ffd60ff96",
+      "hash": "4e3376d8543125acf95718d5450906b3aabe12c970c65045c7d7dead7ee0131a",
       "route": "/fr/utilitaires/categories/cafe-specialite/calculateur-proportion-cafe-cold-brew/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/calculateur-ratio-aeropress/": {
-      "hash": "ab891c35c71cd4e114b821053f22e14958ac444391b445c526428b5fb4dc5502",
+      "hash": "cdd1119aee1ea5dc00f2b8098493e7d693e6667af3cd42589d044b6bb5eb6f72",
       "route": "/fr/utilitaires/categories/cafe-specialite/calculateur-ratio-aeropress/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/calculateur-ratio-cafe/": {
-      "hash": "0eef3ea861ebeb4b79c055cdac738a08d9edb9bb6aae7b8377f89df3e57fb643",
+      "hash": "a4b5b4b4814b7b6938786dccaa52525449c6a348006230ba372f1979cdecadf5",
       "route": "/fr/utilitaires/categories/cafe-specialite/calculateur-ratio-cafe/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/calculateur-retention-moulin-cafe/": {
-      "hash": "270ad09f0ecba9e42f6505df8ca9bb4630a59ff8f2e7baa44bf621e242933a8c",
+      "hash": "33a72e0d170d981e30a10cfa669c07345fc2e570f41db87abf63a948def77c4c",
       "route": "/fr/utilitaires/categories/cafe-specialite/calculateur-retention-moulin-cafe/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/chronometre-cafe/": {
-      "hash": "0a71d2aa7e8894fb1b5d7723d415ac07dad1a4ae4a57c461d20adb915550f4d2",
+      "hash": "69ac654135b26ab0998a98260eb714bbc1b918d8a952e0581b1b1795901a0c97",
       "route": "/fr/utilitaires/categories/cafe-specialite/chronometre-cafe/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/convertisseur-mouture-cafe/": {
-      "hash": "87b98ade115192e2ccd8fd98caeef8e7e134c68d8015a2d9a6d25efb0d7cbe84",
+      "hash": "46a9123ffbea1e85123caf4ff26dc4b969826531eefa3013992105af7889eb1c",
       "route": "/fr/utilitaires/categories/cafe-specialite/convertisseur-mouture-cafe/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/diagnostic-extraction-cafe-brew-fixer/": {
-      "hash": "c558ee6584f896a1f23f1663332035d09a0674bcd6b7447b986d26cc3c54e48d",
+      "hash": "87c5eb71ac4ccc98c62471ba545a7593cd2b84e9ffd82b7e3f636f3be8601bc6",
       "route": "/fr/utilitaires/categories/cafe-specialite/diagnostic-extraction-cafe-brew-fixer/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/": {
-      "hash": "9841ec7c79105fd2c8b16fd18fdff4b1f19179db7b27a16cc748838e71a462e3",
+      "hash": "5abc11706efbe780c99610d069516eb770c0f1b91a4582c996354fd12340a187",
       "route": "/fr/utilitaires/categories/cafe-specialite/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/diagnosis-ekstraksi-kopi-brew-fixer/": {
-      "hash": "a2a0e17b9ecd0ee7ec6ddb40c4967b9ad784814cf4294380e227851760779262",
+      "hash": "68e762068f1cdaadd37554cbcb5139a42386a414c9b63f7381d276fe2866eb2c",
       "route": "/id/utilitas/kategori/kopi/diagnosis-ekstraksi-kopi-brew-fixer/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/": {
-      "hash": "6135411f65108644dee5085ab2f9c4f820dda869dfe3b2d0358cba77765a7167",
+      "hash": "e8d39fcfa0aeb98586d358b858ff4217d903337265cd3b7bf0722058fe7a5d78",
       "route": "/id/utilitas/kategori/kopi/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/kalkulator-air-kopi-sca/": {
-      "hash": "3fc8f67ccacddef2d02cf35e173800d6927a739710f9f450696e626bbd2bf91e",
+      "hash": "4a649eca31fd5d342f32bc43aa5097c65dede2e1b50a225996d2496c4e2b7479",
       "route": "/id/utilitas/kategori/kopi/kalkulator-air-kopi-sca/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/kalkulator-ekstraksi-espresso/": {
-      "hash": "ee66331435ea72cea33db434b8832468f7dd9430b10cada9eea01145bd7a1ccf",
+      "hash": "aac5e90e4db879442eecb7e3457f963b4a2eb27d582cc9d1cf2bc626f1ce5501",
       "route": "/id/utilitas/kategori/kopi/kalkulator-ekstraksi-espresso/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/kalkulator-rasio-aeropress/": {
-      "hash": "8ae09fb0fa9ffdb3247f83f8bb0edbb36c1ab60487aa91445b77ab84b94b4308",
+      "hash": "806b280b099dfb61614cc2c9791d4ab3cfab7835fd35e835779246c5fdae93b6",
       "route": "/id/utilitas/kategori/kopi/kalkulator-rasio-aeropress/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/kalkulator-rasio-kopi/": {
-      "hash": "1264195a3c84d98f650984c8a8eaf53305ced6e497fc44325996dd2fb8fcee91",
+      "hash": "e14cea883ebb052dfea36e3501b760ba9bfad6c76c58aa485b527bd68657ac63",
       "route": "/id/utilitas/kategori/kopi/kalkulator-rasio-kopi/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/kalkulator-rasio-kopi-cold-brew/": {
-      "hash": "3e40a97ea92b0b11cd1ecfc6444157803e68dd1ec8a2be62170a02ad965f7ad3",
+      "hash": "40a3618978bc7f71a78a729b6baed0dd34cfd7923cf7c4d42704137e19c16104",
       "route": "/id/utilitas/kategori/kopi/kalkulator-rasio-kopi-cold-brew/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/kalkulator-retensi-dosis-penggiling-kopi/": {
-      "hash": "99c521b612f18628abce2f4e86c1d92c7ea1a673e79d81327c44e306f3ce2d87",
+      "hash": "36c2797dd534cc126fd64c84355989ba1f945cc61ee0c3bc0e405a29a2906ba1",
       "route": "/id/utilitas/kategori/kopi/kalkulator-retensi-dosis-penggiling-kopi/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/konverter-ukuran-gilingan-kopi/": {
-      "hash": "1af781740395dc920b448349f4be80f71f34ee8541ea4b00877131ce304662fa",
+      "hash": "cd2ae169ca76774974684e62fb6b14c60a4b1d4d423054ca85d5c265c83145e1",
       "route": "/id/utilitas/kategori/kopi/konverter-ukuran-gilingan-kopi/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kopi/timer-seduh-kopi/": {
-      "hash": "18c36414f1c9b431e4d564ef7c6c3e7528fd814b34530de35e2133bc1b67e660",
+      "hash": "8bc56e98fb0b165f6d4af43903780a602edf75c78f3d0975214563ed44b97b50",
       "route": "/id/utilitas/kategori/kopi/timer-seduh-kopi/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/calcolatore-acqua-caffe-sca/": {
-      "hash": "ce4fe1010622dbbe8c94951c2956a1b2f46bccd9ce0f5ea235097e36d7f52c0f",
+      "hash": "262f3485f22fa20ffab75bd60ce061bf4e7a114f2019b9ce9a20e662f2d1ca56",
       "route": "/it/utilita/categorie/caffe/calcolatore-acqua-caffe-sca/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/calcolatore-estrazione-espresso/": {
-      "hash": "1a9d9dda2ee2edeb892b845c22663ae707230ba6b27f4c62c9b0e79880f4e024",
+      "hash": "cc382ef6e223083432bf6febd4e7519c51cd287921d5670ed17980c1a4e076d7",
       "route": "/it/utilita/categorie/caffe/calcolatore-estrazione-espresso/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/calcolatore-proporzione-caffe/": {
-      "hash": "23634e7701335be3ebd5925b0ac67b3e4113330c80f5229ec8da10d7b8be76b4",
+      "hash": "2e3f6055fca170531c68327e39547cfd9414334cd68ee24158d2fe9cd02d450a",
       "route": "/it/utilita/categorie/caffe/calcolatore-proporzione-caffe/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/calcolatore-rapporto-caffe-cold-brew/": {
-      "hash": "741b10c76b0e0c94e0a1ca0ffe9bbacbccb05b1433e7374e7fe4e7455f14b5ed",
+      "hash": "33171fb1e93689a84d6a104c747820a7ac15c42f61c171c0a6b56b19d533770d",
       "route": "/it/utilita/categorie/caffe/calcolatore-rapporto-caffe-cold-brew/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/calcolatore-ratio-aeropress/": {
-      "hash": "d1a3f315b722eff41b870a53164da0df376e8afcd2fed37a9014f9bbc4f36d8e",
+      "hash": "f348ebcfe3976854259470bd7238de62959d32ad768a192aa79f85f56944b521",
       "route": "/it/utilita/categorie/caffe/calcolatore-ratio-aeropress/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/calcolatore-ritenzione-macinacaffe/": {
-      "hash": "9afd8b86ead56683a6a849d81398e87a411aab72667e1617070c6b5d75f722d9",
+      "hash": "50a673e512d7a60afae00ca8746ee46716d7bed43e8592820e3e2d17c951e902",
       "route": "/it/utilita/categorie/caffe/calcolatore-ritenzione-macinacaffe/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/convertitore-macinatura-caffe/": {
-      "hash": "97757e95a01ef5a628ad5792cd929bdf10bdaa92291412fe3232e19dc571fcb0",
+      "hash": "8913a48f8e600d4d82b989e3c5fc55a20cf86a2dc7ad4737dbb7983485ec6f76",
       "route": "/it/utilita/categorie/caffe/convertitore-macinatura-caffe/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/diagnosi-estrazione-caffe-brew-fixer/": {
-      "hash": "6f9dda653132e4b3a74f9bf06b5cd681e5cadb00e082caf9c0dbedb44d58b085",
+      "hash": "a99f0016b85544cea6e98a68552ccc70b8efb6f1476e5859eaa9690c6411fd27",
       "route": "/it/utilita/categorie/caffe/diagnosi-estrazione-caffe-brew-fixer/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/": {
-      "hash": "18f730b964e922a36cd7a5fd8d999717fea97fba6b280402c11b1d6b452d7e7f",
+      "hash": "468af1b27f50bd22698a0f8a242f25a85a6c9a5a855255056b87bedaabbd3710",
       "route": "/it/utilita/categorie/caffe/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/caffe/timer-estrazione-caffe/": {
-      "hash": "6af2e064607a3ec11a94a438f79a7a6a216190c87caf4fafc7c0c3531057cf48",
+      "hash": "e7e08f17a41ef871f6a461a11534127d3114b9c4b93138260f859eef677de6ff",
       "route": "/it/utilita/categorie/caffe/timer-estrazione-caffe/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/aeropress-ratio-calculator/": {
-      "hash": "df68cde0eba8802aff9ac2dbd01375a31a173f494f0ce9ffba47e7df00b45274",
+      "hash": "02845da4082f303a2e9d424a8bb7076849f8d80d3f8809a9c48e4a357a324248",
       "route": "/ja/utilities/categories/coffee/aeropress-ratio-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/coffee-brew-timer/": {
-      "hash": "e154dde1a49b9e79f588e078b4d5ba84a9616f0b4ebe4b3de762fa97d6865369",
+      "hash": "f6cac272504f75c20c2bae4f042d2ea2fab896473088dde4a468a405f65967ed",
       "route": "/ja/utilities/categories/coffee/coffee-brew-timer/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/coffee-flavor-diagnosis-extraction-problems/": {
-      "hash": "73f0cfde696dc1f3c181c7b53309da35992278925a6a90f276e292739a1e377f",
+      "hash": "6f6378e506ae65f1b810faff8cd13aea701f8994caa6511cd6bcdb4ee771f614",
       "route": "/ja/utilities/categories/coffee/coffee-flavor-diagnosis-extraction-problems/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/coffee-grind-size-converter/": {
-      "hash": "28394a484789c352c14fc7dbc3eef4d8745c2895fcf373a45eb5e5e4333be5ac",
+      "hash": "51c6d4d08299420fe9f080f20657c82b6adde381c74b9852e6b5416738a95f69",
       "route": "/ja/utilities/categories/coffee/coffee-grind-size-converter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/coffee-grinder-dose-retention-calculator/": {
-      "hash": "65bf4045172fcc40c7964923e6eb38763cab984d15aed9711f1a167ae1230f57",
+      "hash": "14fbe9fc9a5977db95bf159268e00607e275d192248a9153887f2e3796365027",
       "route": "/ja/utilities/categories/coffee/coffee-grinder-dose-retention-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/coffee-ratio-calculator/": {
-      "hash": "6c6c232bac45ed88ef7b2798af4460042879816ae983967bd4701ce630689129",
+      "hash": "2ba4616f1b522fa3a878cc5b75ce94168cb5b383945c82df30cd79c22bad173f",
       "route": "/ja/utilities/categories/coffee/coffee-ratio-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/cold-brew-coffee-ratio-calculator/": {
-      "hash": "1066cbf4d765d05fefc3d8b6477b7a979dc9260b618093a9654df6fca45f5829",
+      "hash": "09aed026ffe8cde3ab2bd568df73e9fca50c3bd98c94c95832e6992bd856ba14",
       "route": "/ja/utilities/categories/coffee/cold-brew-coffee-ratio-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/espresso-extraction-calculator/": {
-      "hash": "8860f5d6b44e3bd213c670efad5d8b38f41fb923f06f56b91360fa31967fa067",
+      "hash": "8eef034ce87d411812ea7174c748927ad016338f627b9c67ff0d18912860232b",
       "route": "/ja/utilities/categories/coffee/espresso-extraction-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/": {
-      "hash": "c868c9e1d130c338880bfe8e7d144338acbdceeda87d7d3b47039cdab91984a3",
+      "hash": "f76d60d3fe37773eab448979ba04b2568a58c8ec31381da0a9129381b1ae5bf5",
       "route": "/ja/utilities/categories/coffee/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/coffee/sca-coffee-water-calculator/": {
-      "hash": "5cd8e167a536336afc0dd405f0c7b5c83efd338af7a8823636cc7ea967089e9a",
+      "hash": "b1ef70978b165b9d68bc434380b463061644c781a6bc557631a1f2e6d6c4a6f5",
       "route": "/ja/utilities/categories/coffee/sca-coffee-water-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/aeropress-ratio-calculator/": {
-      "hash": "3fc58f035d69cf7c551eabd3011a5f0d2489c5d1e68c6d25099535355a47b6de",
+      "hash": "38da27601f2a690c5ed6a6ef8ab42283035ffd5aee1d00fa6454a1a1c727199d",
       "route": "/ko/utilities/categories/coffee/aeropress-ratio-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/coffee-brew-timer/": {
-      "hash": "2d1a898f9b0bd9b3998522d70aa25159f3e540752014846d341cecc286874828",
+      "hash": "3da459c3903ec515be63b126795b3f91b6d06768da778a2437e21e5bdca4c4dd",
       "route": "/ko/utilities/categories/coffee/coffee-brew-timer/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/coffee-flavor-diagnosis-extraction-problems/": {
-      "hash": "ae39f8e75a03136a85a54a5006a02807c3dc16bf2c6a98e692a20d890cc490a4",
+      "hash": "5a4f5d29cd3687f24ec98c414767f8f8084d63e1b69dbe1c64c53bad9f343486",
       "route": "/ko/utilities/categories/coffee/coffee-flavor-diagnosis-extraction-problems/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/coffee-grind-size-converter/": {
-      "hash": "c090284a694d2207e101563b732e6b7b3f6d895b84bbfa42464c5efdede1bf19",
+      "hash": "42938d9bfa0fee4a2fc2c09ee8d7d161dfa7b5d77b398cae9f07689f0ab64ed3",
       "route": "/ko/utilities/categories/coffee/coffee-grind-size-converter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/coffee-grinder-dose-retention-calculator/": {
-      "hash": "06fd0ad6d17fa146c6dd82625f34a221f4e582fc696de9f56e28886421e14ada",
+      "hash": "82a2ecd364f074444635438f8e33c9a12c150592079f2c7cb90698537883327d",
       "route": "/ko/utilities/categories/coffee/coffee-grinder-dose-retention-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/coffee-ratio-calculator/": {
-      "hash": "ae151855ff014837ae2b457c0221efb14c4535f807053d606b774f011b0b6e06",
+      "hash": "a4c92004173bd07e5a0af6879b58130cbe9697fffd6b80e9cd4b9a715ff21c9d",
       "route": "/ko/utilities/categories/coffee/coffee-ratio-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/cold-brew-coffee-ratio-calculator/": {
-      "hash": "e6b3f13a22a9913f359cfceaf2e47030f490b1966f4342943f7cff83b85f11f2",
+      "hash": "23cb6947089db3590668d060498d19ed3a79ff7e2997111eb50f92e8497021a8",
       "route": "/ko/utilities/categories/coffee/cold-brew-coffee-ratio-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/espresso-extraction-calculator/": {
-      "hash": "5af4ac2269032586404cf6a77a7fd839cf4148032228d8f9e8ecc5b59165d8d2",
+      "hash": "9fdbf9f1a7c9bb5e470e55b5362239659407e307a6deae7e5a617a7838d6f0dc",
       "route": "/ko/utilities/categories/coffee/espresso-extraction-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/": {
-      "hash": "118a01d15b286249988f275b8a9cbdf866d77e51b69cd29c68f511f900ec5ed6",
+      "hash": "cddde1b005091c95c68e737e83892c01635313682ffd2fd8ccc45edd1f800e2f",
       "route": "/ko/utilities/categories/coffee/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/coffee/sca-coffee-water-calculator/": {
-      "hash": "bc74eb78fdc3a5d95e3a13746548ceb17e27cea79340de6a56c2e41ca2eb589c",
+      "hash": "5d5ca58e1e5f6645032fe250ee56a8d0d176c8cb0df770eaf6520fe97aa620dd",
       "route": "/ko/utilities/categories/coffee/sca-coffee-water-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/aeropress-ratio-rekenmachine/": {
-      "hash": "a40209eb1a89796ec5be10c8344f96fc5dc4c498d388a47439d48ef18347b4f1",
+      "hash": "d1a149763e6c70cf8420fc1ad561f3d14a5fb29449783c1f2c25bd57cbf3e988",
       "route": "/nl/hulpmiddelen/categorieen/koffie/aeropress-ratio-rekenmachine/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/cold-brew-koffie-verhouding-calculator/": {
-      "hash": "645adfc4de72b876186bc0820fb5993c8be12eff72b0a70d4485bd063c97e397",
+      "hash": "9489566ef684cf931b727d60c3a9b5f8c074951581d05c7ef61369f881046266",
       "route": "/nl/hulpmiddelen/categorieen/koffie/cold-brew-koffie-verhouding-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/espresso-extractieberekening/": {
-      "hash": "6b783ad164919cc25739da5ecd572c0a4712d9a381788c7a710f71dc7fdc0cf1",
+      "hash": "f7c4ca271e36e7afcc06eb69735263a04f46d5943057c0c58f9318d8be7651f6",
       "route": "/nl/hulpmiddelen/categorieen/koffie/espresso-extractieberekening/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/": {
-      "hash": "e7458ba323442d08c97a6179391b0340a552522c692e48d5f0c201555c5b560b",
+      "hash": "44aceb8113577d249eac5145349bdf96eefa15a7e9615770eb3b4912e7080597",
       "route": "/nl/hulpmiddelen/categorieen/koffie/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/koffie-extractie-diagnose-brew-fixer/": {
-      "hash": "1bab390a3b351f9f512e4e46c51615eb8c102b2e93f1ca2ff8558b6e626edf6b",
+      "hash": "1153c3fa5e36017d4a9767761ddab4209c4e28ed0dbc8b4b3a812dec31a84c15",
       "route": "/nl/hulpmiddelen/categorieen/koffie/koffie-extractie-diagnose-brew-fixer/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/koffie-maalgraad-converter/": {
-      "hash": "d812e956ac4c7a3a201b88711b45dba8fbc38a088b60334fdde6d7cbb04fa0e6",
+      "hash": "d27bdae6772fd39ea699b6bb325f479a9ca4cf930812ae7e1261b398c9199eab",
       "route": "/nl/hulpmiddelen/categorieen/koffie/koffie-maalgraad-converter/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/koffie-ratio-calculator/": {
-      "hash": "6bbcb8618879a290031b6b4a7aaa8e5ba3a7e43101b7ea542695b33c7420dc26",
+      "hash": "89a3615d2af848dce43d6aef4fa1715fe7918c3a2ac101a770ad5bc583938b12",
       "route": "/nl/hulpmiddelen/categorieen/koffie/koffie-ratio-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/koffie-timer/": {
-      "hash": "cd32377007440fb3d4ef439f81337924cc1e2543fe1830a4b3b5024c90d6292f",
+      "hash": "64582816a856fdab0c29bd18743916520c1dbde8c0aaf56f0795fa072161215d",
       "route": "/nl/hulpmiddelen/categorieen/koffie/koffie-timer/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/koffiemolen-retentie-calculator/": {
-      "hash": "6aeed60983ebd4f54b858eba731912376ec0f38f490569ed2f4c15bc6675f450",
+      "hash": "709181072e3e8c4b86296a1380ba71741d6f74df655a3b3d00ae3d18c2081503",
       "route": "/nl/hulpmiddelen/categorieen/koffie/koffiemolen-retentie-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/sca-koffie-water-calculator/": {
-      "hash": "5bdb9258f940ea4fee0cd8a6283e517ccfc99dbf063d75aa18faf99b70f3fa87",
+      "hash": "3e1ecacc507e77e27ea747fa7e7ce5c26ab29319d240b719850d07ab167a3dba",
       "route": "/nl/hulpmiddelen/categorieen/koffie/sca-koffie-water-calculator/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/diagnostyka-ekstrakcji-kawy-brew-fixer/": {
-      "hash": "fa0b5d373acdd4d474100dcf70373ba47faf39e9c909b3bf626019d11c47e77a",
+      "hash": "5f862c8012f6190b2197fa23b6f4f8f4722e63c06672aaf657d1a7bdafab8a3a",
       "route": "/pl/narzedzia/kategorie/kawa/diagnostyka-ekstrakcji-kawy-brew-fixer/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/": {
-      "hash": "a1abe751e8dbf6c5850c0a03ab98cbab1f3e105e9c56ffafc1c618dd291a2e4d",
+      "hash": "3a15938de701d28499404a9be511354064a831ab816a71c77e5beb0653e1978e",
       "route": "/pl/narzedzia/kategorie/kawa/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/kalkulator-ekstrakcji-espresso/": {
-      "hash": "47bcc253f1ac96b3183f4a371fe6d2408ecedda5669b4023205596a5b94f1f95",
+      "hash": "c96799f7529d9a6927e27ee64034d56b5dd578499617d951370158aaa91a2c66",
       "route": "/pl/narzedzia/kategorie/kawa/kalkulator-ekstrakcji-espresso/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/kalkulator-proporcji-aeropress/": {
-      "hash": "10163bb606949b5761b880cf00b65bc25a9e2a49dd89752020cb20e2f91a94d5",
+      "hash": "052943350e2cfab3da6172ca1706612f5496fc691b18800cbc3808838f0f0f30",
       "route": "/pl/narzedzia/kategorie/kawa/kalkulator-proporcji-aeropress/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/kalkulator-proporcji-kawy/": {
-      "hash": "844c990fdab2d98bd6e0ec59ae4279e6a55d15fbcdb1ea88dcc2e7452d55af94",
+      "hash": "caee892f2136965f245d0f3af5fd619bf686c11d7ad6cef03f875577ebadd69b",
       "route": "/pl/narzedzia/kategorie/kawa/kalkulator-proporcji-kawy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/kalkulator-proporcji-kawy-cold-brew/": {
-      "hash": "6de69e2381b2ccabe1de687d036fd56ffcaf6666f013c3d47dcd7f6655bf144a",
+      "hash": "5530dce92e1408e7625d9e690a424c3bea4347c14228e892d2c3d9afa47b5000",
       "route": "/pl/narzedzia/kategorie/kawa/kalkulator-proporcji-kawy-cold-brew/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/kalkulator-retencji-mlynka-do-kawy/": {
-      "hash": "76c620308b7cf76544476b2a20561a8b1a24a34fd29f2dcf8f29823c2f6b0220",
+      "hash": "bf92385836b840a1675e7dc243b7eb9a1a9dc1fa3c9d927b7d645e962e8dcee9",
       "route": "/pl/narzedzia/kategorie/kawa/kalkulator-retencji-mlynka-do-kawy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/kalkulator-wody-do-kawy-sca/": {
-      "hash": "fcd10e2f3ff6912af124975c1d8ec464debdc46038ed376d29a76aa90aea560b",
+      "hash": "ade953b1d0db112311770c9bb00314efdc654b58eed5cca09bf2944630d847a0",
       "route": "/pl/narzedzia/kategorie/kawa/kalkulator-wody-do-kawy-sca/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/konwerter-mielenia-kawy/": {
-      "hash": "19d4b9617e2b3314975b3dbfa2a27933adeb6b1cee90d13dfe02d46e4d3753e1",
+      "hash": "ca1ac1bde60e22fb089bb9f87b78463a8920b0c2ae3418eac9d0a414035d74a6",
       "route": "/pl/narzedzia/kategorie/kawa/konwerter-mielenia-kawy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/kawa/stoper-do-kawy/": {
-      "hash": "ed8608757ccc9aff79ba7a5e765325a09c9d77880a4d99560910a1d4f13d0e31",
+      "hash": "4997f3f6428a6b1cd40508d935c32684f25f62398de6a5dfeea9c6268ecae51f",
       "route": "/pl/narzedzia/kategorie/kawa/stoper-do-kawy/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/calculadora-de-proporcao-aeropress/": {
-      "hash": "181df7a85c2f79f177e07a89c12e614ac28b84326c736fefef854216e048b7cd",
+      "hash": "86f1cf9b0a08491890cae7346cf3591428308274677f3cd36c01e287595f7077",
       "route": "/pt/utilidades/categorias/cafe-especial/calculadora-de-proporcao-aeropress/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/calculadora-extracao-espresso/": {
-      "hash": "744ff0231d76096e8c2584838144de21191832dd07f94e027594c545993ebddb",
+      "hash": "47f33a5787dcc68953624fb612a5ce58a5b0376ca1f7f08e1266ffc921acdd13",
       "route": "/pt/utilidades/categorias/cafe-especial/calculadora-extracao-espresso/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/calculadora-proporcao-cafe/": {
-      "hash": "42522974acbe4f5fbc6e6a1da706e5e6ad169a76087f250a41a4f8168b686d2d",
+      "hash": "2ce20f4727be51dc8a79ec185fd9139c1855d376ecc7af7b9259d89275a88edc",
       "route": "/pt/utilidades/categorias/cafe-especial/calculadora-proporcao-cafe/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/calculadora-proporcao-cafe-cold-brew/": {
-      "hash": "340af488a2d9502c878a0ff80a4bea2d9dc49619e36690b26abc6c26a0b72aca",
+      "hash": "5a7510759921790e879c467f4a19e7e17e75011d1094751cd002d50604a7be2e",
       "route": "/pt/utilidades/categorias/cafe-especial/calculadora-proporcao-cafe-cold-brew/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/calculadora-retencao-moedor-cafe/": {
-      "hash": "a2b4d1a4e6918489d4f6b928865610ebad49e89fd8d5b926463c7428e737e5fd",
+      "hash": "6f72a3242a548fa25ef8431d7d7bf7b7e3b4b1970a7ef1682ecc73e910786573",
       "route": "/pt/utilidades/categorias/cafe-especial/calculadora-retencao-moedor-cafe/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/conversor-moagem-cafe/": {
-      "hash": "7c7db69593e21cabc678b21aec1caa7bb2fe131b9326a3078dcf737acb9d6660",
+      "hash": "521b448443526084479958a5f965a740ad9399bc5b1fab442143a48d2f0abb32",
       "route": "/pt/utilidades/categorias/cafe-especial/conversor-moagem-cafe/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/diagnostico-extracao-cafe-brew-fixer/": {
-      "hash": "f6f3d95f7287f62cbdcae2b7920fe62b0dd7341960a5d66312ba663ee2a51493",
+      "hash": "039fd777cca8ce503066ccc6136557ea7275c258ae0b9e1ef6cbe026f0102ffa",
       "route": "/pt/utilidades/categorias/cafe-especial/diagnostico-extracao-cafe-brew-fixer/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/": {
-      "hash": "85fc94ea4bed3de1834de5656e00a045b24a43579ab114bb1c04ee4ed737e3c1",
+      "hash": "926e109c3464057025a1f9022c79f0ad25ecb086f8658007473131f05aab5824",
       "route": "/pt/utilidades/categorias/cafe-especial/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/sca-calculadora-agua-cafe/": {
-      "hash": "35bda1b03dd6dfc72b0322df966fc18fd2dad855a75d18a993a9ed5e331d5417",
+      "hash": "e46a62cf5746ed0c8689b44bb802dc01b9d5ba991ce5fbd616bcf72514cb8fcf",
       "route": "/pt/utilidades/categorias/cafe-especial/sca-calculadora-agua-cafe/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/cafe-especial/timer-preparo-cafe/": {
-      "hash": "51c5c578e22a22a02907008e91f568df2defcda4b1c72d538c15b6ed80096859",
+      "hash": "f0adee48a4abcc594591bfc70527edc1f6588f0784e0c294cb4ee2e901f4f348",
       "route": "/pt/utilidades/categorias/cafe-especial/timer-preparo-cafe/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/diagnostika-ekstrakcii-kofe-brew-fixer/": {
-      "hash": "f76452351b66084d5f71f6bb44ecd2b0b8dd022f8a5ce0617700797e7d06025a",
+      "hash": "2adfb43e36cd39d2824e039452cd772dd50c8e0efac876d34dcc5e9263535091",
       "route": "/ru/instrumenty/kategorii/kofe/diagnostika-ekstrakcii-kofe-brew-fixer/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/": {
-      "hash": "2fa33c0477b915a9df979f297db6b5e85dbb38c8dc651881a0827ab0a6361bda",
+      "hash": "ad533bc3019d72dfbca39e0f65ab55a4220bca12c4ee30d134b9eba77f9f674d",
       "route": "/ru/instrumenty/kategorii/kofe/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/kalkulator-proporcii-kofe/": {
-      "hash": "0b9e2c369fed4964e5c23385bbf6cd908936326fd49c45734fec2d3690f13a39",
+      "hash": "8bc33ac394eaa2ca733992f446216b9125b1a0a13b390717b22b0745b0810149",
       "route": "/ru/instrumenty/kategorii/kofe/kalkulator-proporcii-kofe/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/kalkulyator-ekstraktsii-espresso/": {
-      "hash": "2a55453b337737911cf20b5cb258039a0f3fd953cfc6460dc84e51c63f990a49",
+      "hash": "1c983a28f2a1707122ab3043db6fc58d4c858e96279acf844b8c1b485915ee82",
       "route": "/ru/instrumenty/kategorii/kofe/kalkulyator-ekstraktsii-espresso/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/kalkulyator-proportsii-kofe-cold-brew/": {
-      "hash": "9dd73322cdd2e4af790da1b4daf2393bbc02459e7f019390a2b1d9d4dc816735",
+      "hash": "37dd1a8cf270606989830b23f66ab195cb76d4cdce832e7c09bb1126162b42ce",
       "route": "/ru/instrumenty/kategorii/kofe/kalkulyator-proportsii-kofe-cold-brew/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/kalkulyator-proportsiy-aeropress/": {
-      "hash": "20041d9bea43844635adbebefc423b3da449593570199d85eb21c5588083f992",
+      "hash": "5f64b28763639fa38f5ba888c494656c02eafe2c07b44fa4c84d926ce04b726a",
       "route": "/ru/instrumenty/kategorii/kofe/kalkulyator-proportsiy-aeropress/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/kalkulyator-uderzhaniya-kofeynoy-molki/": {
-      "hash": "77b55dfe727f15363db7b906e3c7996d095d48dcb90c4eeb577c934a54bef20c",
+      "hash": "fd68eb35aad247e60557cadc39bfdca914a94cecdc668c93134f909f76cc2f04",
       "route": "/ru/instrumenty/kategorii/kofe/kalkulyator-uderzhaniya-kofeynoy-molki/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/khronometr-dlya-prigotovleniya-kofe/": {
-      "hash": "86e25584792412c6d1d231f997c4bb1e52523a51be14990f40679d9f4c280866",
+      "hash": "b373f2ff499660c7c5a06cd3ad03a7bbda9c755b4c8d69f55acff840d3fceada",
       "route": "/ru/instrumenty/kategorii/kofe/khronometr-dlya-prigotovleniya-kofe/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/konverter-pomola-kofe/": {
-      "hash": "62abc212a1fb2bc00cf466e1ffc90824f954bfdd94fc59a66b5c9cb44c95d2fa",
+      "hash": "5d29e1d425f6e957aadf4e218a975d2e3420b276a5fa32bcbf061e48d33b407e",
       "route": "/ru/instrumenty/kategorii/kofe/konverter-pomola-kofe/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/kofe/sca-kalkulator-vody-dlya-kofe/": {
-      "hash": "71845662ce2a4d834819544dcba8c52c29ebac3b54e67a06b2a8c3af48fc0d7c",
+      "hash": "f7e62c112b659fef8b0d7f329fa64220a25f3c20f6804fd2901129d28ed5d3c9",
       "route": "/ru/instrumenty/kategorii/kofe/sca-kalkulator-vody-dlya-kofe/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/aeropress-ratio-kalkylator/": {
-      "hash": "15be17b985d9506bede62296754d5fbee60addc5e2774eb9ec2738a079da56bd",
+      "hash": "99c9c5da479fdf1623c2797bf2f4f359ecc3c0af3de03cea2848fd97032d9ec4",
       "route": "/sv/verktyg/kategorier/kaffe/aeropress-ratio-kalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/cold-brew-kaffe-proportion-kalkylator/": {
-      "hash": "80253357a9477d302e1107e4d66419652c48757d8c020b050fa289b8bd5f792e",
+      "hash": "eb61192f6727d84156ab72b46801acea80e66de5a8fbafc10a2feba18c6cc012",
       "route": "/sv/verktyg/kategorier/kaffe/cold-brew-kaffe-proportion-kalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/diagnos-kaffeextraktion-brew-fixer/": {
-      "hash": "818bdda04dd173b74b17c82bac8b1ea947ac7a296a2a76a806a2bb8836bbbaa1",
+      "hash": "0e1e10969bf290dce86cbcebf5b5c973facce0208b65871ac19527605ccf304e",
       "route": "/sv/verktyg/kategorier/kaffe/diagnos-kaffeextraktion-brew-fixer/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/espresso-extraktionskalkylator/": {
-      "hash": "33dd5a164f58f5672830aaeea94863ca5c263200421f819c54aa54e43d8c329e",
+      "hash": "df22ccc645d43d643a920e2b2c7d5357157a2b7966015f2cec7c34ba0c8939df",
       "route": "/sv/verktyg/kategorier/kaffe/espresso-extraktionskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/": {
-      "hash": "fe3953f50ea4c98fabde75cdb2410fcae88d51206472fb11fad80ad801361e08",
+      "hash": "cf511b889dda6135729d909f4df0a0c7b2a42f4d931f6dab452a7d48d1b0c4ab",
       "route": "/sv/verktyg/kategorier/kaffe/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/kaffebryggningstimer/": {
-      "hash": "84bd14d3c134abec33acd77ac66c2a583654683b1f83f2787e5318ac03a0382a",
+      "hash": "0a0009d9d8e5a38079208240eac39721c7e9905ede94e8038d3c217cc441b873",
       "route": "/sv/verktyg/kategorier/kaffe/kaffebryggningstimer/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/kaffekvarn-retentionskalkylator/": {
-      "hash": "f7b96db033327be439bb82c3178c5c9226e5eab137f454c4f9ae0c263246cc8a",
+      "hash": "ef41b13bf751717d27e166defcbb630d4529d5198a9fed2b7a242b7ff4a59d32",
       "route": "/sv/verktyg/kategorier/kaffe/kaffekvarn-retentionskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/kaffemalnings-konverterare/": {
-      "hash": "35d6aea707ba67f42fc91a0fa1a81ead80049c6b3ead82f69e8df89a2d157ed6",
+      "hash": "96a5452e4945c70b05f09f02dd676cbf79489a972b2b90134b7b91b04500e0f0",
       "route": "/sv/verktyg/kategorier/kaffe/kaffemalnings-konverterare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/kafferatio-kalkylator/": {
-      "hash": "698acc299e836aaea85f67c46e9be263d925e223f61ebea9273e4215d0a1f40a",
+      "hash": "0ddad4d6aba2626cdd63460670b29107fccef10081b9f262d4d0124c26fbdc10",
       "route": "/sv/verktyg/kategorier/kaffe/kafferatio-kalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/kaffe/sca-kaffevatten-kalkylator/": {
-      "hash": "03dfb7ba0df895dd4b5fbad07d827c86d9b128ea77b26a62ea9833552d4a8102",
+      "hash": "0dfda9b1603daaeb663173651f9a0f66c80f3c13893e662f97ef4a882e0d9c37",
       "route": "/sv/verktyg/kategorier/kaffe/sca-kaffevatten-kalkylator/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/aeropress-oran-hesaplayici/": {
-      "hash": "778cf5d391d9d0c579b92812e20487ec15ef5ae0dc8baad02f37d25505183d53",
+      "hash": "420fe25b4b7d15040e546a66359f4dcdb10ef73e6ce2bdb6de035d33ea8c769b",
       "route": "/tr/araclar/kategoriler/kahve/aeropress-oran-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/cold-brew-kahve-orani-hesaplayici/": {
-      "hash": "582ca1479ddcbdda7e25c8f7c081670b474a8a36dd30b1c36ab73e1ad215cf74",
+      "hash": "8b7b7ebea7bc620186077a5d6b55c186a86e1a9e251459b1cdf7b0312507885d",
       "route": "/tr/araclar/kategoriler/kahve/cold-brew-kahve-orani-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/espresso-ekstraksiyon-hesaplayici/": {
-      "hash": "bcd358b4844cfe783f11f75a1a1668145d1e14874b9c289ba441b0a4f5003c01",
+      "hash": "e64dd6c63c4baaa3c670097f745f9fb366589d92f1fba153eb3edb88846b5ee4",
       "route": "/tr/araclar/kategoriler/kahve/espresso-ekstraksiyon-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/": {
-      "hash": "665f4196de3fe18c77f449f3359fbd3af6066d7e1d7aaf4e1ffa90057e87cf58",
+      "hash": "3c04fa1ef7d8e74268c021719933e7cf7e6591a0ec611d62fc2cda6dea1bdcda",
       "route": "/tr/araclar/kategoriler/kahve/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/kahve-degirmeni-tutulma-hesaplayici/": {
-      "hash": "9642d5b09c1e1019f527b0f0f66a50fe435d1ad21b3620f0a961f775d5ba5e8b",
+      "hash": "e66a232ead6be061333c64bdd8d576fc5b6a53da1e2f12b48cac25c8b1150e76",
       "route": "/tr/araclar/kategoriler/kahve/kahve-degirmeni-tutulma-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/kahve-demleme-zamanlayicisi/": {
-      "hash": "7c062df2daf945e46904bd8c9bff0323355d5d2ab6bfb969c40d736f671ee47e",
+      "hash": "5b632cd9735eeade43a19115d92e77733a1311be9bd476b47f22e57a5141b4a2",
       "route": "/tr/araclar/kategoriler/kahve/kahve-demleme-zamanlayicisi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/kahve-ekstraksyon-teshisi-brew-fixer/": {
-      "hash": "08d2b10cb6af7b3308a4794452b1b0132fba1626eaf3117ffffece0a061ba3c1",
+      "hash": "0d3cb25c957749e474f5e23f3d259f601a6e6920af5177ecac172e2b5c27167b",
       "route": "/tr/araclar/kategoriler/kahve/kahve-ekstraksyon-teshisi-brew-fixer/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/kahve-ogutme-boyutu-donusturucu/": {
-      "hash": "fca72504ca508abf57bdb02ca08abe6a2e0000b98e5a6297c45ad032e7997633",
+      "hash": "4ec84f9710d8e7515fbb87be2fd364909615bfb102f6bea5875358c831b6f084",
       "route": "/tr/araclar/kategoriler/kahve/kahve-ogutme-boyutu-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/kahve-oran-hesaplayici/": {
-      "hash": "926b1f0a4716c57be536b4a3fac5d3f0670b27bdf90635c429e92cd7f394afd1",
+      "hash": "ee9ebbc57b6a5cc01af0946f2180eddb77ce426f0e95d95f9cfedd8f47f64c0d",
       "route": "/tr/araclar/kategoriler/kahve/kahve-oran-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/kahve/sca-kahve-suyu-hesaplayici/": {
-      "hash": "6b77116a5faaf541980f346ccd6d2256d6c13aaec68b8058d7acd456aa2144ca",
+      "hash": "d6a64a5ad73ec54dc77922265c02402fda2dd5896e9059224676370ae477dd6b",
       "route": "/tr/araclar/kategoriler/kahve/sca-kahve-suyu-hesaplayici/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-agua-cafe-sca/": {
-      "hash": "22fdc0aaca8873cce670b9e067bf9388d0afff7676e28352d8710f674d6f7b04",
+      "hash": "40e9dff647009cee84cc6c29b2e69a835dfd9a38ad3d9d42d507e504dfac27c2",
       "route": "/utilidades/calculadora-agua-cafe-sca/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-extraccion-espresso/": {
-      "hash": "9d04eaa2b8cd291909f2a639cbb49447395f7c3616d5c6d6c4a952751705e484",
+      "hash": "7056bec132a8d5b022b300894707c96fa3db2e04d99efea1c5175ab214a70e57",
       "route": "/utilidades/calculadora-extraccion-espresso/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-proporcion-cafe-cold-brew/": {
-      "hash": "4aac7b8277f3c69c584914169bbc59c56e57e2befd5fac14e21eadaf140d6926",
+      "hash": "f0fac68e23ebf807309c720f5027da66fc632b132dda8576296d7f5eef1bc904",
       "route": "/utilidades/calculadora-proporcion-cafe-cold-brew/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-ratio-aeropress/": {
-      "hash": "c3cf8f620094619f5ee22ad433c8497f969542bd29661cc76dcb9ec88dd40a2f",
+      "hash": "f20dda95a1beb667208dde027381b1e9736ac195116796ff8a7b492840daa642",
       "route": "/utilidades/calculadora-ratio-aeropress/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-ratio-cafe/": {
-      "hash": "f8306d20a31462bcfcbd779faea7ec49a7ed172d9d46cecceefba1d78487e6ef",
+      "hash": "a61e39f93868803cd089075c9b2ca4ba3fec5704b3b327e72943df3476bd166e",
       "route": "/utilidades/calculadora-ratio-cafe/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-retencion-molinillo-cafe/": {
-      "hash": "f9cc3d6fe762abeb1428c565822907efe74bc5cd27dacc103bef64bc6850e2ab",
+      "hash": "739d9146101ccc85b201762aa802a025c9b4f15a135e33bf621cf51221564aa6",
       "route": "/utilidades/calculadora-retencion-molinillo-cafe/"
     },
     "https://www.jjlmoya.es/utilidades/categorias/cafe/": {
-      "hash": "88a3f3eef0d3f357ce84c735c4b5e55932bc416d4c79f2c5f83c51118a547857",
+      "hash": "1574bc7f86ab3bd8c1ec8b01ca2c7a8c616493f3d5894cb2d340415ca9b6f578",
       "route": "/utilidades/categorias/cafe/"
     },
     "https://www.jjlmoya.es/utilidades/conversor-molienda-cafe/": {
-      "hash": "6e73a0efe8d4fd5a0d83612ea07f821af39e205eb57d8bcf1083c92a379070db",
+      "hash": "7d6086af783be425a621b6795e8555ba2177c1cab528d4847815a0119775a815",
       "route": "/utilidades/conversor-molienda-cafe/"
     },
     "https://www.jjlmoya.es/utilidades/cronometro-cafe/": {
-      "hash": "e9d7db166d8575a6a5dd7c6129bd9f46141e016e126311490a2bcf28771bdb5e",
+      "hash": "825c604b4c1be8f4e3d081f515108ce045a26cc0c3dec5d208be3a008daeea05",
       "route": "/utilidades/cronometro-cafe/"
     },
     "https://www.jjlmoya.es/utilidades/diagnostico-extraccion-cafe-brew-fixer/": {
-      "hash": "90936a1fd3ef21759db7a81b63faf350753a4a367f0dd3392bf28918757203a7",
+      "hash": "3c81950532758ca256fafad192f0e8ce59755442c654c4d2b090283816d56d3b",
       "route": "/utilidades/diagnostico-extraccion-cafe-brew-fixer/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/aeropress-ratio-calculator/": {
-      "hash": "7517a617391107a4761cb83ae6a3bb3150014e0152386ebf55044a6cdab163bb",
+      "hash": "b5b9218e42ab99019ee1fe5904ce71c1f584d729f9d3171ecf44dbdf3765a113",
       "route": "/zh/utilities/categories/coffee/aeropress-ratio-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/coffee-brew-timer/": {
-      "hash": "34611b1f525ce8c3cb1dca01d556795d03d0e9892e670a620eb77ae3f42595b5",
+      "hash": "d89af3c83c8ab6c2b6567d906576d964fec218f69544c3be86d144e3918f7f23",
       "route": "/zh/utilities/categories/coffee/coffee-brew-timer/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/coffee-flavor-diagnosis-extraction-problems/": {
-      "hash": "2e806969c3758cada37524d5c6978fd20c0c362d69857e281fdc2a345390c28e",
+      "hash": "59a4da9b5ca97fb3f31b98090e28774bac4e86706a5fd60cc3fcf3f2a89a7d44",
       "route": "/zh/utilities/categories/coffee/coffee-flavor-diagnosis-extraction-problems/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/coffee-grind-size-converter/": {
-      "hash": "d181203cd23861a480997cc11091cf0017b3de72c8e19f5fd2b29d1c360c888d",
+      "hash": "821df33fabc42b5ad67c61379b59245364d68b7c0fb190cfbbf84ee6934c8b08",
       "route": "/zh/utilities/categories/coffee/coffee-grind-size-converter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/coffee-grinder-dose-retention-calculator/": {
-      "hash": "4ee1b511027d5b6f85ee3666508458a6b0b8aaae6b3c143b168cf837d235b4e7",
+      "hash": "7409355f3a053e7ddba1e1d4a668ac1b2bdd73d0e74e972a75a9ecc6436198ab",
       "route": "/zh/utilities/categories/coffee/coffee-grinder-dose-retention-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/coffee-ratio-calculator/": {
-      "hash": "3d38314bfc7637e5a37e097bf82ebbf2d8f89130a87a4d838435c1e62e3975ee",
+      "hash": "3800854f1a2ed05f50d3132c708a098e1e27ae16d504dacd183b8340977bd53b",
       "route": "/zh/utilities/categories/coffee/coffee-ratio-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/cold-brew-coffee-ratio-calculator/": {
-      "hash": "06d345dc94637725359d3e1772a14c1e6d4c5c62e7a6515b5f00b862c6978e2c",
+      "hash": "24b35267ba71bd3afe69807bbfaa23da3a70f37ebeb1e421589f17e017dc4381",
       "route": "/zh/utilities/categories/coffee/cold-brew-coffee-ratio-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/espresso-extraction-calculator/": {
-      "hash": "8f455fa833285678c70526a2bbc1a097029e408d2ae8297954dcd8a503ca8556",
+      "hash": "a07fddb38a3c19e1ea23fac7ab4d084e18563e0b30dbfca766d3465ea50c144e",
       "route": "/zh/utilities/categories/coffee/espresso-extraction-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/": {
-      "hash": "2dbc85aace1950c1cd4ca6a18da97e80d395e151f04e57da2b8af600c5dab79b",
+      "hash": "0c7352a9f3608e40056c498f9f22efeb4241c9dc9f80cd8a63e20c3f61b99fa4",
       "route": "/zh/utilities/categories/coffee/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/coffee/sca-coffee-water-calculator/": {
-      "hash": "4f5e90dd64b5ffd99dff60cf405ce23264e18fde7af7cd0440988a6f9641a34e",
+      "hash": "f092ab42f99117996a1c16c7bcee82ebac4cf7af5163ac9e0770cdef43ecbc17",
       "route": "/zh/utilities/categories/coffee/sca-coffee-water-calculator/"
     }
   }
