@@ -7,195 +7,99 @@
     "preview_urls": true,
     "routes": [
         {
-            "pattern": "www.jjlmoya.es/utilidades/categorias/cafe",
+            "pattern": "www.jjlmoya.es/utilidades/categorias/cafe*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/categorias/cafe/*",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-ratio-aeropress*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-ratio-aeropress",
+            "pattern": "www.jjlmoya.es/utilidades/diagnostico-extraccion-cafe-brew-fixer*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-ratio-aeropress/*",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-ratio-cafe*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/diagnostico-extraccion-cafe-brew-fixer",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-retencion-molinillo-cafe*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/diagnostico-extraccion-cafe-brew-fixer/*",
+            "pattern": "www.jjlmoya.es/utilidades/cronometro-cafe*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-ratio-cafe",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-proporcion-cafe-cold-brew*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-ratio-cafe/*",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-extraccion-espresso*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-retencion-molinillo-cafe",
+            "pattern": "www.jjlmoya.es/utilidades/conversor-molienda-cafe*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-retencion-molinillo-cafe/*",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-agua-cafe-sca*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/cronometro-cafe",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/cronometro-cafe/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-proporcion-cafe-cold-brew",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-proporcion-cafe-cold-brew/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-extraccion-espresso",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-extraccion-espresso/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/conversor-molienda-cafe",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/conversor-molienda-cafe/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-agua-cafe-sca",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-agua-cafe-sca/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.gamebob.dev/en/utilities/categories/coffee",
+            "pattern": "www.gamebob.dev/en/utilities/categories/coffee*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/en/utilities/categories/coffee/*",
+            "pattern": "www.gamebob.dev/fr/utilitaires/categories/cafe-specialite*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/fr/utilitaires/categories/cafe-specialite",
+            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/kaffee*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/fr/utilitaires/categories/cafe-specialite/*",
+            "pattern": "www.gamebob.dev/it/utilita/categorie/caffe*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/kaffee",
+            "pattern": "www.gamebob.dev/pt/utilidades/categorias/cafe-especial*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/kaffee/*",
+            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/it/utilita/categorie/caffe",
+            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/kaffe*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/it/utilita/categorie/caffe/*",
+            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/kawa*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/pt/utilidades/categorias/cafe-especial",
+            "pattern": "www.gamebob.dev/id/utilitas/kategori/kopi*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/pt/utilidades/categorias/cafe-especial/*",
+            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/kahve*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie",
+            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/kofe*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/koffie/*",
+            "pattern": "www.gamebob.dev/ja/utilities/categories/coffee*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/kaffe",
+            "pattern": "www.gamebob.dev/ko/utilities/categories/coffee*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/kaffe/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/kawa",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/kawa/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/id/utilitas/kategori/kopi",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/id/utilitas/kategori/kopi/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/kahve",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/kahve/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/kofe",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/kofe/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ja/utilities/categories/coffee",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ja/utilities/categories/coffee/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ko/utilities/categories/coffee",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ko/utilities/categories/coffee/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/zh/utilities/categories/coffee",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/zh/utilities/categories/coffee/*",
+            "pattern": "www.gamebob.dev/zh/utilities/categories/coffee*",
             "zone_name": "gamebob.dev"
         },
         {
